@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0dae85-90b5-4cb1-be6e-56416332d1bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/3_Environment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/3_Environment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyDrawer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyDrawer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchySettings.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchySettings.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyWindow.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProBuilderSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,7 +59,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2677">
@@ -126,6 +121,152 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+              <folding>
+                <marker date="1558186749601" expanded="false" signature="6:246" ph="..." />
+                <marker date="1558186749601" expanded="true" signature="278:20695" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="311:340" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="375:435" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="476:696" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="733:815" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="891:20693" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="2714:2931" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="2941:3049" ph="/// Handles movement state transitions and enter/exit callbacks ... " />
+                <marker date="1558186749601" expanded="true" signature="3112:3351" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="3361:3437" ph="/// Event when entering a state ... " />
+                <marker date="1558186749601" expanded="true" signature="3518:3713" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="3555:3703" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="3723:3798" ph="/// Event when exiting a state ... " />
+                <marker date="1558186749601" expanded="true" signature="3876:4071" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="3913:4061" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="4081:4224" ph="/// This is called every frame by ExamplePlayer in order to tell the character what its inputs are ... " />
+                <marker date="1558186749601" expanded="true" signature="4288:6727" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="4730:4888" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="5045:6717" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="5309:5727" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="5814:5975" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="6066:6491" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="6195:6465" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="6541:6649" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="6737:6880" ph="/// This is called every frame by the AI script in order to tell the character what its inputs are ... " />
+                <marker date="1558186749601" expanded="true" signature="6940:7060" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="7070:7253" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1558186749601" expanded="true" signature="7312:7332" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="7342:7621" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1558186749601" expanded="true" signature="7705:8868" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="7758:8858" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="7932:8484" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="8534:8791" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="8878:9154" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1558186749601" expanded="true" signature="9235:15956" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="9288:15946" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="9480:11382" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="9797:10534" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="10129:10298" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="10335:10504" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="11451:13720" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="11591:13468" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="11904:12287" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="12757:12891" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="12928:13371" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="13919:15561" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="14232:15535" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="14533:14689" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="14723:14965" ph="/* Makes the character skip ground probing/snapping on its next update. ... */" />
+                <marker date="1558186749601" expanded="true" signature="15693:15879" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="15966:16154" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1558186749601" expanded="true" signature="16212:18832" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="16265:18822" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="16599:16715" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="16853:17244" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="17024:17151" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="17277:17513" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="17651:18755" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="18216:18439" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="18472:18729" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="18890:19293" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19052:19108" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19216:19283" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19358:19613" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19413:19470" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19520:19578" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19748:19768" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19905:19925" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="19976:20245" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="20029:20235" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="20455:20475" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="20510:20530" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="20576:20596" ph="{...}" />
+                <marker date="1558186749601" expanded="true" signature="20667:20687" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterInput.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="417">
+              <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+              <folding>
+                <marker date="1559327203622" expanded="true" signature="6:229" ph="..." />
+                <marker date="1559327203622" expanded="true" signature="261:6747" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="400:6745" ph="{...}" />
+                <marker date="1559327203622" expanded="false" signature="429:789" ph="Events" />
+                <marker date="1559327203622" expanded="true" signature="1414:2618" ph="##region" />
+                <marker date="1559327203622" expanded="true" signature="2372:2456" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="2622:6742" ph="Methods" />
+                <marker date="1559327203622" expanded="true" signature="2767:3389" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="2824:3353" ph="/* StandardControls.Movement.move.performed += OnMoveInput; ... */" />
+                <marker date="1559327203622" expanded="true" signature="3473:3589" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="3675:3769" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="3851:3970" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="4165:4305" ph="/// Handles the sprint input ... " />
+                <marker date="1559327203622" expanded="true" signature="4381:4494" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="4498:4811" ph="/// Helper function for broadcasting the start and end events of a specific action. e.g. start sprint and end spr ... " />
+                <marker date="1559327203622" expanded="true" signature="4910:5048" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="4972:5005" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="5013:5044" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="5165:5218" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="5335:5388" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="5529:5566" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="5708:5745" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="5879:5912" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="6053:6111" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="6197:6566" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="6218:6562" ph="{...}" />
+                <marker date="1559327203622" expanded="true" signature="6636:6726" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
+              <folding>
+                <marker date="1559326846331" expanded="true" signature="6:63" ph="..." />
+                <marker date="1559326846331" expanded="true" signature="88:1588" ph="{...}" />
+                <marker date="1559326846331" expanded="true" signature="95:195" ph="/// Implementation of First Person Input ... " />
+                <marker date="1559326846331" expanded="true" signature="246:1586" ph="{...}" />
+                <marker date="1559326846331" expanded="true" signature="261:530" ph="/*Fired when the crouch is started ... */" />
+                <marker date="1559326846331" expanded="true" signature="785:873" ph="{...}" />
+                <marker date="1559326846331" expanded="true" signature="989:1159" ph="{...}" />
+                <marker date="1559326846331" expanded="true" signature="1012:1149" ph="/* StandardControls.Movement.crouch.performed += OnCrouchInput; ... */" />
+                <marker date="1559326846331" expanded="true" signature="1269:1366" ph="{...}" />
+                <marker date="1559326846331" expanded="true" signature="1441:1579" ph="{...}" />
+                <marker date="1559326846331" expanded="true" signature="1464:1569" ph="/* BroadcastInputAction(ref m_IsCrouching, CrouchStarted, CrouchEnded); ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -134,12 +275,17 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/MultiScene/SceneReference/SceneReference.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Utilities/UIComponents/TextMPButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Utilities/UIComponents/TextMPButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterInput.cs" />
       </list>
     </option>
   </component>
@@ -209,12 +355,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559320988918</updated>
-      <workItem from="1559320990353" duration="928000" />
+      <workItem from="1559320990353" duration="2862000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="928000" />
+    <option name="totallyTimeSpent" value="2862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,6 +514,151 @@
             <marker date="1528750622000" expanded="true" signature="11567:11629" ph="{...}" />
             <marker date="1528750622000" expanded="true" signature="11684:11833" ph="{...}" />
             <marker date="1528750622000" expanded="true" signature="11719:11785" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
+          <folding>
+            <marker date="1558186749601" expanded="false" signature="6:246" ph="..." />
+            <marker date="1558186749601" expanded="true" signature="278:20695" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="311:340" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="375:435" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="476:696" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="733:815" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="891:20693" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="2714:2931" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="2941:3049" ph="/// Handles movement state transitions and enter/exit callbacks ... " />
+            <marker date="1558186749601" expanded="true" signature="3112:3351" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="3361:3437" ph="/// Event when entering a state ... " />
+            <marker date="1558186749601" expanded="true" signature="3518:3713" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="3555:3703" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="3723:3798" ph="/// Event when exiting a state ... " />
+            <marker date="1558186749601" expanded="true" signature="3876:4071" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="3913:4061" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="4081:4224" ph="/// This is called every frame by ExamplePlayer in order to tell the character what its inputs are ... " />
+            <marker date="1558186749601" expanded="true" signature="4288:6727" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="4730:4888" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="5045:6717" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="5309:5727" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="5814:5975" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="6066:6491" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="6195:6465" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="6541:6649" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="6737:6880" ph="/// This is called every frame by the AI script in order to tell the character what its inputs are ... " />
+            <marker date="1558186749601" expanded="true" signature="6940:7060" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="7070:7253" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1558186749601" expanded="true" signature="7312:7332" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="7342:7621" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1558186749601" expanded="true" signature="7705:8868" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="7758:8858" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="7932:8484" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="8534:8791" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="8878:9154" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1558186749601" expanded="true" signature="9235:15956" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="9288:15946" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="9480:11382" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="9797:10534" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="10129:10298" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="10335:10504" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="11451:13720" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="11591:13468" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="11904:12287" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="12757:12891" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="12928:13371" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="13919:15561" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="14232:15535" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="14533:14689" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="14723:14965" ph="/* Makes the character skip ground probing/snapping on its next update. ... */" />
+            <marker date="1558186749601" expanded="true" signature="15693:15879" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="15966:16154" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1558186749601" expanded="true" signature="16212:18832" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="16265:18822" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="16599:16715" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="16853:17244" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="17024:17151" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="17277:17513" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="17651:18755" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="18216:18439" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="18472:18729" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="18890:19293" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19052:19108" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19216:19283" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19358:19613" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19413:19470" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19520:19578" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19748:19768" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19905:19925" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="19976:20245" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="20029:20235" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="20455:20475" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="20510:20530" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="20576:20596" ph="{...}" />
+            <marker date="1558186749601" expanded="true" signature="20667:20687" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonPlayerBrain.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2160" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
+          <folding>
+            <marker date="1559326846331" expanded="true" signature="6:63" ph="..." />
+            <marker date="1559326846331" expanded="true" signature="88:1588" ph="{...}" />
+            <marker date="1559326846331" expanded="true" signature="95:195" ph="/// Implementation of First Person Input ... " />
+            <marker date="1559326846331" expanded="true" signature="246:1586" ph="{...}" />
+            <marker date="1559326846331" expanded="true" signature="261:530" ph="/*Fired when the crouch is started ... */" />
+            <marker date="1559326846331" expanded="true" signature="785:873" ph="{...}" />
+            <marker date="1559326846331" expanded="true" signature="989:1159" ph="{...}" />
+            <marker date="1559326846331" expanded="true" signature="1012:1149" ph="/* StandardControls.Movement.crouch.performed += OnCrouchInput; ... */" />
+            <marker date="1559326846331" expanded="true" signature="1269:1366" ph="{...}" />
+            <marker date="1559326846331" expanded="true" signature="1441:1579" ph="{...}" />
+            <marker date="1559326846331" expanded="true" signature="1464:1569" ph="/* BroadcastInputAction(ref m_IsCrouching, CrouchStarted, CrouchEnded); ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterInput.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+          <folding>
+            <marker date="1559327203622" expanded="true" signature="6:229" ph="..." />
+            <marker date="1559327203622" expanded="true" signature="261:6747" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="400:6745" ph="{...}" />
+            <marker date="1559327203622" expanded="false" signature="429:789" ph="Events" />
+            <marker date="1559327203622" expanded="true" signature="1414:2618" ph="##region" />
+            <marker date="1559327203622" expanded="true" signature="2372:2456" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="2622:6742" ph="Methods" />
+            <marker date="1559327203622" expanded="true" signature="2767:3389" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="2824:3353" ph="/* StandardControls.Movement.move.performed += OnMoveInput; ... */" />
+            <marker date="1559327203622" expanded="true" signature="3473:3589" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="3675:3769" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="3851:3970" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="4165:4305" ph="/// Handles the sprint input ... " />
+            <marker date="1559327203622" expanded="true" signature="4381:4494" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="4498:4811" ph="/// Helper function for broadcasting the start and end events of a specific action. e.g. start sprint and end spr ... " />
+            <marker date="1559327203622" expanded="true" signature="4910:5048" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="4972:5005" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="5013:5044" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="5165:5218" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="5335:5388" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="5529:5566" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="5708:5745" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="5879:5912" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="6053:6111" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="6197:6566" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="6218:6562" ph="{...}" />
+            <marker date="1559327203622" expanded="true" signature="6636:6726" ph="{...}" />
           </folding>
         </state>
       </provider>
