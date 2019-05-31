@@ -47,6 +47,7 @@
                 <e p="GradientHandle.cs" t="Include" />
               </e>
               <e p="Highlight" t="Include">
+                <e p="Facepunch.Highlight.asmdef" t="Include" />
                 <e p="Highlight.cs" t="Include" />
                 <e p="HighlightImageEffect.shader" t="Include" />
                 <e p="HighlightMesh.shader" t="Include" />
@@ -127,13 +128,6 @@
                   <e p="SceneReferencePropertyDrawer.cs" t="Include" />
                 </e>
               </e>
-              <e p="Odin Hierarchy" t="Include">
-                <e p="Editor" t="Include">
-                  <e p="OdinHierarchyDrawer.cs" t="Include" />
-                  <e p="OdinHierarchySettings.cs" t="Include" />
-                  <e p="OdinHierarchyWindow.cs" t="Include" />
-                </e>
-              </e>
               <e p="PathCreator" t="Include">
                 <e p="Core" t="Include">
                   <e p="Editor" t="Include">
@@ -142,6 +136,7 @@
                       <e p="PathHandle.cs" t="Include" />
                       <e p="ScreenSpacePolyLine.cs" t="Include" />
                     </e>
+                    <e p="PathCreatorEditor.asmdef" t="Include" />
                     <e p="PathEditor.cs" t="Include" />
                   </e>
                   <e p="Runtime" t="Include">
@@ -155,6 +150,7 @@
                       <e p="PathSpace.cs" t="Include" />
                       <e p="VertexPath.cs" t="Include" />
                     </e>
+                    <e p="PathCreator.asmdef" t="Include" />
                     <e p="Utility" t="Include">
                       <e p="CubicBezierUtility.cs" t="Include" />
                       <e p="MathUtility.cs" t="Include" />
@@ -177,6 +173,7 @@
               <e p="PhysicsPlacement.cs" t="Include" />
               <e p="Transform Editor Extended" t="Include">
                 <e p="Editor" t="Include">
+                  <e p="ExtendedTransformEditor.asmdef" t="Include" />
                   <e p="ExtendedTransformEditor.cs" t="Include" />
                   <e p="Utility" t="Include">
                     <e p="CustomFloatField.cs" t="Include" />
@@ -353,6 +350,42 @@
               <e p="UIExtensions.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Auto Letterbox" t="Include">
+          <e p="Demos" t="Include">
+            <e p="Game Demo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="DragonClass.cs" t="Include" />
+                <e p="Editor" t="Include">
+                  <e p="TerrainSegmentEditor.cs" t="Include" />
+                </e>
+                <e p="EnemyClass.cs" t="Include" />
+                <e p="FollowCam.cs" t="Include" />
+                <e p="FoodTracker.cs" t="Include" />
+                <e p="GameManager.cs" t="Include" />
+                <e p="LetterboxGameDemo.cs" t="Include" />
+                <e p="Parralax.cs" t="Include" />
+                <e p="PlayerMovement.cs" t="Include" />
+                <e p="PlayerScrollScript.cs" t="Include" />
+                <e p="TeleportPlayer.cs" t="Include" />
+                <e p="Terrain" t="Include">
+                  <e p="LoopingTerrain.cs" t="Include" />
+                  <e p="TerrainSegment.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Multi-Cam Demo" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Demo.cs" t="Include" />
+                <e p="MenuSpin.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Util.cs" t="Include" />
+          </e>
+          <e p="Editor" t="Include">
+            <e p="ForceCameraRatioEditor.cs" t="Include" />
+          </e>
+          <e p="ForceCameraRatio.cs" t="Include" />
         </e>
         <e p="KinematicCharacterController" t="Include">
           <e p="Core" t="Include">
@@ -763,6 +796,7 @@
                   <e p="BuildAOTAutomation.cs" t="Include" />
                   <e p="EnsureOdinInspectorDefine.cs" t="Include" />
                   <e p="FixBrokenUnityObjectWrapperDrawer.cs" t="Include" />
+                  <e p="Sirenix.OdinInspector.CompatibilityLayer.Editor.asmdef" t="Include" />
                   <e p="SyncListDrawer.cs" t="Include" />
                   <e p="SyncVarAttributeDrawer.cs" t="Include" />
                   <e p="Vector2IntMinMaxAttributeDrawer.cs" t="Include" />
@@ -770,10 +804,14 @@
                   <e p="VectorIntPropertyResolvers.cs" t="Include" />
                 </e>
                 <e p="SerializedNetworkBehaviour.cs" t="Include" />
+                <e p="Sirenix.OdinInspector.CompatibilityLayer.asmdef" t="Include" />
                 <e p="VectorIntFormatters.cs" t="Include" />
               </e>
             </e>
             <e p="Readme.txt" t="Include" />
+          </e>
+          <e p="Ult Events" t="Include">
+            <e p="UltEvents.xml" t="Include" />
           </e>
           <e p="Ultimate Game Tools" t="Include">
             <e p="AutomaticLOD" t="Include">

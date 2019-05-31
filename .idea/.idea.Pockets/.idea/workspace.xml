@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0dae85-90b5-4cb1-be6e-56416332d1bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/3_Environment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/3_Environment.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyDrawer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyDrawer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchySettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchySettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/Odin Hierarchy/Editor/OdinHierarchyWindow.cs.meta" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,15 +26,102 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+              <folding>
+                <marker date="1559321092135" expanded="true" signature="38:564" ph="{...}" />
+                <marker date="1559321092135" expanded="true" signature="51:357" ph="..." />
+                <marker date="1559321092135" expanded="true" signature="401:562" ph="{...}" />
+                <marker date="1559321092135" expanded="true" signature="467:556" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/MultiScene/SceneReference/SceneReference.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="53" column="124" selection-start-line="53" selection-start-column="123" selection-end-line="53" selection-end-column="124" />
+              <folding>
+                <marker date="1556185893517" expanded="true" signature="24:4441" ph="{...}" />
+                <marker date="1556185893517" expanded="false" signature="37:167" ph="..." />
+                <marker date="1556185893517" expanded="true" signature="177:295" ph="/// A wrapper that provides the means to safely serialize Scene Asset References. ... " />
+                <marker date="1556185893517" expanded="true" signature="386:4439" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="805:1337" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="831:1138" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="1154:1327" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="1894:1984" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="2338:2460" ph="/// Called to prepare this data for serialization. ... " />
+                <marker date="1556185893517" expanded="true" signature="2500:2605" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="2615:2733" ph="/// Called to set up data for deserialization. ... " />
+                <marker date="1556185893517" expanded="true" signature="2774:3004" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="3075:3690" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="3244:3582" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="3599:3680" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="3737:4417" ph="{...}" />
+                <marker date="1556185893517" expanded="true" signature="4294:4407" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/MultiScene/SceneReference/SceneReference.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="53" column="124" selection-start-line="53" selection-start-column="123" selection-end-line="53" selection-end-column="124" />
+            <state relative-caret-position="-2677">
+              <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+              <folding>
+                <marker date="1528750622000" expanded="false" signature="6:101" ph="..." />
+                <marker date="1528750622000" expanded="true" signature="128:11841" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="135:351" ph="/* ForceCameraRatio.cs ... */" />
+                <marker date="1528750622000" expanded="true" signature="474:6010" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="513:718" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="1240:1359" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="1369:1501" ph="/// Sets the Camera's current Viewport as the viewport measurements to fill on resizing ... " />
+                <marker date="1528750622000" expanded="true" signature="1545:1640" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="1650:1826" ph="/// Sets the Anchor for this Camera when it is resized based on a given enum description ... " />
+                <marker date="1528750622000" expanded="true" signature="1891:3090" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="1922:3080" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="3100:3390" ph="/// Forces a camera to render at a given ratio ... " />
+                <marker date="1528750622000" expanded="true" signature="3495:6004" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="3667:3857" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="5364:5678" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="5502:5581" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="5818:5895" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="6138:11839" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="6589:8221" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="6724:6780" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="6829:6895" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="7046:7111" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="7252:8109" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="7838:8095" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="7897:8077" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="8146:8211" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="8254:8592" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="8296:8582" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="8473:8568" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="8602:8875" ph="/// Returns the container class for a Camera and it's ratio by the _camera it contains ... " />
+                <marker date="1528750622000" expanded="true" signature="8944:9259" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="8979:9023" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9077:9223" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9151:9209" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9269:9370" ph="/// Removes any null elements from the CameraRatio Array ... " />
+                <marker date="1528750622000" expanded="true" signature="9414:9606" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9473:9596" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9522:9582" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9616:9740" ph="/// Populates the tracked Camera Array with every Camera currently in the scene ... " />
+                <marker date="1528750622000" expanded="true" signature="9786:10221" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="9955:10211" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="10050:10197" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="10231:10506" ph="/// Loops through all cameras in scene (or that have been set in editor) ... " />
+                <marker date="1528750622000" expanded="true" signature="10561:11218" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="10912:10972" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="11026:11208" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="11228:11396" ph="/// Set the anchor for a given Camera ... " />
+                <marker date="1528750622000" expanded="true" signature="11467:11639" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="11567:11629" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="11684:11833" ph="{...}" />
+                <marker date="1528750622000" expanded="true" signature="11719:11785" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -37,6 +130,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/MultiScene/SceneReference/SceneReference.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Utilities/UIComponents/TextMPButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -111,12 +209,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559320988918</updated>
-      <workItem from="1559320990353" duration="324000" />
+      <workItem from="1559320990353" duration="928000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324000" />
+    <option name="totallyTimeSpent" value="928000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -179,13 +277,98 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding>
+            <marker date="1559321092135" expanded="true" signature="38:564" ph="{...}" />
+            <marker date="1559321092135" expanded="true" signature="51:357" ph="..." />
+            <marker date="1559321092135" expanded="true" signature="401:562" ph="{...}" />
+            <marker date="1559321092135" expanded="true" signature="467:556" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Tools/MultiScene/SceneReference/SceneReference.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
+        <state relative-caret-position="615">
           <caret line="53" column="124" selection-start-line="53" selection-start-column="123" selection-end-line="53" selection-end-column="124" />
+          <folding>
+            <marker date="1556185893517" expanded="true" signature="24:4441" ph="{...}" />
+            <marker date="1556185893517" expanded="false" signature="37:167" ph="..." />
+            <marker date="1556185893517" expanded="true" signature="177:295" ph="/// A wrapper that provides the means to safely serialize Scene Asset References. ... " />
+            <marker date="1556185893517" expanded="true" signature="386:4439" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="805:1337" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="831:1138" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="1154:1327" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="1894:1984" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="2338:2460" ph="/// Called to prepare this data for serialization. ... " />
+            <marker date="1556185893517" expanded="true" signature="2500:2605" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="2615:2733" ph="/// Called to set up data for deserialization. ... " />
+            <marker date="1556185893517" expanded="true" signature="2774:3004" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="3075:3690" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="3244:3582" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="3599:3680" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="3737:4417" ph="{...}" />
+            <marker date="1556185893517" expanded="true" signature="4294:4407" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2677">
+          <caret line="50" column="41" selection-start-line="50" selection-start-column="41" selection-end-line="50" selection-end-column="41" />
+          <folding>
+            <marker date="1528750622000" expanded="false" signature="6:101" ph="..." />
+            <marker date="1528750622000" expanded="true" signature="128:11841" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="135:351" ph="/* ForceCameraRatio.cs ... */" />
+            <marker date="1528750622000" expanded="true" signature="474:6010" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="513:718" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="1240:1359" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="1369:1501" ph="/// Sets the Camera's current Viewport as the viewport measurements to fill on resizing ... " />
+            <marker date="1528750622000" expanded="true" signature="1545:1640" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="1650:1826" ph="/// Sets the Anchor for this Camera when it is resized based on a given enum description ... " />
+            <marker date="1528750622000" expanded="true" signature="1891:3090" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="1922:3080" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="3100:3390" ph="/// Forces a camera to render at a given ratio ... " />
+            <marker date="1528750622000" expanded="true" signature="3495:6004" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="3667:3857" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="5364:5678" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="5502:5581" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="5818:5895" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="6138:11839" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="6589:8221" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="6724:6780" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="6829:6895" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="7046:7111" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="7252:8109" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="7838:8095" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="7897:8077" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="8146:8211" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="8254:8592" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="8296:8582" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="8473:8568" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="8602:8875" ph="/// Returns the container class for a Camera and it's ratio by the _camera it contains ... " />
+            <marker date="1528750622000" expanded="true" signature="8944:9259" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="8979:9023" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9077:9223" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9151:9209" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9269:9370" ph="/// Removes any null elements from the CameraRatio Array ... " />
+            <marker date="1528750622000" expanded="true" signature="9414:9606" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9473:9596" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9522:9582" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9616:9740" ph="/// Populates the tracked Camera Array with every Camera currently in the scene ... " />
+            <marker date="1528750622000" expanded="true" signature="9786:10221" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="9955:10211" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="10050:10197" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="10231:10506" ph="/// Loops through all cameras in scene (or that have been set in editor) ... " />
+            <marker date="1528750622000" expanded="true" signature="10561:11218" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="10912:10972" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="11026:11208" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="11228:11396" ph="/// Set the anchor for a given Camera ... " />
+            <marker date="1528750622000" expanded="true" signature="11467:11639" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="11567:11629" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="11684:11833" ph="{...}" />
+            <marker date="1528750622000" expanded="true" signature="11719:11785" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
