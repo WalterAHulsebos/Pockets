@@ -218,7 +218,7 @@ namespace Core.Managers
             {
                 GameObject letterBoxCameraObj = new GameObject();
                 letterBoxCamera = letterBoxCameraObj.AddComponent<Camera>();
-                
+
                 letterBoxCamera.backgroundColor = letterBoxCameraColor;
                 letterBoxCamera.cullingMask = 0;
                 letterBoxCamera.depth = -100;
@@ -367,7 +367,7 @@ namespace Core.Managers
             => cameras.GetMultiple(func: (cameraRatio => cameraRatio.cameraGroup == cameraGroup));
         
         public List<CameraRatio> GetCamerasNotFromGroup(int cameraGroup)
-            => cameras.GetMultiple(func: (cameraRatio => cameraRatio.cameraGroup == cameraGroup));
+            => cameras.GetMultiple(func: (cameraRatio => cameraRatio.cameraGroup != cameraGroup));
     
         #endregion
     }
