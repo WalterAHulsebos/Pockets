@@ -12,6 +12,13 @@
         <e p="[Source]" t="Include">
           <e p="Scripts" t="Include">
             <e p="Core" t="Include">
+              <e p="Player" t="Include">
+                <e p="Movement" t="Include">
+                  <e p="CharacterController.cs" t="Include" />
+                  <e p="CharacterInput.cs" t="Include" />
+                  <e p="FirstPersonInput.cs" t="Include" />
+                </e>
+              </e>
               <e p="Utilities" t="Include">
                 <e p="UIComponents" t="Include">
                   <e p="Editor" t="Include">
@@ -348,6 +355,15 @@
                 </e>
               </e>
               <e p="UIExtensions.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Assets" t="Include">
+          <e p="[Source]" t="Include">
+            <e p="Settings" t="Include">
+              <e p="Input Control Schemes" t="Include">
+                <e p="DefaultControlScheme.cs" t="Include" />
+              </e>
             </e>
           </e>
         </e>
