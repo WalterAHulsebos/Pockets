@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0dae85-90b5-4cb1-be6e-56416332d1bf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Auto Letterbox/Editor.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Auto Letterbox/Editor/ForceCameraRatioEditor.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Auto Letterbox/Editor/ForceCameraRatioEditor.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/1_Managers.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/1_Managers.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/2_Lighting.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/2_Lighting.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/2_Lighting_Profiles/Post-process Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/2_Lighting_Profiles/Post-process Volume Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
-              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+              <caret line="114" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <marker date="1559328702708" expanded="true" signature="6:206" ph="..." />
                 <marker date="1559328702708" expanded="false" signature="208:431" ph="/* ForceCameraRatioEditor.cs ... */" />
@@ -257,14 +255,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/Demos/Multi-Cam Demo/Scripts/Demo.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="3" />
               <folding>
-                <marker date="1528750608000" expanded="false" signature="6:67" ph="..." />
+                <marker date="1528750608000" expanded="true" signature="6:67" ph="..." />
                 <marker date="1528750608000" expanded="true" signature="94:6831" ph="{...}" />
                 <marker date="1528750608000" expanded="true" signature="101:310" ph="/* Demo.cs ... */" />
                 <marker date="1528750608000" expanded="true" signature="349:6829" ph="{...}" />
                 <marker date="1528750608000" expanded="false" signature="365:946" ph="Variables" />
-                <marker date="1528750608000" expanded="false" signature="956:1392" ph="Unity Default Functions" />
+                <marker date="1528750608000" expanded="true" signature="956:1392" ph="Unity Default Functions" />
                 <marker date="1528750608000" expanded="true" signature="997:1077" ph="/// Validate any insecure variables ... " />
                 <marker date="1528750608000" expanded="true" signature="1108:1372" ph="{...}" />
                 <marker date="1528750608000" expanded="true" signature="1463:1591" ph="{...}" />
@@ -295,11 +294,29 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Managers/CameraManager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <marker date="1559332701614" expanded="true" signature="6:118" ph="..." />
+                <marker date="1559332701614" expanded="true" signature="201:1147" ph="{...}" />
+                <marker date="1559332701614" expanded="true" signature="209:695" ph="Variables" />
+                <marker date="1559332701614" expanded="true" signature="526:679" ph="/* public int startingDefault = 0; ... */" />
+                <marker date="1559332701614" expanded="true" signature="701:1145" ph="Unity Default Functions" />
+                <marker date="1559332701614" expanded="true" signature="738:810" ph="/// Validate any insecure variables ... " />
+                <marker date="1559332701614" expanded="true" signature="836:1129" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
+              <caret line="2" column="30" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
               <folding>
                 <marker date="1559326846331" expanded="true" signature="6:63" ph="..." />
                 <marker date="1559326846331" expanded="true" signature="88:1588" ph="{...}" />
@@ -329,6 +346,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterInput.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Managers/CameraManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Utilities/UIComponents/TextMPButton.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -338,6 +356,7 @@
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs" />
         <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/CharacterInput.cs" />
         <option value="$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs" />
+        <option value="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Managers/CameraManager.cs" />
       </list>
     </option>
   </component>
@@ -407,12 +426,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1559320988918</updated>
-      <workItem from="1559320990353" duration="3765000" />
+      <workItem from="1559320990353" duration="4803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3765000" />
+    <option name="totallyTimeSpent" value="4803000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -602,7 +621,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/FirstPersonInput.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="30" lean-forward="true" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
+          <caret line="2" column="30" selection-start-line="2" selection-end-line="2" selection-end-column="30" />
           <folding>
             <marker date="1559326846331" expanded="true" signature="6:63" ph="..." />
             <marker date="1559326846331" expanded="true" signature="88:1588" ph="{...}" />
@@ -656,45 +675,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/Demos/Multi-Cam Demo/Scripts/Demo.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1528750608000" expanded="false" signature="6:67" ph="..." />
-            <marker date="1528750608000" expanded="true" signature="94:6831" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="101:310" ph="/* Demo.cs ... */" />
-            <marker date="1528750608000" expanded="true" signature="349:6829" ph="{...}" />
-            <marker date="1528750608000" expanded="false" signature="365:946" ph="Variables" />
-            <marker date="1528750608000" expanded="false" signature="956:1392" ph="Unity Default Functions" />
-            <marker date="1528750608000" expanded="true" signature="997:1077" ph="/// Validate any insecure variables ... " />
-            <marker date="1528750608000" expanded="true" signature="1108:1372" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="1463:1591" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="1519:1581" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="1623:6823" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="1839:1950" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="2662:2985" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="2775:2857" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="3046:3366" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="3179:3238" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="3522:3597" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="3702:3941" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="4012:4251" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="4324:4563" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="4639:4877" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="5110:5155" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="5314:5359" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="5518:5563" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="5916:5961" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="5994:6041" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="6073:6119" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="6272:6813" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="6301:6354" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="6434:6487" ph="{...}" />
-            <marker date="1528750608000" expanded="true" signature="6567:6620" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/Editor/ForceCameraRatioEditor.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -705,7 +685,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/ForceCameraRatio.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
           <folding>
             <marker date="1559328702708" expanded="true" signature="6:206" ph="..." />
             <marker date="1559328702708" expanded="false" signature="208:431" ph="/* ForceCameraRatioEditor.cs ... */" />
@@ -761,6 +741,62 @@
             <marker date="1559328702708" expanded="true" signature="16236:16298" ph="{...}" />
             <marker date="1559328702708" expanded="true" signature="16353:16502" ph="{...}" />
             <marker date="1559328702708" expanded="true" signature="16388:16454" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Auto Letterbox/Demos/Multi-Cam Demo/Scripts/Demo.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="3" />
+          <folding>
+            <marker date="1528750608000" expanded="true" signature="6:67" ph="..." />
+            <marker date="1528750608000" expanded="true" signature="94:6831" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="101:310" ph="/* Demo.cs ... */" />
+            <marker date="1528750608000" expanded="true" signature="349:6829" ph="{...}" />
+            <marker date="1528750608000" expanded="false" signature="365:946" ph="Variables" />
+            <marker date="1528750608000" expanded="true" signature="956:1392" ph="Unity Default Functions" />
+            <marker date="1528750608000" expanded="true" signature="997:1077" ph="/// Validate any insecure variables ... " />
+            <marker date="1528750608000" expanded="true" signature="1108:1372" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="1463:1591" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="1519:1581" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="1623:6823" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="1839:1950" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="2662:2985" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="2775:2857" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="3046:3366" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="3179:3238" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="3522:3597" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="3702:3941" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="4012:4251" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="4324:4563" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="4639:4877" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="5110:5155" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="5314:5359" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="5518:5563" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="5916:5961" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="5994:6041" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="6073:6119" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="6272:6813" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="6301:6354" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="6434:6487" ph="{...}" />
+            <marker date="1528750608000" expanded="true" signature="6567:6620" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Managers/CameraManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <marker date="1559332701614" expanded="true" signature="6:118" ph="..." />
+            <marker date="1559332701614" expanded="true" signature="201:1147" ph="{...}" />
+            <marker date="1559332701614" expanded="true" signature="209:695" ph="Variables" />
+            <marker date="1559332701614" expanded="true" signature="526:679" ph="/* public int startingDefault = 0; ... */" />
+            <marker date="1559332701614" expanded="true" signature="701:1145" ph="Unity Default Functions" />
+            <marker date="1559332701614" expanded="true" signature="738:810" ph="/// Validate any insecure variables ... " />
+            <marker date="1559332701614" expanded="true" signature="836:1129" ph="{...}" />
           </folding>
         </state>
       </provider>
