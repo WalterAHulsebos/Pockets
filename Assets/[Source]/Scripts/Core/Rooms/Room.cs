@@ -10,7 +10,7 @@ public class Room : MonoBehaviour
     public ItemRoom roomType;
     private List<Container> containersInRoom = new List<Container>();
 
-    private void Awake()
+    private void Start()
     {
         SetInitialReferences();
     }

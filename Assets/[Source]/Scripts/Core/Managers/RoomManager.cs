@@ -38,5 +38,4 @@ public class RoomManager : MonoBehaviour
             rooms.Add(newRoom);
         }
     }
-
 }
