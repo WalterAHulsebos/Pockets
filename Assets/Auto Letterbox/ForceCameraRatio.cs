@@ -139,7 +139,8 @@ namespace LetterboxCamera
         public Vector2 vectorAnchor;
         private Rect originViewPort;
 
-        public CameraRatio (Camera _camera, Vector2 _anchor) {
+        public CameraRatio (Camera _camera, Vector2 _anchor)
+        {
             camera = _camera;
             vectorAnchor = _anchor;
             originViewPort = camera.rect;
