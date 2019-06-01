@@ -10,7 +10,7 @@ public class Container : MonoBehaviour
 
     public bool IsInCorrectRoom(Item item)
     {
-        return item.room == room.roomType;
+        return item.storageRoom == room.roomType;
     }
 
     public float CalculateOrganisation()

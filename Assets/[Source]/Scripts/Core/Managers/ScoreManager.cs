@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.Extensions;
+using Utilities;
 
-public class ScoreManager : MonoBehaviour
+public class ScoreManager : PersistentSingleton<ScoreManager>
 {
     public float roomOrganisationScore = 0;
     public int heroSatisfactionRating = 100;
