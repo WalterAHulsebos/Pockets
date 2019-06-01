@@ -9,6 +9,10 @@ using Rewired;
 using Utilities;
 using Utilities.Extensions;
 
+using Sirenix.OdinInspector;
+
+using ReadOnlyAttribute = Sirenix.OdinInspector.ReadOnlyAttribute;
+
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 #endif
@@ -23,34 +27,48 @@ namespace Core.Movement
 
 		//public int playerId = 0; // The Rewired player id of this character
 		
-		public TempCamera playerCamera;
+		[Required]
+		public PlayerCamera playerCamera;
 		
+		[PropertySpace(spaceBefore: 0, spaceAfter: 5)]
+		[Required]
 		public KinematicCharacterMotor motor;
 		
-		[Header("Stable Movement")]
-		[SerializeField] private float maxStableMoveSpeed = 10f;
-		[SerializeField] private float stableMovementSharpness = 15f;
+		[BoxGroup("Index", showLabel: false)]
+		[SerializeField] private int playerIndex = 0;
+		
+		[FoldoutGroup("Ground Movement")]
+		[SerializeField] private float maxGroundMoveSpeed = 10f;
+		[FoldoutGroup("Ground Movement")]
+		[SerializeField] private float groundMovementSharpness = 15f;
+		[FoldoutGroup("Ground Movement")]
 		[SerializeField] private float orientationSharpness = 10f;
-		[SerializeField] private OrientationMethod orientationMethod = OrientationMethod.TowardsCamera;
+		
+		private OrientationMethod orientationMethod = OrientationMethod.TowardsCamera;
 
-		[Header("Air Movement")]
-		[SerializeField] private float maxAirMoveSpeed = 100f;
-		[SerializeField] private float airAccelerationSpeed = 15f;
-		[SerializeField] private float drag = 0.1f;
+		[FoldoutGroup("Air Movement")]
+		[SerializeField] private float 
+			maxAirMoveSpeed = 100f, 
+			airAccelerationSpeed = 15f, 
+			drag = 0.1f;
 
-		[Header("Jumping")]
+		[FoldoutGroup("Jumping")]
 		[SerializeField] private bool allowJumpingWhenSliding = false;
-		[SerializeField] private float jumpUpSpeed = 10f;
-		[SerializeField] private float jumpScalableForwardSpeed = 10f;
-		[SerializeField] private float jumpPreGroundingGraceTime = 0f;
-		[SerializeField] private float jumpPostGroundingGraceTime = 0f;
+		[FoldoutGroup("Jumping")]
+		[SerializeField] private float 
+			jumpUpSpeed = 10f, 
+			jumpScalableForwardSpeed = 10f,
+			jumpPreGroundingGraceTime = 0f, 
+			jumpPostGroundingGraceTime = 0f;
 
-		[Header("Misc")]
+		[FoldoutGroup("Misc")]
 		[SerializeField] private List<Collider> ignoredColliders = new List<Collider>();
+		[FoldoutGroup("Misc")]
 		[SerializeField] private bool orientTowardsGravity = false;
+		[FoldoutGroup("Misc")]
 		[SerializeField] private Vector3 gravity = new Vector3(0, -30f, 0);
+		[FoldoutGroup("Misc")]
 		[SerializeField] private Transform meshRoot;
-		[SerializeField] private Transform cameraFollowPoint;
 		
 		#endregion
 
@@ -75,9 +93,6 @@ namespace Core.Movement
 		
 		//[SerializeField] [ReadOnly]
 		private Player player; // The Rewired Player
-
-		[SerializeField] [ReadOnly] 
-		private int playerIndex = default;
 		
 		[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
 		private bool initialized;
@@ -85,6 +100,8 @@ namespace Core.Movement
 		[SerializeField] [ReadOnly] 
 		private PlayerCharacterInputs inputs;
 		
+		#endregion
+			
 		#region Local Classes
 		
 		public enum CharacterState
@@ -111,27 +128,30 @@ namespace Core.Movement
 		
 		#region Consts
 		
-		private const string MOUSE_X_INPUT = "Look Horizontal";
-		private const string MOUSE_Y_INPUT = "Look Vertical";
-		//private const string MOUSE_SCROLL_INPUT = "Mouse ScrollWheel";
-		private const string HORIZONTAL_INPUT = "Move Horizontal";
-		private const string VERTICAL_INPUT = "Move Vertical";
+		private const string LOOK_HORIZONTAL = "Look Horizontal";
+		private const string LOOK_VERTICAL = "Look Vertical";
+		private const string MOVE_HORIZONTAL = "Move Horizontal";
+		private const string MOVE_VERTICAL = "Move Vertical";
 		private const string JUMP_KEY = "Jump";
 		
 		#endregion
-		
-		#endregion
+
 		
 		#endregion
 
 		#region Methods
+
+		private void Reset()
+		{
+			playerIndex = Instances.GetIndex(func: (instance => instance == this));
+		}
 
 		private void Awake()
 		{
 			// Handle initial state
 			TransitionToState(CharacterState.Default);
 
-			motor = motor ?? GetComponent<KinematicCharacterMotor>();
+			motor = motor ?? GetComponent<KinematicCharacterMotor>() ?? GetComponentInChildren<KinematicCharacterMotor>();
 			
 			// Assign the characterController to the motor
 			motor.CharacterController = this;
@@ -159,9 +179,7 @@ namespace Core.Movement
 		/// Links a player to their playerID
 		/// </summary>
 		private void Initialize()
-		{
-			playerIndex = Instances.GetIndex(func: (instance => instance == this));
-			
+		{	
 			// Get the Rewired Player object for this player.
 			player = ReInput.players.GetPlayer(playerIndex);
 			
@@ -172,9 +190,9 @@ namespace Core.Movement
 		
 		private void HandleCameraInput()
 		{
-			float mouseLookAxisUp = 0f; //player.GetAxisRaw(MOUSE_Y_INPUT);
-			float mouseLookAxisRight = 0f; //player.GetAxisRaw(MOUSE_X_INPUT);
-			Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
+			float mouseLookAxisUp = player.GetAxisRaw(LOOK_VERTICAL);
+			float mouseLookAxisRight = player.GetAxisRaw(LOOK_HORIZONTAL);
+			Vector3 lookInputVector = new Vector3(mouseLookAxisRight, -mouseLookAxisUp, 0f);
 		
 			// Prevent moving the camera while the cursor isn't locked
 			if (Cursor.lockState != CursorLockMode.Locked)
@@ -184,19 +202,17 @@ namespace Core.Movement
 		
 			//float scrollInput = -player.GetAxis(MOUSE_SCROLL_INPUT);
 		
-			playerCamera.UpdateWithInput(Time.deltaTime, 0, lookInputVector);
+			playerCamera.UpdateWithInput(lookInputVector, meshRoot);
 		}
 
 		private void HandleCharacterInput()
 		{
-			Debug.Log("We are handling Player Input, right?");
-			
 			//TODO: Don't make a new one every frame, cache it.
 			 PlayerCharacterInputs characterInputs = new PlayerCharacterInputs
 			 {
-				 moveAxisForward = player.GetAxisRaw(VERTICAL_INPUT),
-				 moveAxisRight = player.GetAxisRaw(HORIZONTAL_INPUT),
-				 cameraRotation = playerCamera.Transform.rotation,
+				 moveAxisForward = player.GetAxisRaw(MOVE_VERTICAL),
+				 moveAxisRight = player.GetAxisRaw(MOVE_HORIZONTAL),
+				 cameraRotation = playerCamera.TargetTransforms[0].rotation,
 				 jumpDown = player.GetButtonDown(JUMP_KEY),
 			 };
 
@@ -332,7 +348,7 @@ namespace Core.Movement
 									 Vector3 smoothedLookInputDirection = Vector3.Slerp(motor.CharacterForward, lookInputVector, 1 - Mathf.Exp(-orientationSharpness * deltaTime)).normalized;
 		  
 									 // Set the current rotation (which will be used by the KinematicCharacterMotor)
-									 currentRotation = Quaternion.LookRotation(smoothedLookInputDirection, motor.CharacterUp);
+									 //currentRotation = Quaternion.LookRotation(smoothedLookInputDirection, motor.CharacterUp);
 								}
 								if (orientTowardsGravity)
 								{
@@ -381,10 +397,10 @@ namespace Core.Movement
 									 // Calculate target velocity
 									 Vector3 inputRight = Vector3.Cross(moveInputVector, motor.CharacterUp);
 									 Vector3 reorientedInput = Vector3.Cross(effectiveGroundNormal, inputRight).normalized * moveInputVector.magnitude;
-									 Vector3 targetMovementVelocity = reorientedInput * maxStableMoveSpeed;
+									 Vector3 targetMovementVelocity = reorientedInput * maxGroundMoveSpeed;
 		  
 									 // Smooth movement Velocity
-									 currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-stableMovementSharpness * deltaTime));
+									 currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-groundMovementSharpness * deltaTime));
 								}
 								// Air movement
 								else
