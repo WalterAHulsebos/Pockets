@@ -1401,6 +1401,7 @@ MonoBehaviour:
   - {fileID: 8737679630623681448}
   - {fileID: -7700514488434086254}
   - {fileID: 2871838378167503918}
+  - {fileID: 6608599827557852793}
 --- !u!114 &213888263867526270
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1447,7 +1448,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1
+    value: 2
   threshold:
     overrideState: 0
     value: 1
@@ -1585,6 +1586,46 @@ MonoBehaviour:
   passes:
     overrideState: 0
     value: 3
+--- !u!114 &6608599827557852793
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aca6b5f0da8ca64cb69109b860c1891, type: 3}
+  m_Name: LightStreaks
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  quality:
+    overrideState: 1
+    value: 1
+  debug:
+    overrideState: 1
+    value: 0
+  intensity:
+    overrideState: 1
+    value: 1
+  luminanceThreshold:
+    overrideState: 1
+    value: 1
+  direction:
+    overrideState: 1
+    value: -1
+  blur:
+    overrideState: 1
+    value: 1
+  iterations:
+    overrideState: 1
+    value: 2
+  downscaling:
+    overrideState: 1
+    value: 2
 --- !u!114 &8737679630623681448
 MonoBehaviour:
   m_ObjectHideFlags: 3

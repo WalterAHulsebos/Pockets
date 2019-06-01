@@ -1,0 +1,37 @@
+{
+    "name": "DefaultControlScheme",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "c7a725c2-e274-4dd3-8077-47936151f8b1",
+            "actions": [
+                {
+                    "name": "New action",
+                    "id": "7acb0f17-5a4a-450e-9eaa-a78fa69f6c87",
+                    "expectedControlLayout": "",
+                    "continuous": false,
+                    "passThrough": false,
+                    "initialStateCheck": false,
+                    "processors": "",
+                    "interactions": "",
+                    "bindings": []
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "d2bff9e1-d254-433c-ba00-4176173ba4e3",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false,
+                    "modifiers": ""
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
