@@ -15,6 +15,16 @@ public class GameManager : PersistentSingleton<GameManager>
 
     private ItemEvent currentRequestEvent;
 
+    private void Start()
+    {
+        SetInitialReferences();
+    }
+
+    private void SetInitialReferences()
+    {
+        Composer.Instance.ComposeNextLevel();
+    }
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -54,6 +64,11 @@ public class GameManager : PersistentSingleton<GameManager>
     private void Tick()
     {
         ItemManager.Instance.CallEventDegradeCallback();
+    }
+
+    public void AddScheduledEvent(ScheduleItem scheduledItem)
+    {
+        schedule.Add(scheduledItem);
     }
 
     public ItemEvent GetActiveRequestEvent()
