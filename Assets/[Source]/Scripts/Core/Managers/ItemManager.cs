@@ -78,6 +78,7 @@ public class ItemManager : PersistentSingleton<ItemManager>
 
                 newItem.GetComponent<MeshFilter>().mesh = items[i].mesh;
                 newItem.GetComponent<MeshRenderer>().material = items[i].material;
+                newItem.GetComponent<MeshCollider>().sharedMesh = items[i].mesh;
                 globalItems.Add(newItem);
                 degradeCallback += newItem.DoDegration;
             }

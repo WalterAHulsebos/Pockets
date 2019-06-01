@@ -17,9 +17,9 @@ using ReadOnlyAttribute = Sirenix.OdinInspector.ReadOnlyAttribute;
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 #endif
 
-namespace Core.Movement
+namespace Core.PlayerSystems.Movement
 {
-	public class RewiredPlayerController : Multiton<RewiredPlayerController>, ICharacterController
+	public class PlayerController : Multiton<PlayerController>, ICharacterController
 	{
 		#region Variables
 
@@ -92,7 +92,7 @@ namespace Core.Movement
 		private Vector3 lastOuterNormal = Vector3.zero;
 		
 		//[SerializeField] [ReadOnly]
-		private Player player; // The Rewired Player
+		public Player Player { get; private set; } // The Rewired Player
 		
 		[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
 		private bool initialized;
@@ -181,7 +181,7 @@ namespace Core.Movement
 		private void Initialize()
 		{	
 			// Get the Rewired Player object for this player.
-			player = ReInput.players.GetPlayer(playerIndex);
+			Player = ReInput.players.GetPlayer(playerIndex);
 			
 			initialized = true;
 		}
@@ -190,8 +190,8 @@ namespace Core.Movement
 		
 		private void HandleCameraInput()
 		{
-			float mouseLookAxisUp = player.GetAxisRaw(LOOK_VERTICAL);
-			float mouseLookAxisRight = player.GetAxisRaw(LOOK_HORIZONTAL);
+			float mouseLookAxisUp = Player.GetAxisRaw(LOOK_VERTICAL);
+			float mouseLookAxisRight = Player.GetAxisRaw(LOOK_HORIZONTAL);
 			Vector3 lookInputVector = new Vector3(mouseLookAxisRight, -mouseLookAxisUp, 0f);
 		
 			// Prevent moving the camera while the cursor isn't locked
@@ -210,10 +210,10 @@ namespace Core.Movement
 			//TODO: Don't make a new one every frame, cache it.
 			 PlayerCharacterInputs characterInputs = new PlayerCharacterInputs
 			 {
-				 moveAxisForward = player.GetAxisRaw(MOVE_VERTICAL),
-				 moveAxisRight = player.GetAxisRaw(MOVE_HORIZONTAL),
+				 moveAxisForward = Player.GetAxisRaw(MOVE_VERTICAL),
+				 moveAxisRight = Player.GetAxisRaw(MOVE_HORIZONTAL),
 				 cameraRotation = playerCamera.TargetTransforms[0].rotation,
-				 jumpDown = player.GetButtonDown(JUMP_KEY),
+				 jumpDown = Player.GetButtonDown(JUMP_KEY),
 			 };
 
 			 inputs = characterInputs;
@@ -312,15 +312,6 @@ namespace Core.Movement
 					 default:
 						  throw new ArgumentOutOfRangeException();
 				}
-		  }
-		  
-		  /// <summary>
-		  /// This is called every frame by the AI script in order to tell the character what its inputs are
-		  /// </summary>
-		  public void SetInputs(ref AICharacterInputs inputs)
-		  {
-				moveInputVector = inputs.MoveVector;
-				lookInputVector = inputs.LookVector;
 		  }
 		  
 		  /// <summary>
