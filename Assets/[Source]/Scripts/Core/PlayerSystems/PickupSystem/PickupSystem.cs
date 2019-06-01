@@ -89,9 +89,7 @@ namespace Core.PlayerSystems
 			 
 			 Ray ray = new Ray(cameraTransform.position, cameraTransform.forward * grabRange);
 			 
-			 Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
-			 
-			 //CGDebug.DrawRay(ray).Color(Color.cyan).Duration(1f);
+			 //Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
 			 
 			 if(holdingAnObject == false)
 			 {
@@ -116,8 +114,7 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform); //Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
-				 
+				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
 				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
 				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
