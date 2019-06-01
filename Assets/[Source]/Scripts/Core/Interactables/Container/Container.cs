@@ -26,11 +26,25 @@ public class Container : MonoBehaviour
                 itemsDictionary.Add(itemsInContainer[i].type, 1);
             }
         }
-        
-        for(int i = 0; i < itemsDictionary.Count; i++)
-        {
 
+        // Only one type in the container. Maximum organisation.
+        if(itemsDictionary.Count == 1)
+        {
+            return 1.0f;
         }
+
+        string mostNumerous = "";
+        int highestValue = 0;
+        foreach(var kvp in itemsDictionary)
+        {
+            if(kvp.Value > highestValue)
+            {
+                highestValue = kvp.Value;
+                mostNumerous = kvp.Key;
+            }
+        }
+
+        organisationPercentage = highestValue / itemsInContainer.Count;
 
         return organisationPercentage;
     }
