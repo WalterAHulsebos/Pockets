@@ -9,6 +9,21 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
     public float roomOrganisationScore = 0;
     public int heroSatisfactionRating = 100;
 
+    private List<int> recordedHeroSatisfactionRatings;
+    public int averageHeroSatisfactionRating
+    {
+        get
+        {
+            int total = 0;
+            foreach(int rating in recordedHeroSatisfactionRatings)
+            {
+                total += rating;
+            }
+
+            return total / recordedHeroSatisfactionRatings.Count;
+        }
+    }
+
     public TextMesh organisationTextMesh;
     public TextMesh satisfactionTextMesh;
 
@@ -25,6 +40,8 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
         {
             heroSatisfactionRating = 100;
         }
+
+        recordedHeroSatisfactionRatings.Add(heroSatisfactionRating);
     }
 
     public void CalculateAndDisplayValues()
