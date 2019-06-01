@@ -10,7 +10,7 @@ public class Room : MonoBehaviour
     public ItemRoom roomType;
     private List<Container> containersInRoom = new List<Container>();
 
-    private void Awake()
+    private void Start()
     {
         SetInitialReferences();
     }
@@ -21,10 +21,18 @@ public class Room : MonoBehaviour
         {
             defaultRoom = this;
         }
+
+        RoomManager.instance.RegisterRoom(this);
     }
 
     public float CalculateRoomOrganisation()
     {
+        // Anything in the default room in not organised.
+        if(isDefaultRoom)
+        {
+            return 0.0f;
+        }
+
         float overallOrganisation = 0;
         for (int i = 0; i < containersInRoom.Count; i++)
         {

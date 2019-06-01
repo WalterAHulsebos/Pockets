@@ -6,6 +6,7 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "New Item", menuName = "New Item")]
 public class ItemType : ScriptableObject
 {
+    public string type;
     public Mesh mesh;
     public Material material;
     public ItemRoom room;

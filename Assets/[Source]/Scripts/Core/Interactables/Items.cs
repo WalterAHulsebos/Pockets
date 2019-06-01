@@ -9,7 +9,7 @@ public class Item : MonoBehaviour, IInteractable
 
     public string type;
     public GameObject prefab;
-    public ItemRoom room;
+    public ItemRoom storageRoom;
     public ItemEffects effects;
     public float degradePerTick;
 
