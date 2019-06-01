@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(ItemType))]
-public class Test001Editor : Editor
+public class ItemTypeEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         GUI.changed = false;
         ItemType type = (ItemType)this.target;
         DrawDefaultInspector();
-        if (GUI.changed) { Test001Editor.SaveData(type); }
+        if (GUI.changed) { SaveData(type); }
     }
 
     private static void SaveData(ItemType test)
