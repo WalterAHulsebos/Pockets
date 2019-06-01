@@ -12,11 +12,22 @@ public class Item : MonoBehaviour, IInteractable
     public GameObject prefab;
     public ItemRoom room;
     public ItemEffects effects;
-    public float degradingSpeed = 0.001f, degradingDelay = 5f;
+    public float degradePerTick;
 
     [HideInInspector] public float integity = 100;
-    [HideInInspector] public bool stored = false;
+    [HideInInspector] public Container container;
 
     #endregion
+
+    public void DoDegration()
+    {
+        if(container != null)
+        {
+            if(container.IsInCorrectContainer(this))
+            {
+                integity -= degradePerTick;
+            }
+        }
+    }
 }
 
