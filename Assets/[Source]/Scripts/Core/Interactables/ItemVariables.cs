@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.Serialization;
 
 [System.Serializable]
 public enum ItemRoom
@@ -22,4 +23,51 @@ public enum ItemEffects
     //TODO: Add more effects if needed
 }
 
+[System.Serializable]
+public enum ItemEventType
+{
+    AddEvent,
+    RemoveEvent
+}
+
+[System.Serializable]
+public class ItemEvent
+{
+    public ItemEventType eventType;
+    public List<Item> items;
+    public List<int> counts;
+    public float mutationChance;
+    
+    public int timeToExecute;
+
+    public IEnumerator HandleEvent()
+    {
+        while(timeToExecute > 0 && eventType == ItemEventType.RemoveEvent)
+        {
+            timeToExecute -= 1;
+            yield return new WaitForSecondsRealtime(1f);
+        }
+
+        switch(eventType)
+        {
+            case ItemEventType.AddEvent:
+                //ItemManager.Instance.CreateItems(items, mutationChance);
+                Debug.Log("ADD");
+                break;
+
+            case ItemEventType.RemoveEvent:
+                //ItemManager.Instance.RemoveItems(items);
+                Debug.Log("REMOVE");
+                break;
+        }
+
+    }
+}
+
+[System.Serializable]
+public class ScheduleItem
+{
+    public float minuteToExecute;
+    public ItemEvent itemEvent;
+}
 
