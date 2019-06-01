@@ -25,6 +25,11 @@ namespace Core.PlayerSystems
 		 
 		 [SerializeField] private float grabRange = 10f;
 		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
+
+		 [SerializeField] private float objectFollowingSpeed = 10f;
+		 
+		 [FoldoutGroup("Sensitivity")]
+		 [SerializeField] private Vector2 rotationSensitivity = new Vector3(1,1,1);
 		 
 		 [FoldoutGroup("Throw Force")]
 		 
@@ -45,10 +50,16 @@ namespace Core.PlayerSystems
 
 		 private bool holdingAnObject = false;
 
+		 private bool initialGrab = false;
+
 		 private Vector3 heldObjectMoveTowardsPosition = Vector3.zero;
 		 
 		 private float timeSinceStartedCharging = 0f;
-		 private float chargePercentage = 0f;
+		 
+		 private Vector2 rotationInput = Vector3.zero;
+		 
+		 [ReadOnly]
+		 [SerializeField] private float chargePercentage = 0f;
 		 
 		 private Transform heldObject = null;
 		 private Rigidbody heldObjectRigidBody = null;
@@ -64,7 +75,6 @@ namespace Core.PlayerSystems
 		
 		 #endregion
 
-		 
 		 #endregion
 	 
 		 #region Methods
@@ -104,6 +114,8 @@ namespace Core.PlayerSystems
 				 //heldObjectCollider = heldObject.GetComponent<Collider>();
 				 
 				 heldObjectRigidBody.isKinematic = true;
+
+				 initialGrab = true;
 				 //heldObjectCollider.enabled = false;
 			 }
 			 else
@@ -114,17 +126,32 @@ namespace Core.PlayerSystems
 				 
 				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
-				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 
-				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
+				 rotationInput = new Vector3(
+					 InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
+					 InputPlayer.GetAxis(ROTATE_VERTICAL), 
+					 0);
+				 
+				 Debug.Log($"rotationInput = {rotationInput}");
+				 
+				 heldObjectMoveTowardsPosition = matrix.MultiplyPoint(holdOffset);
 
 				 if(InputPlayer.GetButtonDown(PICKUP_BUTTON))
+				 {
+					 initialGrab = false;
+				 }
+				 
+				 if(initialGrab){return;}
+				 
+				 if(InputPlayer.GetButton(PICKUP_BUTTON))
 				 {
 					 timeSinceStartedCharging += Time.deltaTime;
 					 chargePercentage = timeSinceStartedCharging / chargeTime;
 				 }
 				 
-				 if (!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
+				 if (!(chargePercentage >= 0.05 )) return;
+				 if(!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
 
 				 float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
 
@@ -143,10 +170,15 @@ namespace Core.PlayerSystems
 
 		 private void FixedUpdate()
 		 {
-			 if (heldObjectRigidBody != null)
-			 {
-			 	//heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition);
-			 }
+			 if (heldObjectRigidBody == null) return;
+			 
+			 heldObjectRigidBody.AddTorque(transform.up * rotationInput.y * rotationSensitivity.y);
+			 heldObjectRigidBody.AddTorque(transform.right * rotationInput.x * rotationSensitivity.x);
+			 
+			 //Vector3 direction = (heldObjectMoveTowardsPosition - heldObject.position).normalized;
+			 //heldObjectRigidBody.MovePosition(heldObject.position + direction * objectFollowingSpeed * Time.deltaTime);
+
+			 heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition); // * Time.fixedDeltaTime);
 		 }
 
 		 #endregion

@@ -2,14 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.Serialization;
+using Utilities.Extensions;
+using Utilities;
 
-public class GameManager : MonoBehaviour
+public class GameManager : PersistentSingleton<GameManager>
 {
     public List<ScheduleItem> schedule = new List<ScheduleItem>();
     public float secondsPerTick;
     float timer;
     float globalTimer;
     int schedulePos = 0;
+
+    private ItemEvent currentRequestEvent;
 
     private void Update()
     {
@@ -31,7 +35,18 @@ public class GameManager : MonoBehaviour
         {
             if ((schedule[schedulePos].minuteToExecute * 60) <= globalTimer)
             {
+                if(schedule[schedulePos].itemEvent.eventType == ItemEventType.RemoveEvent)
+                {
+                    currentRequestEvent = schedule[schedulePos].itemEvent;
+                }
                 StartCoroutine(schedule[schedulePos++].itemEvent.HandleEvent());
+            }
+        }
+        if (currentRequestEvent != null)
+        {
+            if (currentRequestEvent.timeToExecute <= 0)
+            {
+                currentRequestEvent = null;
             }
         }
     }
@@ -44,5 +59,8 @@ public class GameManager : MonoBehaviour
     public void AddScheduledEvent(ScheduleItem scheduledItem)
     {
 
+    public ItemEvent GetActiveRequestEvent()
+    {
+        return currentRequestEvent;
     }
 }
