@@ -14,6 +14,7 @@ public class Item : MonoBehaviour, IInteractable
     public float degradePerTick;
 
     [HideInInspector] public float integity = 100;
+    private float integrityBuffer = 5;
     [HideInInspector] public Container container;
 
     #endregion
@@ -24,12 +25,26 @@ public class Item : MonoBehaviour, IInteractable
         {
             if(!container.IsInCorrectRoom(this))
             {
-                integity -= degradePerTick;
+                if (integrityBuffer > 0)
+                {
+                    integrityBuffer -= 1;
+                }
+                else
+                {
+                    integity -= degradePerTick;
+                }
             }
         }
         else
         {
-            integity -= degradePerTick;
+            if (integrityBuffer > 0)
+            {
+                integrityBuffer -= 1;
+            }
+            else
+            {
+                integity -= degradePerTick;
+            }
         }
     }
 }
