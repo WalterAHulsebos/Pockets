@@ -101,10 +101,10 @@ namespace Core.PlayerSystems
 				 
 				 //TODO: Walter - Edit this.
 				 heldObjectRigidBody = heldObject.GetComponent<Rigidbody>();
-				 heldObjectCollider = GetComponent<Collider>();
+				 //heldObjectCollider = heldObject.GetComponent<Collider>();
 				 
 				 heldObjectRigidBody.isKinematic = true;
-				 heldObjectCollider.enabled = false;
+				 //heldObjectCollider.enabled = false;
 			 }
 			 else
 			 {
@@ -131,13 +131,13 @@ namespace Core.PlayerSystems
 				 timeSinceStartedCharging = 0f;
 				 
 				 heldObjectRigidBody.isKinematic = false;
-				 heldObjectCollider.enabled = true;
+				 //heldObjectCollider.enabled = true;
 				 heldObjectRigidBody.AddForce(throwForce * cameraTransform.forward, throwForceMode);
 
 				 holdingAnObject = false;
 				 heldObject = null;
 				 heldObjectRigidBody = null;
-				 heldObjectCollider = null;
+				 //heldObjectCollider = null;
 			 }
 		 }
 
