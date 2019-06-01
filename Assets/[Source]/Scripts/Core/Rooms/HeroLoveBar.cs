@@ -15,14 +15,12 @@ public class HeroLoveBar : MonoBehaviour
         m_BarTransform.localScale = scale;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.H))
+        if (ScoreManager.Instance != null)
         {
-            SetHeroLove(0.5f);
-        }*/
-
-        // TODO: Poll score manager to get the hero's opinion/love and then set the value using SetHeroLove function
+            float heroLove = (ScoreManager.Instance.heroSatisfactionRating / 100.0f); // Needs to be between 0 and 1
+            SetHeroLove(heroLove);
+        }
     }
 }
