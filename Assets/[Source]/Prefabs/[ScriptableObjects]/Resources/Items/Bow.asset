@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8956e135bcd3c4d88b399dcc97b2bc, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
+  type: Bow
   mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: 985b2da9ed688b74e8d03a14fd1e7fdc, type: 2}
   room: 1
   effects: 0
-  degradePerTick: 0
+  degradePerTick: 5

@@ -15,9 +15,11 @@ public class ItemManager : PersistentSingleton<ItemManager>
 
     public GameObject baseItemPrefab;
 
-    LayerMask itemLayerMask;
+    public LayerMask itemLayerMask;
 
+    public float dropForce;
 
+    WaitForSecondsRealtime waitTime = new WaitForSecondsRealtime(0.2f);
 
     public List<Item> globalItems = new List<Item>();
 
@@ -44,12 +46,50 @@ public class ItemManager : PersistentSingleton<ItemManager>
 
     public void CreateItems(List<ItemType> items, List<int> counts, int mutationChance)
     {
-        for(int i = 0; i < items.Count; i++)
+        StartCoroutine(ActivateItem(items, counts, mutationChance));
+    }
+
+    public void RemoveItems(List<ItemType> items, List<int> counts)
+    {
+        List<int> itemCounter = counts;
+
+        Collider[] colliders = UnityEngine.Physics.OverlapCapsule(requestCapsuleTop, requestCapsuleBottom, requestPositionRadius, itemLayerMask);
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            Item removeItem = colliders[i].GetComponent<Item>();
+            
+            for(int j = 0; j < items.Count; j++)
+            {
+                if(removeItem.type == items[j].type)
+                {
+                    itemCounter[j]--;
+                    break;
+                }
+            }
+            
+            DestroyItem(removeItem);
+        }
+        CalculateFinalScore(itemCounter);
+    }
+
+    public void DestroyItem(Item item)
+    {
+        globalItems.Remove(item);
+        degradeCallback -= item.DoDegration;
+        DestroyImmediate(item.gameObject);
+    }
+
+    private IEnumerator ActivateItem(List<ItemType> items, List<int> counts, int mutationChance)
+    {
+        for (int i = 0; i < items.Count; i++)
         {
             for (int j = 0; j < counts[i]; j++)
             {
                 //turn to inside unit circle on x and z
-                Item newItem = Instantiate(baseItemPrefab, spawnPosition.position + (Random.insideUnitSphere * spawnRadius), Quaternion.identity).GetComponent<Item>();
+                Item newItem = ItemSpawner.Instance.SpawnItem(baseItemPrefab, spawnPosition.position + (Random.insideUnitSphere * spawnRadius)).GetComponent<Item>(); ;
+
+
                 newItem.type = items[i].type;
                 newItem.storageRoom = items[i].room;
                 newItem.effects = items[i].effects;
@@ -60,7 +100,7 @@ public class ItemManager : PersistentSingleton<ItemManager>
                         //TODO Mutation
                     }
 
-                    if(newItem.effects == ItemEffects.Fire)
+                    if (newItem.effects == ItemEffects.Fire)
                     {
                         ItemEffectFactory.Instance.CreateFireEffect(newItem.transform);
                     }
@@ -78,48 +118,33 @@ public class ItemManager : PersistentSingleton<ItemManager>
 
                 newItem.GetComponent<MeshFilter>().mesh = items[i].mesh;
                 newItem.GetComponent<MeshRenderer>().material = items[i].material;
-                newItem.GetComponent<MeshCollider>().sharedMesh = items[i].mesh;
+                MeshCollider newMeshCollider = newItem.GetComponent<MeshCollider>();
+                newMeshCollider.sharedMesh = items[i].mesh;
+                newMeshCollider.convex = true;
+
+                newItem.GetComponent<Rigidbody>().AddForce(Vector3.down * dropForce, ForceMode.Impulse);
+
                 globalItems.Add(newItem);
                 degradeCallback += newItem.DoDegration;
+                yield return waitTime;
+                
             }
         }
-    }
-
-    public void RemoveItems(List<ItemType> items, List<int> counts)
-    {
-        List<int> itemCounter = counts;
-
-        Collider[] colliders = UnityEngine.Physics.OverlapCapsule(requestCapsuleTop, requestCapsuleBottom, requestPositionRadius, itemLayerMask);
-
-        for(int i = 0; i < colliders.Length; i++)
-        {
-            Item removeItem = colliders[i].GetComponent<Item>();
-            if(removeItem == null)
-            {
-                continue;
-            }
-            
-            for(int j = 0; j < items.Count; j++)
-            {
-                if(removeItem.type == items[j].type)
-                {
-                    itemCounter[j]--;
-                    break;
-                }
-            }
-
-            globalItems.Remove(removeItem);
-            degradeCallback -= removeItem.DoDegration;
-            Destroy(removeItem);
-        }
-        CalculateFinalScore(itemCounter);
     }
 
     private void CalculateFinalScore(List<int> counts)
     {
         foreach(int count in counts)
         {
-            int satisfaction = count == 0 ? 10 : -10;
+            int satisfaction = 0;
+            if (count == 0)
+            {
+                satisfaction = 10;
+            }
+            else
+            {
+                satisfaction = -(Mathf.Abs(count) * 5);
+            }
             ScoreManager.Instance.ChangeSatisfaction(satisfaction);
         }
     }

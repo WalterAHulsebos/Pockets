@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1281928139426422551}
   - component: {fileID: 1281928139426422550}
   - component: {fileID: 2595340809756705189}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BaseItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 
-  prefab: {fileID: 0}
   storageRoom: 0
   effects: 0
   degradePerTick: 0
