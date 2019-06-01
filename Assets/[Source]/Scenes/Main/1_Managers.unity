@@ -1309,30 +1309,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  schedule:
-  - minuteToExecute: 0.05
-    itemEvent:
-      eventType: 0
-      items:
-      - {fileID: 11400000, guid: fa9bbf6a542ca664a8cbecd166cb9f5f, type: 2}
-      counts: 03000000
-      mutationChance: 0
-      timeToExecute: 1
-  - minuteToExecute: 0.2
-    itemEvent:
-      eventType: 1
-      items:
-      - {fileID: 11400000, guid: fa9bbf6a542ca664a8cbecd166cb9f5f, type: 2}
-      counts: 03000000
-      mutationChance: 0
-      timeToExecute: 30
-  - minuteToExecute: 0
-    itemEvent:
-      eventType: 0
-      items: []
-      counts: 
-      mutationChance: 0
-      timeToExecute: 30
+  schedule: []
   secondsPerTick: 4
 --- !u!4 &1137181457
 Transform:
