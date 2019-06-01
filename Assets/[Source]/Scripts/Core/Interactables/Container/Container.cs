@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class Container : MonoBehaviour
 {
-    //Room room;
+    public Room room;
     private List<Item> itemsInContainer;
 
-    private float organisationPercentage;
+    public bool IsInCorrectRoom(Item item)
+    {
+        return item.room == room.roomType;
+    }
 
     public float CalculateOrganisation()
     {
-        organisationPercentage = 0;
         Dictionary<string, int> itemsDictionary = new Dictionary<string, int>();
 
         for (int i = 0; i < itemsInContainer.Count; i++)
@@ -44,9 +46,17 @@ public class Container : MonoBehaviour
             }
         }
 
-        organisationPercentage = highestValue / itemsInContainer.Count;
+        return highestValue / itemsInContainer.Count;
+    }
 
-        return organisationPercentage;
+    public void AddMeToRoom(Room newRoom)
+    {
+        room = newRoom;
+    }
+
+    public void RemoveMeFromRoom()
+    {
+        room = Room.defaultRoom;
     }
 
     public void AddItemToContainer(Item itemToAdd)
@@ -56,7 +66,7 @@ public class Container : MonoBehaviour
             return;
         }
 
-        //itemToAdd.isContained = true;
+        itemToAdd.container = this;
         itemsInContainer.Add(itemToAdd);
     }
 
@@ -67,7 +77,7 @@ public class Container : MonoBehaviour
             return;
         }
 
-        //itemToAdd.isContained = false;
+        itemToRemove.container = null;
         itemsInContainer.Remove(itemToRemove);
     }
 
