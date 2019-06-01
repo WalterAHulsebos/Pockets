@@ -90,6 +90,7 @@ public class ItemManager : PersistentSingleton<ItemManager>
                     break;
                 }
             }
+            Destroy(newItem);
         }
         CalculateFinalScore(itemCounter);
     }
