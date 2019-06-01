@@ -1256,6 +1256,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1232090ec1f162b4ca46bda52667a2e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
   schedule:
   - minuteToExecute: 0.05
     itemEvent:
@@ -1265,15 +1274,14 @@ MonoBehaviour:
       counts: 03000000
       mutationChance: 0
       timeToExecute: 1
-  - minuteToExecute: 0
+  - minuteToExecute: 0.2
     itemEvent:
-      eventType: 0
+      eventType: 1
       items:
       - {fileID: 11400000, guid: fa9bbf6a542ca664a8cbecd166cb9f5f, type: 2}
-      - {fileID: 11400000, guid: f0ced95b0a8cdd84397961819fc4af1c, type: 2}
-      counts: 0300000005000000
+      counts: 03000000
       mutationChance: 0
-      timeToExecute: 5
+      timeToExecute: 30
   - minuteToExecute: 0
     itemEvent:
       eventType: 0
