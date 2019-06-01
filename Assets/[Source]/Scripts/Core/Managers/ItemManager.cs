@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    /* TODO: [Wybren]
-     * Keep track of all global items
-     * Add items to world\
-     * remove / request items from world
-     */
+    
+
+
+    public void DumpItems()
+    {
+
+    }
+
+    public void RequestItems()
+    {
+
+    }
 }
