@@ -46,6 +46,8 @@ namespace Core.Managers
         private bool isletterBoxCameraNotNull;
 
         private const int DEFAULT_PLAYER_COUNT = 0;
+
+        private int activePlayerCount = 0;
         
         [Serializable]
         /// <summary> A class for tracking individual Cameras and their Viewports </summary>
@@ -386,13 +388,25 @@ namespace Core.Managers
     
                 // Assign the joystick to this Player
                 player.controllers.AddController(joystick, false);
+
+                activePlayerCount++;
             }
     
             // If all players have joysticks, enable joystick auto-assignment
             if (!DoAllPlayersHaveJoysticks()) return;
+
+            SetCameras();
             
             ReInput.configuration.autoAssignJoysticks = true;
             this.enabled = false; // disable this script
+        }
+
+        private void SetCameras()
+        {
+            Debug.Log($"PlayerCount = {ReInput.players.playerCount}");
+            
+            GetCamerasFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = true);
+            GetCamerasNotFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = false);
         }
     
         // Searches all Players to find the next Player without a Joystick assigned

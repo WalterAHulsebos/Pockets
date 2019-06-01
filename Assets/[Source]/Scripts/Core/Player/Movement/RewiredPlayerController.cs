@@ -30,8 +30,12 @@ namespace Core.Movement
 		[Required]
 		public PlayerCamera playerCamera;
 		
+		[PropertySpace(spaceBefore: 0, spaceAfter: 5)]
 		[Required]
 		public KinematicCharacterMotor motor;
+		
+		[BoxGroup("Index", showLabel: false)]
+		[SerializeField] private int playerIndex = 0;
 		
 		[FoldoutGroup("Ground Movement")]
 		[SerializeField] private float maxGroundMoveSpeed = 10f;
@@ -89,9 +93,6 @@ namespace Core.Movement
 		
 		//[SerializeField] [ReadOnly]
 		private Player player; // The Rewired Player
-
-		[SerializeField] [ReadOnly] 
-		private int playerIndex = default;
 		
 		[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
 		private bool initialized;
@@ -140,6 +141,11 @@ namespace Core.Movement
 
 		#region Methods
 
+		private void Reset()
+		{
+			playerIndex = Instances.GetIndex(func: (instance => instance == this));
+		}
+
 		private void Awake()
 		{
 			// Handle initial state
@@ -173,9 +179,7 @@ namespace Core.Movement
 		/// Links a player to their playerID
 		/// </summary>
 		private void Initialize()
-		{
-			playerIndex = Instances.GetIndex(func: (instance => instance == this));
-			
+		{	
 			// Get the Rewired Player object for this player.
 			player = ReInput.players.GetPlayer(playerIndex);
 			
