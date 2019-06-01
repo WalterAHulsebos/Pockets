@@ -20,7 +20,7 @@ namespace Core.PlayerSystems
 	 {
 		 #region Variables
 
-		 [SerializeField] private LayerMask pickupLayermask = -1;
+		 [SerializeField] private LayerMask pickupLayermask = 1 << 14;
 		 
 		 [SerializeField] private float grabRange = 10f;
 		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);

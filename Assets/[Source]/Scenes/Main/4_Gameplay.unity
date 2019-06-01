@@ -3649,5 +3649,9 @@ PrefabInstance:
       propertyPath: _targetTransforms.Array.data[3]
       value: 
       objectReference: {fileID: 1805208288}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: pickupLayermask.m_Bits
+      value: 16695
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
