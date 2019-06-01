@@ -1675,6 +1675,16 @@ PrefabInstance:
       propertyPath: _targetTransforms.Array.data[1]
       value: 
       objectReference: {fileID: 1762200736}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: verticalSensitivity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: horizontalSensitivity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 16896
@@ -2241,6 +2251,16 @@ PrefabInstance:
       propertyPath: _targetTransforms.Array.data[3]
       value: 
       objectReference: {fileID: 730872710}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: verticalSensitivity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: horizontalSensitivity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 16896
@@ -3780,6 +3800,16 @@ PrefabInstance:
       propertyPath: _targetTransforms.Array.data[3]
       value: 
       objectReference: {fileID: 1805208288}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: verticalSensitivity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: horizontalSensitivity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 16896
@@ -3897,6 +3927,16 @@ PrefabInstance:
       propertyPath: _targetTransforms.Array.data[3]
       value: 
       objectReference: {fileID: 1805208288}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: verticalSensitivity
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: horizontalSensitivity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 16896
