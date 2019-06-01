@@ -4,7 +4,7 @@ using UnityEngine;
 using Utilities.Extensions;
 using Utilities;
 
-public class ItemManager : PersistentSingleton<ItemManager>
+public class ItemManager : EnsuredSingleton<ItemManager>
 {
     public Transform requestPosition;
     private Vector3 requestCapsuleBottom, requestCapsuleTop;
