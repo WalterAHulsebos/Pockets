@@ -85,6 +85,8 @@ namespace Core.Movement
 		[SerializeField] [ReadOnly] 
 		private PlayerCharacterInputs inputs;
 		
+		#endregion
+			
 		#region Local Classes
 		
 		public enum CharacterState
@@ -111,16 +113,15 @@ namespace Core.Movement
 		
 		#region Consts
 		
-		private const string MOUSE_X_INPUT = "Look Horizontal";
-		private const string MOUSE_Y_INPUT = "Look Vertical";
+		private const string LOOK_HORIZONTAL = "Look Horizontal";
+		private const string LOOK_VERTICAL = "Look Vertical";
 		//private const string MOUSE_SCROLL_INPUT = "Mouse ScrollWheel";
-		private const string HORIZONTAL_INPUT = "Move Horizontal";
-		private const string VERTICAL_INPUT = "Move Vertical";
+		private const string MOVE_HORIZONTAL = "Move Horizontal";
+		private const string MOVE_VERTICAL = "Move Vertical";
 		private const string JUMP_KEY = "Jump";
 		
 		#endregion
-		
-		#endregion
+
 		
 		#endregion
 
@@ -172,9 +173,9 @@ namespace Core.Movement
 		
 		private void HandleCameraInput()
 		{
-			float mouseLookAxisUp = 0f; //player.GetAxisRaw(MOUSE_Y_INPUT);
-			float mouseLookAxisRight = 0f; //player.GetAxisRaw(MOUSE_X_INPUT);
-			Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
+			float mouseLookAxisUp = player.GetAxisRaw(LOOK_VERTICAL);
+			float mouseLookAxisRight = player.GetAxisRaw(LOOK_HORIZONTAL);
+			Vector3 lookInputVector = new Vector3(mouseLookAxisRight, -mouseLookAxisUp, 0f);
 		
 			// Prevent moving the camera while the cursor isn't locked
 			if (Cursor.lockState != CursorLockMode.Locked)
@@ -184,7 +185,7 @@ namespace Core.Movement
 		
 			//float scrollInput = -player.GetAxis(MOUSE_SCROLL_INPUT);
 		
-			playerCamera.UpdateWithInput(Time.deltaTime, 0, lookInputVector);
+			playerCamera.UpdateWithInput(lookInputVector);
 		}
 
 		private void HandleCharacterInput()
@@ -194,8 +195,8 @@ namespace Core.Movement
 			//TODO: Don't make a new one every frame, cache it.
 			 PlayerCharacterInputs characterInputs = new PlayerCharacterInputs
 			 {
-				 moveAxisForward = player.GetAxisRaw(VERTICAL_INPUT),
-				 moveAxisRight = player.GetAxisRaw(HORIZONTAL_INPUT),
+				 moveAxisForward = player.GetAxisRaw(MOVE_VERTICAL),
+				 moveAxisRight = player.GetAxisRaw(MOVE_HORIZONTAL),
 				 cameraRotation = playerCamera.Transform.rotation,
 				 jumpDown = player.GetButtonDown(JUMP_KEY),
 			 };

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
+using static Core.Utilities.Helpers;
 
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
@@ -10,6 +12,84 @@ namespace Core.Movement
 {
     public class TempCamera : MonoBehaviour
     {
+        #region Variables
+        
+        public	Transform	targetTrans;
+        
+        public bool inputActive = true;
+        public bool controlCursor = false;
+        public bool pitchClamp	= true;
+        
+        [Range(-90f, 90f)] [SerializeField] private float defaultVerticalAngle = 20f;
+        
+        [ShowIf("pitchClamp")]
+        [Range(-90f, 90f)] [SerializeField] private float minVerticalAngle = -90f, 
+                                                          maxVerticalAngle = 90f;
+        
+        [Header("Smoothing")]
+        public bool byPassSmoothing	= false;
+        public float mouseSmoothing = 20f;	//Lambda | higher = less latency but also less smoothing
+        
+        [Header("Sensitivity")]
+        [HorizontalGroup("Sensitivity")]
+        public float horizontalSensitivity = 4f;
+        public float verticalSensitivity = 4f;
+        
+        public BufferV2	mouseBuffer = new BufferV2();
+        
+        #region Accessors
+
+        public Transform Transform { get; private set; }
+        
+        #endregion
+        
+        #endregion
+        
+        #region Methods
+
+        private void Awake()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void UpdateWithInput(Vector3 rotationInput)
+        {
+            //if(Input.GetKeyDown(KeyCode.Space)){inputActive = !inputActive;}
+            if(controlCursor)
+            {	//Cursor Control
+                if (inputActive && Cursor.lockState != CursorLockMode.Locked)
+                {
+                    Cursor.lockState = CursorLockMode.Locked;
+                }
+
+                if (!inputActive && Cursor.lockState != CursorLockMode.None)
+                {
+                    Cursor.lockState = CursorLockMode.None;
+                }
+            }		
+            if(!inputActive){ return; }	//active?
+
+            UpdateMouseBuffer(rotationInput);
+            targetTrans.rotation = Quaternion.Euler(mouseBuffer.curAbs);
+        }
+
+        //consider late Update for applying the rotation if your game needs it (e.g. if camera parents are rotated in Update for some reason)
+        private void LateUpdate() {}
+
+        private	void UpdateMouseBuffer(Vector3 rotationInput)
+        {
+            mouseBuffer.target += new Vector2( verticalSensitivity * rotationInput.y, horizontalSensitivity * rotationInput.x); //Mouse Input is inherently framerate independend!
+            
+            mouseBuffer.target.x = pitchClamp
+                ? Mathf.Clamp(mouseBuffer.target.x, minVerticalAngle, maxVerticalAngle) 
+                : mouseBuffer.target.x;
+            
+            mouseBuffer.Update(mouseSmoothing, Time.deltaTime, byPassSmoothing);
+        }
+        
+        #endregion
+        
+        /*
         #region Variables
 
         #region Serialized
@@ -194,6 +274,7 @@ namespace Core.Movement
         }
 
         #endregion
+        */
         
     }
     
