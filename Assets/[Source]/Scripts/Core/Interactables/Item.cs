@@ -8,12 +8,11 @@ public class Item : MonoBehaviour, IInteractable
     #region Variables
 
     public string type;
-    public GameObject prefab;
     public ItemRoom storageRoom;
     public ItemEffects effects;
     public float degradePerTick;
 
-    [HideInInspector] public float integity = 100;
+    public float integity = 100;
     private float integrityBuffer = 5;
     [HideInInspector] public Container container;
 

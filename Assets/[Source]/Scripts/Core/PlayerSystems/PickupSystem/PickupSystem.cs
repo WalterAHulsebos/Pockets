@@ -8,6 +8,7 @@ using Rewired;
 using PlayerController = Core.PlayerSystems.Movement.PlayerController;
 
 using Sirenix.OdinInspector;
+using Math = Utilities.Extensions.Math;
 
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
@@ -42,14 +43,22 @@ namespace Core.PlayerSystems
 
 		 private PlayerCamera playerCamera = null;
 
+		 private bool holdingAnObject = false;
+
+		 private bool initialGrab = false;
+
+		 private Vector3 heldObjectMoveTowardsPosition = Vector3.zero;
+		 
 		 private float timeSinceStartedCharging = 0f;
-		 private float chargePercentage = 0f;
+		 
+		 [ReadOnly]
+		 [SerializeField] private float chargePercentage = 0f;
 		 
 		 private Transform heldObject = null;
 		 private Rigidbody heldObjectRigidBody = null;
 		 private Collider heldObjectCollider = null;
 
-		 private Player Player => playerController.Player;
+		 private Player InputPlayer => playerController.Player;
 		 
 		 #region Consts
 
@@ -70,60 +79,90 @@ namespace Core.PlayerSystems
 			 playerCamera = playerCamera ?? GetComponentInChildren<PlayerCamera>();
 		 }
 
-		 private void Update ()
+		 private void Update()
 		 {
-			 Transform myTransform = this.transform;
+			 if(!ReInput.isReady) return;
+			 if(!playerController.initialized) return;
+			 if(InputPlayer == null) return;
 			 
-			 Ray ray = new Ray(myTransform.position, myTransform.forward * grabRange);
+			 Transform cameraTransform = playerCamera.TargetTransforms[0]; 
 			 
-			 //CGDebug.DrawRay(ray).Color(Color.cyan);
+			 Ray ray = new Ray(cameraTransform.position, cameraTransform.forward * grabRange);
 			 
-			 if(heldObject == null)
+			 Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
+			 
+			 //CGDebug.DrawRay(ray).Color(Color.cyan).Duration(1f);
+			 
+			 if(holdingAnObject == false)
 			 {
-				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
+				 if (!InputPlayer.GetButtonDown(PICKUP_BUTTON)) return;
 
 				 if (!Physics.Raycast(ray, out RaycastHit hit, grabRange, pickupLayermask)) return;
 				 
 				 heldObject = hit.collider.transform;
+
+				 holdingAnObject = true;
 				 
 				 //TODO: Walter - Edit this.
 				 heldObjectRigidBody = heldObject.GetComponent<Rigidbody>();
-				 heldObjectCollider = GetComponent<Collider>();
+				 //heldObjectCollider = heldObject.GetComponent<Collider>();
 				 
 				 heldObjectRigidBody.isKinematic = true;
-				 heldObjectCollider.enabled = false;
+
+				 initialGrab = true;
+				 //heldObjectCollider.enabled = false;
 			 }
 			 else
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 Transform cameraTransform = playerCamera.TargetTransforms[0]; 
-
-				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
+				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform); //Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
+				 
+				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
 				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
-				 heldTransform.rotation = (Quaternion.Inverse(playerCamera.TargetTransforms[0].rotation) * heldTransform.rotation);
+				 
+				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
 
-				 if(Player.GetButtonDown(PICKUP_BUTTON))
+				 if (InputPlayer.GetButtonDown(PICKUP_BUTTON))
+				 {
+					 initialGrab = false;
+				 }
+				 
+				 if(initialGrab == true){return;}
+				 
+				 if(InputPlayer.GetButton(PICKUP_BUTTON))
 				 {
 					 timeSinceStartedCharging += Time.deltaTime;
 					 chargePercentage = timeSinceStartedCharging / chargeTime;
 				 }
 				 
-				 if (!Player.GetButtonUp(PICKUP_BUTTON)) return;
+				 if (!(chargePercentage >= 0.05 )) return;
+				 if(!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
 
 				 float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
 
 				 timeSinceStartedCharging = 0f;
 				 
 				 heldObjectRigidBody.isKinematic = false;
-				 heldObjectCollider.enabled = true;
-				 heldObjectRigidBody.AddForce(throwForce * myTransform.forward, throwForceMode);
-				 
+				 //heldObjectCollider.enabled = true;
+				 heldObjectRigidBody.AddForce(throwForce * cameraTransform.forward, throwForceMode);
+
+				 holdingAnObject = false;
 				 heldObject = null;
+				 heldObjectRigidBody = null;
+				 //heldObjectCollider = null;
 			 }
 		 }
-		 
+
+		 private void FixedUpdate()
+		 {
+			 if (heldObjectRigidBody != null)
+			 {
+			 	//heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition);
+			 }
+		 }
+
 		 #endregion
 	 }
 }

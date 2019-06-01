@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8956e135bcd3c4d88b399dcc97b2bc, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  type: Sword
   mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: 95572b9714c8e4b42a07b832e62db5df, type: 2}
   room: 1
   effects: 0
-  degradePerTick: 0
+  degradePerTick: 5

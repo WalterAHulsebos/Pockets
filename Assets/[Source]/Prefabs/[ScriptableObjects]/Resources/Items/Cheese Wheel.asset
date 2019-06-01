@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa8956e135bcd3c4d88b399dcc97b2bc, type: 3}
   m_Name: Cheese Wheel
   m_EditorClassIdentifier: 
+  type: Cheese Wheel
   mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   material: {fileID: 2100000, guid: bf2b21222bbe4c64abf85d36726468ef, type: 2}
   room: 0
   effects: 0
-  degradePerTick: 0
+  degradePerTick: 5

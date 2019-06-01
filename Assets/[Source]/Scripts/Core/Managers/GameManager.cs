@@ -5,12 +5,13 @@ using Sirenix.Serialization;
 
 public class GameManager : MonoBehaviour
 {
-    [OdinSerialize]
     public List<ScheduleItem> schedule = new List<ScheduleItem>();
     public float secondsPerTick;
     float timer;
     float globalTimer;
     int schedulePos = 0;
+
+    private ItemEvent currentRequestEvent;
 
     private void Update()
     {
@@ -28,17 +29,31 @@ public class GameManager : MonoBehaviour
 
     public void CheckSchedule()
     {
-        if (schedule.Count <= schedulePos)
+        if (schedule.Count > schedulePos)
         {
             if ((schedule[schedulePos].minuteToExecute * 60) <= globalTimer)
             {
+                if(schedule[schedulePos].itemEvent.eventType == ItemEventType.RemoveEvent)
+                {
+                    currentRequestEvent = schedule[schedulePos].itemEvent;
+                }
                 StartCoroutine(schedule[schedulePos++].itemEvent.HandleEvent());
             }
+        }
+
+        if(currentRequestEvent.timeToExecute <= 0)
+        {
+            currentRequestEvent = null;
         }
     }
 
     private void Tick()
     {
+        ItemManager.Instance.CallEventDegradeCallback();
+    }
 
+    public ItemEvent GetActiveRequestEvent()
+    {
+        return currentRequestEvent;
     }
 }
