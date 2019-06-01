@@ -29,7 +29,6 @@ namespace Core.Managers
         
         [SerializeField] private Vector2 ratio = new Vector2(16, 9);
         [SerializeField] private bool forceRatioOnAwake = true;
-        [SerializeField] private bool listenForWindowChanges = true;
         [SerializeField] private bool findCamerasAutomatically = true;
 
         #region LetterBoxCamera
@@ -47,7 +46,7 @@ namespace Core.Managers
         public List<CameraRatio> cameras;
         private bool isletterBoxCameraNotNull;
 
-        private const int DEFAULT_PLAYER_COUNT = 3;
+        private const int DEFAULT_PLAYER_COUNT = 0;
         
         [Serializable]
         /// <summary> A class for tracking individual Cameras and their Viewports </summary>
@@ -210,7 +209,7 @@ namespace Core.Managers
             ValidateCameraArray();
 
             // Set the origin viewport space for each Camera
-            foreach (CameraRatio cameraRatio in cameras)
+            foreach(CameraRatio cameraRatio in cameras)
             {
                 cameraRatio.ResetOriginViewport();
             }
@@ -243,9 +242,7 @@ namespace Core.Managers
             {
                 CalculateAndSetAllCameraRatios();
             }
-            
-            
-            
+
             GetCamerasFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = true);
             GetCamerasNotFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = false);
             
@@ -355,10 +352,10 @@ namespace Core.Managers
         /// <param name="_anchor"></param>
         public void SetCameraAnchor(Camera camera, Vector2 anchor)
         {
-            CameraRatio _cameraRatio = GetCameraRatioByCamera(camera);
-            if (_cameraRatio != null)
+            CameraRatio cameraRatio = GetCameraRatioByCamera(camera);
+            if (cameraRatio != null)
             {
-                _cameraRatio.vectorAnchor = anchor;
+                cameraRatio.vectorAnchor = anchor;
             }
         }
 

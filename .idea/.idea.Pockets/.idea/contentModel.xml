@@ -45,6 +45,8 @@
                   <e p="CharacterController.cs" t="Include" />
                   <e p="CharacterInput.cs" t="Include" />
                   <e p="FirstPersonInput.cs" t="Include" />
+                  <e p="RewiredPlayerController.cs" t="Include" />
+                  <e p="TempCamera.cs" t="Include" />
                 </e>
               </e>
               <e p="Utilities" t="Include">
