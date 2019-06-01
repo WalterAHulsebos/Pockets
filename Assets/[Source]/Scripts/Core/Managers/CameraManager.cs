@@ -8,6 +8,7 @@ using System;
 
 using Rewired;
 using Enumerable = System.Linq.Enumerable;
+using Player = Rewired.Player;
     
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;

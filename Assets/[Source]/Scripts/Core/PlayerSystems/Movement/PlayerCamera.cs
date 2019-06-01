@@ -9,7 +9,7 @@ using static Core.Utilities.Helpers;
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 #endif
 
-namespace Core.Movement
+namespace Core.PlayerSystems.Movement
 {
     public class PlayerCamera : MonoBehaviour
     {

@@ -2634,19 +2634,44 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &1779405915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3076984117389161505, guid: 1a822019871ed1b4fb35fa659b75edc8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3076984119166525562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1779405916 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
     type: 3}
   m_PrefabInstance: {fileID: 3076984119166525562}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1779405917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779405915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a26fe417b0350445b7739ad8b472353, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grabRange: 10
+  holdOffset: {x: 2, y: 0, z: 0}
+  throwForce: 25
+  throwForceMode: 0
+  pickupLayermask:
+    serializedVersion: 2
+    m_Bits: 311
 --- !u!114 &1779405918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
     type: 3}
   m_PrefabInstance: {fileID: 3076984119166525562}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1779405915}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad4132f7fbb994247bd4392f47c4c46c, type: 3}
