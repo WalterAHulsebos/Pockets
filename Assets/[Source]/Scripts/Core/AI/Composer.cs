@@ -1,8 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
+using Utilities.Extensions;
 
-public class Composer : MonoBehaviour
+public class Composer : EnsuredSingleton<Composer>
 {
     private Object[] itemTypes;
     private Dictionary<string, int> itemDictionary = new Dictionary<string, int>();
@@ -17,7 +19,7 @@ public class Composer : MonoBehaviour
 
     private int maxTypeNumber = 3;
 
-    private void Start()
+    private void Awake()
     {
         SetInitialReferences();
     }
@@ -59,9 +61,24 @@ public class Composer : MonoBehaviour
         return requestDictionary;
     }
 
-    private Dictionary<ItemType, int> GetSingleItem()
+    private KeyValuePair<List<ItemType>, List<int>> GetSingleItem()
     {
-        
+        ItemType availableType = new ItemType();
+        for(int i = 0; i < itemTypes.Length; i++)
+        {
+            ItemType currentType = (ItemType)itemTypes[i];
+            if (itemDictionary.ContainsKey(currentType.type))
+            {
+                availableType = currentType;
+            }
+        }
+        List<ItemType> list = new List<ItemType>();
+        list.Add(availableType);
+        List<int> list2 = new List<int>();
+        list2.Add(1);
+
+        KeyValuePair<List<ItemType>, List<int>> result = new KeyValuePair<List<ItemType>, List<int>>(list, list2);
+        return result;
     }
 
 
@@ -111,9 +128,9 @@ public class Composer : MonoBehaviour
         float minutesToExecute = 0.25f;             // TODO: Make Random
         ScheduleItem scheduleItem = new ScheduleItem();
         scheduleItem.itemEvent = itemEvent;
-        scheduleItem.minuteToExecute = minutesToExecute; 
+        scheduleItem.minuteToExecute = minutesToExecute;
 
-
+        GameManager.Instance.AddScheduledEvent(scheduleItem);
         giveReceiveRatio++;
     }
 
@@ -121,12 +138,12 @@ public class Composer : MonoBehaviour
     {
         int testDifficulty = 10; // TODO: Make Random
 
-        
+        KeyValuePair< List<ItemType>, List<int>> pair = GetSingleItem();
 
         ItemEvent itemEvent = new ItemEvent();
         itemEvent.eventType = ItemEventType.RemoveEvent;
-        //itemEvent.items = items;
-        //itemEvent.counts = itemSplits;
+        itemEvent.items = pair.Key;
+        itemEvent.counts = pair.Value;
         itemEvent.mutationChance = 5;
         itemEvent.timeToExecute = 30; // TODO: Make Random
 
@@ -135,7 +152,7 @@ public class Composer : MonoBehaviour
         scheduleItem.itemEvent = itemEvent;
         scheduleItem.minuteToExecute = minutesToExecute;
 
-
+        GameManager.Instance.AddScheduledEvent(scheduleItem);
         giveReceiveRatio--;
     }
 
