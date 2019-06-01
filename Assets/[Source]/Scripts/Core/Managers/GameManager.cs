@@ -42,10 +42,12 @@ public class GameManager : PersistentSingleton<GameManager>
                 StartCoroutine(schedule[schedulePos++].itemEvent.HandleEvent());
             }
         }
-
-        if(currentRequestEvent.timeToExecute <= 0)
+        if (currentRequestEvent != null)
         {
-            currentRequestEvent = null;
+            if (currentRequestEvent.timeToExecute <= 0)
+            {
+                currentRequestEvent = null;
+            }
         }
     }
 
