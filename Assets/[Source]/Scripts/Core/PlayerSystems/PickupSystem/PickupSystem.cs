@@ -8,6 +8,7 @@ using Rewired;
 using PlayerController = Core.PlayerSystems.Movement.PlayerController;
 
 using Sirenix.OdinInspector;
+using Math = Utilities.Extensions.Math;
 
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
@@ -42,6 +43,10 @@ namespace Core.PlayerSystems
 
 		 private PlayerCamera playerCamera = null;
 
+		 private bool holdingAnObject = false;
+
+		 private Vector3 heldObjectMoveTowardsPosition = Vector3.zero;
+		 
 		 private float timeSinceStartedCharging = 0f;
 		 private float chargePercentage = 0f;
 		 
@@ -72,19 +77,25 @@ namespace Core.PlayerSystems
 
 		 private void Update ()
 		 {
-			 Transform myTransform = this.transform;
+			 //Transform myTransform = this.transform;
 			 
-			 Ray ray = new Ray(myTransform.position, myTransform.forward * grabRange);
+			 Transform cameraTransform = playerCamera.TargetTransforms[0]; 
 			 
-			 //CGDebug.DrawRay(ray).Color(Color.cyan);
+			 Ray ray = new Ray(cameraTransform.position, cameraTransform.forward * grabRange);
 			 
-			 if(heldObject == null)
+			 Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
+			 
+			 //CGDebug.DrawRay(ray).Color(Color.cyan).Duration(1f);
+			 
+			 if(holdingAnObject == false)
 			 {
 				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
 
 				 if (!Physics.Raycast(ray, out RaycastHit hit, grabRange, pickupLayermask)) return;
 				 
 				 heldObject = hit.collider.transform;
+
+				 holdingAnObject = true;
 				 
 				 //TODO: Walter - Edit this.
 				 heldObjectRigidBody = heldObject.GetComponent<Rigidbody>();
@@ -97,12 +108,13 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 Transform cameraTransform = playerCamera.TargetTransforms[0]; 
+				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform); //Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
+				 
+				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
-				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
-
-				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
-				 heldTransform.rotation = (Quaternion.Inverse(playerCamera.TargetTransforms[0].rotation) * heldTransform.rotation);
+				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 
+				 heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
 
 				 if(Player.GetButtonDown(PICKUP_BUTTON))
 				 {
@@ -118,12 +130,23 @@ namespace Core.PlayerSystems
 				 
 				 heldObjectRigidBody.isKinematic = false;
 				 heldObjectCollider.enabled = true;
-				 heldObjectRigidBody.AddForce(throwForce * myTransform.forward, throwForceMode);
-				 
+				 heldObjectRigidBody.AddForce(throwForce * cameraTransform.forward, throwForceMode);
+
+				 holdingAnObject = false;
 				 heldObject = null;
+				 heldObjectRigidBody = null;
+				 heldObjectCollider = null;
 			 }
 		 }
-		 
+
+		 private void FixedUpdate()
+		 {
+			 if (heldObjectRigidBody != null)
+			 {
+			 	heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition);
+			 }
+		 }
+
 		 #endregion
 	 }
 }
