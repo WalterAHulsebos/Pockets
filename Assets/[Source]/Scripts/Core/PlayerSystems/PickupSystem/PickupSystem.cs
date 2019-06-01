@@ -21,7 +21,8 @@ namespace Core.PlayerSystems
 		 [SerializeField] private float grabRange = 10f;
 		 
 		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
-		 
+
+		 [SerializeField] private float chargeTime = 0.75f;
 		 [SerializeField] private float throwForce = 25f;
 		 [SerializeField] private ForceMode throwForceMode;
 		 
@@ -30,6 +31,9 @@ namespace Core.PlayerSystems
 		 private PlayerController playerController = null;
 
 		 private PlayerCamera playerCamera = null;
+
+		 private float timeSinceStartedCharging = 0f;
+		 private float chargePercentage = 0f;
 		 
 		 private Transform heldObject = null;
 		 private Rigidbody heldObjectRigidBody = null;
@@ -39,7 +43,7 @@ namespace Core.PlayerSystems
 		 
 		 #region Consts
 
-		 private const string PICKUP_BUTTON = "Fire";
+		 private const string PICKUP_BUTTON = "Interact";
 		 private const string ROTATE_HORIZONTAL = "Move Horizontal";
 		 private const string ROTATE_VERTICAL = "Move Vertical";
 		
@@ -60,13 +64,13 @@ namespace Core.PlayerSystems
 		 {
 			 Transform myTransform = this.transform;
 			 
+			 Ray ray = new Ray(myTransform.position, myTransform.forward * grabRange);
+			 CGDebug.DrawRay(ray).Color(Color.cyan);
+			 
 			 if(heldObject == null)
 			 {
 				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
 
-				 Ray ray = new Ray(myTransform.position, myTransform.forward * grabRange);
-				 CGDebug.DrawRay(ray).Color(Color.cyan);
-					 
 				 if (!Physics.Raycast(ray, out RaycastHit hit, grabRange, pickupLayermask)) return;
 				 
 				 heldObject = hit.collider.transform;
@@ -87,7 +91,15 @@ namespace Core.PlayerSystems
 				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 heldTransform.rotation = (Quaternion.Inverse(playerCamera.TargetTransforms[0].rotation) * heldTransform.rotation);
 
-				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
+				 if(Player.GetButtonDown(PICKUP_BUTTON))
+				 {
+					 timeSinceStartedCharging += Time.deltaTime;
+					 chargePercentage = timeSinceStartedCharging / chargeTime;
+				 }
+				 
+				 if (!Player.GetButtonUp(PICKUP_BUTTON)) return;
+
+				 timeSinceStartedCharging = 0f;
 				 
 				 heldObjectRigidBody.isKinematic = false;
 				 heldObjectCollider.enabled = true;
