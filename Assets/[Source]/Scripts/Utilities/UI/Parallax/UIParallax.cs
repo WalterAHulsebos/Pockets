@@ -1,18 +1,18 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities.CGTK.Greasy;
 
 /// <summary>
 /// This class implements the abstraction of the parallax system.
 /// </summary>
 public abstract class UIParallax : MonoBehaviour
 {
-    
     [System.Serializable]
     public struct ParallaxElement
     {
         // Image source for the parallax layer
-        public RawImage image;
+        public RectTransform transform;
 
         // You can select the required range
         [Range(0, 100)]
@@ -21,10 +21,34 @@ public abstract class UIParallax : MonoBehaviour
     }
     
     // Layers of parallax.They can be configured from the inspector
-    public ParallaxElement[] ParallaxLayers;
+    [SerializeField] protected ParallaxElement[] parallaxLayers;
+    [SerializeField] protected EaseType easeType;
+    [SerializeField] protected float moveTime = 1f;
 
-    protected bool _isInitialize = true;
+    protected bool initialized = true;
 
+    /// <summary> The main method that implemented parallax. </summary>
+    /// <param name="direction"> Parallax movement direction </param>
+    protected void Parallaxing(Vector3 targetPosition)
+    {
+
+        if(!initialized) return;
+
+        if(parallaxLayers.Length <= 0)
+        {
+            Debug.LogWarning("Parallax layers are not found");
+            return;
+        }
+
+        foreach (ParallaxElement parallaxLayer in parallaxLayers)
+        {
+            Vector3 adjustedPosition = Vector3.Lerp(parallaxLayer.transform.position, targetPosition, (parallaxLayer.intensity/100));
+            
+            parallaxLayer.transform.PositionTo(adjustedPosition, moveTime, easeType);
+        }
+    }
+    
+    /*
     /// <summary>
     /// The main method that implemented parallax.
     /// </summary>
@@ -64,7 +88,5 @@ public abstract class UIParallax : MonoBehaviour
         }
 
     }
-
-
-
+    */
 }
