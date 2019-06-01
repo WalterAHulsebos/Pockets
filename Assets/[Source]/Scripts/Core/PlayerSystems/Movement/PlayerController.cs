@@ -17,9 +17,9 @@ using ReadOnlyAttribute = Sirenix.OdinInspector.ReadOnlyAttribute;
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 #endif
 
-namespace Core.Movement
+namespace Core.PlayerSystems.Movement
 {
-	public class RewiredPlayerController : Multiton<RewiredPlayerController>, ICharacterController
+	public class PlayerController : Multiton<PlayerController>, ICharacterController
 	{
 		#region Variables
 
@@ -312,15 +312,6 @@ namespace Core.Movement
 					 default:
 						  throw new ArgumentOutOfRangeException();
 				}
-		  }
-		  
-		  /// <summary>
-		  /// This is called every frame by the AI script in order to tell the character what its inputs are
-		  /// </summary>
-		  public void SetInputs(ref AICharacterInputs inputs)
-		  {
-				moveInputVector = inputs.MoveVector;
-				lookInputVector = inputs.LookVector;
 		  }
 		  
 		  /// <summary>
