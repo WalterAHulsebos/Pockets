@@ -112,9 +112,9 @@ namespace Core.PlayerSystems
 				 
 				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
-				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 
-				 heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
+				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
 
 				 if(Player.GetButtonDown(PICKUP_BUTTON))
 				 {
@@ -143,7 +143,7 @@ namespace Core.PlayerSystems
 		 {
 			 if (heldObjectRigidBody != null)
 			 {
-			 	heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition);
+			 	//heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition);
 			 }
 		 }
 

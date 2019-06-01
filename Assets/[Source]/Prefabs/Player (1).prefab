@@ -119,13 +119,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupLayermask:
     serializedVersion: 2
-    m_Bits: 311
-  grabRange: 10
-  holdOffset: {x: 2, y: 0, z: 0}
+    m_Bits: 16384
+  grabRange: 5
+  holdOffset: {x: 0, y: 0, z: 2}
   minThrowForce: 0
   maxThrowForce: 25
   chargeTime: 0.75
-  throwForceMode: 0
+  throwForceMode: 1
 --- !u!1 &3076984117631754371
 GameObject:
   m_ObjectHideFlags: 0
