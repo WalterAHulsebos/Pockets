@@ -15,14 +15,21 @@ namespace Core.PlayerSystems
 		 #region Variables
 
 		 [SerializeField] private float grabRange = 10f;
-		 [SerializeField] private Transform holdPosition;
+		 
+		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
+		 
 		 [SerializeField] private float throwForce = 25f;
 		 [SerializeField] private ForceMode throwForceMode;
+		 
 		 [SerializeField] private LayerMask pickupLayermask = -1;
 
 		 private PlayerController playerController = null;
+
+		 private PlayerCamera playerCamera = null;
 		 
 		 private Transform heldObject = null;
+		 private Rigidbody heldObjectRigidBody = null;
+		 private Collider heldObjectCollider = null;
 		 
 		 #region Consts
 
@@ -53,20 +60,28 @@ namespace Core.PlayerSystems
 				 heldObject = hit.collider.transform;
 				 
 				 //TODO: Walter - Edit this.
-				 heldObject.GetComponent<Rigidbody>().isKinematic = true;
-				 heldObject.GetComponent<Collider>().enabled = false;
+				 heldObjectRigidBody = heldObject.GetComponent<Rigidbody>();
+				 heldObjectCollider = GetComponent<Collider>();
+				 
+				 heldObjectRigidBody.isKinematic = true;
+				 heldObjectCollider.enabled = false;
 			 }
 			 else
 			 {
 				 Transform heldTransform = heldObject.transform;
-				 heldTransform.position = holdPosition.position;
-				 heldTransform.rotation = holdPosition.rotation;
+
+				 Transform myTransform = this.transform;
+				 Matrix4x4 matrix = Matrix4x4.TRS(myTransform.position, myTransform.rotation, myTransform.localScale);
+
+				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 heldTransform.rotation = (Quaternion.Inverse(playerCamera.TargetTransforms[0].rotation) * heldTransform.rotation);
 
 				 if (!Input.GetButtonDown(PICKUP_BUTTON)) return;
-				 Rigidbody body = heldObject.GetComponent<Rigidbody>();
-				 body.isKinematic = false;
-				 heldObject.GetComponent<Collider>().enabled = true;
-				 body.AddForce(throwForce*transform.forward,throwForceMode);
+				 
+				 heldObjectRigidBody.isKinematic = false;
+				 heldObjectCollider.enabled = true;
+				 heldObjectRigidBody.AddForce(throwForce*transform.forward, throwForceMode);
+				 
 				 heldObject = null;
 			 }
 		 }
