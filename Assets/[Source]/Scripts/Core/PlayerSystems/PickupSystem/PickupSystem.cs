@@ -7,6 +7,8 @@ using CGDebug = Utilities.CGTK.CGDebug;
 using Rewired;
 using PlayerController = Core.PlayerSystems.Movement.PlayerController;
 
+using Sirenix.OdinInspector;
+
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 #endif
@@ -18,15 +20,23 @@ namespace Core.PlayerSystems
 	 {
 		 #region Variables
 
-		 [SerializeField] private float grabRange = 10f;
-		 
-		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
-
-		 [SerializeField] private float chargeTime = 0.75f;
-		 [SerializeField] private float throwForce = 25f;
-		 [SerializeField] private ForceMode throwForceMode;
-		 
 		 [SerializeField] private LayerMask pickupLayermask = -1;
+		 
+		 [SerializeField] private float grabRange = 10f;
+		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
+		 
+		 [FoldoutGroup("Throw Force")]
+		 
+		 [HorizontalGroup("Throw Force/Group", 0.5f, LabelWidth = 60)] 
+		 [LabelText("Min")] [SerializeField] private float minThrowForce = 0f;
+		 [HorizontalGroup("Throw Force/Group")]
+		 [LabelText("Max")] [SerializeField] private float maxThrowForce = 25f;
+		 
+		 [FoldoutGroup("Throw Force")]
+		 [SerializeField] private float chargeTime = 0.75f;
+		 
+		 [FoldoutGroup("Throw Force")]
+		 [SerializeField] private ForceMode throwForceMode;
 
 		 private PlayerController playerController = null;
 
@@ -87,7 +97,9 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 Matrix4x4 matrix = Matrix4x4.TRS(myTransform.position, myTransform.rotation, myTransform.localScale);
+				 Transform cameraTransform = playerCamera.TargetTransforms[0]; 
+
+				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
 
 				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 heldTransform.rotation = (Quaternion.Inverse(playerCamera.TargetTransforms[0].rotation) * heldTransform.rotation);
@@ -99,6 +111,8 @@ namespace Core.PlayerSystems
 				 }
 				 
 				 if (!Player.GetButtonUp(PICKUP_BUTTON)) return;
+
+				 float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
 
 				 timeSinceStartedCharging = 0f;
 				 
