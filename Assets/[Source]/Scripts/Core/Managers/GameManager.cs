@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
 
     private void Tick()
     {
-
+        ItemManager.Instance.CallEventDegradeCallback();
     }
+
+
 }
