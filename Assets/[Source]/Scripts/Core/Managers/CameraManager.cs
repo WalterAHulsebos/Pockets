@@ -29,7 +29,6 @@ namespace Core.Managers
         
         [SerializeField] private Vector2 ratio = new Vector2(16, 9);
         [SerializeField] private bool forceRatioOnAwake = true;
-        [SerializeField] private bool findCamerasAutomatically = true;
 
         #region LetterBoxCamera
         
@@ -43,7 +42,7 @@ namespace Core.Managers
         
         #endregion
 
-        public List<CameraRatio> cameras;
+        public List<CameraRatio> cameras = new List<CameraRatio>();
         private bool isletterBoxCameraNotNull;
 
         private const int DEFAULT_PLAYER_COUNT = 0;
@@ -196,15 +195,6 @@ namespace Core.Managers
         private void Awake()
         {
             isletterBoxCameraNotNull = letterBoxCamera != null;
-            // If no cameras have been assigned in editor, search for cameras in the scene
-            if (findCamerasAutomatically)
-            {
-                FindAllCamerasInScene();
-            }
-            else if (cameras == null || cameras.Count == 0)
-            {
-                cameras = new List<CameraRatio>();
-            }
 
             ValidateCameraArray();
 
