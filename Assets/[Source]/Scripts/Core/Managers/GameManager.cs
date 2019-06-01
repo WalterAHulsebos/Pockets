@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     float globalTimer;
     int schedulePos = 0;
 
+    private ItemEvent currentRequestEvent;
+
     private void Update()
     {
         timer += Time.deltaTime;
@@ -31,8 +33,17 @@ public class GameManager : MonoBehaviour
         {
             if ((schedule[schedulePos].minuteToExecute * 60) <= globalTimer)
             {
+                if(schedule[schedulePos].itemEvent.eventType == ItemEventType.RemoveEvent)
+                {
+                    currentRequestEvent = schedule[schedulePos].itemEvent;
+                }
                 StartCoroutine(schedule[schedulePos++].itemEvent.HandleEvent());
             }
+        }
+
+        if(currentRequestEvent.timeToExecute <= 0)
+        {
+            currentRequestEvent = null;
         }
     }
 
@@ -41,5 +52,8 @@ public class GameManager : MonoBehaviour
         ItemManager.Instance.CallEventDegradeCallback();
     }
 
-
+    public ItemEvent GetActiveRequestEvent()
+    {
+        return currentRequestEvent;
+    }
 }
