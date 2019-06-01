@@ -245,6 +245,11 @@ MonoBehaviour:
   meshRoot: {fileID: 1908744066}
   cameraFollowPoint: {fileID: 1318520733}
   playerIndex: 0
+  inputs:
+    moveAxisForward: 0
+    moveAxisRight: 0
+    cameraRotation: {x: 0, y: 0, z: 0, w: 0}
+    jumpDown: 0
 --- !u!1 &23184184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1555,11 @@ MonoBehaviour:
   meshRoot: {fileID: 1515514677}
   cameraFollowPoint: {fileID: 828602299}
   playerIndex: 0
+  inputs:
+    moveAxisForward: 0
+    moveAxisRight: 0
+    cameraRotation: {x: 0, y: 0, z: 0, w: 0}
+    jumpDown: 0
 --- !u!114 &397752353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3191,7 +3201,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1277480461
 Transform:
   m_ObjectHideFlags: 0
@@ -3396,7 +3406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1523789273
 Transform:
   m_ObjectHideFlags: 0
@@ -3617,6 +3627,11 @@ MonoBehaviour:
   meshRoot: {fileID: 1828839405}
   cameraFollowPoint: {fileID: 953418277}
   playerIndex: 0
+  inputs:
+    moveAxisForward: 0
+    moveAxisRight: 0
+    cameraRotation: {x: 0, y: 0, z: 0, w: 0}
+    jumpDown: 0
 --- !u!1 &1576913190
 GameObject:
   m_ObjectHideFlags: 0
@@ -3632,7 +3647,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1576913192
 Transform:
   m_ObjectHideFlags: 0
@@ -3918,6 +3933,11 @@ MonoBehaviour:
   meshRoot: {fileID: 23184185}
   cameraFollowPoint: {fileID: 302515400}
   playerIndex: 0
+  inputs:
+    moveAxisForward: 0
+    moveAxisRight: 0
+    cameraRotation: {x: 0, y: 0, z: 0, w: 0}
+    jumpDown: 0
 --- !u!1 &1679804183
 GameObject:
   m_ObjectHideFlags: 0
@@ -4115,7 +4135,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753461075}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2324bb97bba6253428cb1ccbf69060ec, type: 3}
   m_Name: 
