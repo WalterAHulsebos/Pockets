@@ -126,6 +126,7 @@ MonoBehaviour:
   maxThrowForce: 25
   chargeTime: 0.75
   throwForceMode: 1
+  chargePercentage: 0
 --- !u!1 &3076984117631754371
 GameObject:
   m_ObjectHideFlags: 0
