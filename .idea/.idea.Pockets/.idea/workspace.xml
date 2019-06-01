@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e0dae85-90b5-4cb1-be6e-56416332d1bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pockets/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/1_Managers.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/1_Managers.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/3_Environment.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/3_Environment.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scenes/Main/4_Gameplay.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Managers/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Managers/CameraManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/RewiredPlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/RewiredPlayerController.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,7 @@
               <entry file="file://$PROJECT_DIR$/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="126">
-                    <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+                    <caret line="41" selection-start-line="41" selection-end-line="41" />
                     <folding>
                       <marker date="1554267613000" expanded="false" signature="6:159" ph="..." />
                       <marker date="1554267613000" expanded="true" signature="208:3276" ph="{...}" />
@@ -45,7 +43,7 @@
               <entry file="file://$PROJECT_DIR$/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterController.cs">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="291">
-                    <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+                    <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
                     <folding>
                       <marker date="1554267634000" expanded="true" signature="6:128" ph="..." />
                       <marker date="1554267634000" expanded="true" signature="177:20601" ph="{...}" />
@@ -131,7 +129,7 @@
               <entry file="file://$PROJECT_DIR$/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterCamera.cs">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="2595">
-                    <caret line="176" column="5" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="176" selection-end-column="5" />
+                    <caret line="176" column="5" selection-start-line="9" selection-start-column="8" selection-end-line="176" selection-end-column="5" />
                     <folding>
                       <marker date="1554267591000" expanded="false" signature="6:92" ph="..." />
                       <marker date="1554267591000" expanded="true" signature="141:7379" ph="{...}" />
@@ -360,65 +358,65 @@
             <state relative-caret-position="1620">
               <caret line="404" column="12" selection-start-line="404" selection-start-column="12" selection-end-line="404" selection-end-column="12" />
               <folding>
-                <marker date="1559378762961" expanded="true" signature="6:282" ph="..." />
-                <marker date="1559378762961" expanded="true" signature="307:16221" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="370:16219" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="385:8000" ph="Variables" />
-                <marker date="1559378762961" expanded="false" signature="518:662" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="886:1371" ph="LetterBoxCamera" />
-                <marker date="1559378762961" expanded="false" signature="1679:7976" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="1803:2052" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="2324:2509" ph="[...]" />
-                <marker date="1559378762961" expanded="true" signature="2785:2946" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="3119:3233" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="3407:4848" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="3453:4834" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="4866:5176" ph="/// Forces a camera to render at a given ratio ... " />
-                <marker date="1559378762961" expanded="true" signature="5285:7966" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="5477:5683" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="7274:7612" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="7416:7503" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="7756:7841" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="8014:16213" ph="Methods" />
-                <marker date="1559378762961" expanded="false" signature="8043:8123" ph="/// Validate any insecure variables ... " />
-                <marker date="1559378762961" expanded="true" signature="8152:10255" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="8359:8428" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="8488:8567" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="8721:8800" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="8928:9927" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="9605:9913" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="9693:9895" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="9963:10041" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="10294:10686" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="10469:10569" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="10696:14488" ph="Camera Management" />
-                <marker date="1559378762961" expanded="false" signature="10731:11004" ph="/// Returns the container class for a Camera and it's ratio by the _camera it contains ... " />
-                <marker date="1559378762961" expanded="false" signature="11070:11397" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="11184:11361" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="11271:11347" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="11407:11508" ph="/// Removes any null elements from the CameraRatio Array ... " />
-                <marker date="1559378762961" expanded="false" signature="11551:11780" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="11618:11770" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="11679:11756" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="11790:11914" ph="/// Populates the tracked Camera Array with every Camera currently in the scene ... " />
-                <marker date="1559378762961" expanded="false" signature="11958:12389" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="12126:12379" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="12211:12365" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="12399:12674" ph="/// Loops through all cameras in scene (or that have been set in editor) ... " />
-                <marker date="1559378762961" expanded="false" signature="12727:13453" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="13086:13159" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="13209:13443" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="13463:13631" ph="/// Set the anchor for a given Camera ... " />
-                <marker date="1559378762961" expanded="false" signature="13698:13904" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="13815:13894" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="13947:14117" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="13990:14069" ph="{...}" />
-                <marker date="1559378762961" expanded="true" signature="14498:16189" ph="Controller Management" />
-                <marker date="1559378762961" expanded="true" signature="14576:15701" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="14599:14714" ph="/* Check all joysticks for a button press and assign it tp ... */" />
-                <marker date="1559378762961" expanded="false" signature="14838:15422" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="15841:16039" ph="{...}" />
-                <marker date="1559378762961" expanded="false" signature="16093:16169" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="6:282" ph="..." />
+                <marker date="1559379270785" expanded="true" signature="307:16221" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="370:16219" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="385:8000" ph="Variables" />
+                <marker date="1559379270785" expanded="false" signature="518:662" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="886:1371" ph="LetterBoxCamera" />
+                <marker date="1559379270785" expanded="false" signature="1679:7976" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="1803:2052" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="2324:2509" ph="[...]" />
+                <marker date="1559379270785" expanded="true" signature="2785:2946" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="3119:3233" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="3407:4848" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="3453:4834" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="4866:5176" ph="/// Forces a camera to render at a given ratio ... " />
+                <marker date="1559379270785" expanded="true" signature="5285:7966" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="5477:5683" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="7274:7612" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="7416:7503" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="7756:7841" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="8014:16213" ph="Methods" />
+                <marker date="1559379270785" expanded="false" signature="8043:8123" ph="/// Validate any insecure variables ... " />
+                <marker date="1559379270785" expanded="true" signature="8152:10255" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="8359:8428" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="8488:8567" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="8721:8800" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="8928:9927" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="9605:9913" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="9693:9895" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="9963:10041" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="10294:10686" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="10469:10569" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="10696:14488" ph="Camera Management" />
+                <marker date="1559379270785" expanded="false" signature="10731:11004" ph="/// Returns the container class for a Camera and it's ratio by the _camera it contains ... " />
+                <marker date="1559379270785" expanded="false" signature="11070:11397" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="11184:11361" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="11271:11347" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="11407:11508" ph="/// Removes any null elements from the CameraRatio Array ... " />
+                <marker date="1559379270785" expanded="false" signature="11551:11780" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="11618:11770" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="11679:11756" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="11790:11914" ph="/// Populates the tracked Camera Array with every Camera currently in the scene ... " />
+                <marker date="1559379270785" expanded="false" signature="11958:12389" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="12126:12379" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="12211:12365" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="12399:12674" ph="/// Loops through all cameras in scene (or that have been set in editor) ... " />
+                <marker date="1559379270785" expanded="false" signature="12727:13453" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="13086:13159" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="13209:13443" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="13463:13631" ph="/// Set the anchor for a given Camera ... " />
+                <marker date="1559379270785" expanded="false" signature="13698:13904" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="13815:13894" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="13947:14117" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="13990:14069" ph="{...}" />
+                <marker date="1559379270785" expanded="true" signature="14498:16189" ph="Controller Management" />
+                <marker date="1559379270785" expanded="true" signature="14576:15701" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="14599:14714" ph="/* Check all joysticks for a button press and assign it tp ... */" />
+                <marker date="1559379270785" expanded="false" signature="14838:15422" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="15841:16039" ph="{...}" />
+                <marker date="1559379270785" expanded="false" signature="16093:16169" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -427,97 +425,96 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/RewiredPlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="517">
-              <caret line="190" column="121" selection-start-line="190" selection-start-column="106" selection-end-line="190" selection-end-column="121" />
+            <state relative-caret-position="760">
+              <caret line="191" column="59" lean-forward="true" selection-start-line="191" selection-start-column="59" selection-end-line="191" selection-end-column="59" />
               <folding>
-                <marker date="1559379018204" expanded="true" signature="6:190" ph="..." />
-                <marker date="1559379018204" expanded="true" signature="311:19383" ph="{...}" />
-                <marker date="1559379018204" expanded="true" signature="409:19381" ph="{...}" />
-                <marker date="1559379018204" expanded="true" signature="415:3526" ph="Variables" />
-                <marker date="1559379018204" expanded="false" signature="436:1804" ph="Serialized" />
-                <marker date="1559379018204" expanded="true" signature="1808:3510" ph="Non-Serialized" />
-                <marker date="1559379018204" expanded="false" signature="2775:3116" ph="Local Classes" />
-                <marker date="1559379018204" expanded="false" signature="2828:2848" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="2881:2927" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="2966:3100" ph="{...}" />
-                <marker date="1559379018204" expanded="true" signature="3122:3494" ph="Consts" />
-                <marker date="1559379018204" expanded="true" signature="3530:19375" ph="Methods" />
-                <marker date="1559379018204" expanded="false" signature="3569:3803" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="3828:4184" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="3992:4024" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="4068:4125" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="4190:4259" ph="/// Links a player to their playerID ... " />
-                <marker date="1559379018204" expanded="false" signature="4287:4506" ph="{...}" />
-                <marker date="1559379018204" expanded="true" signature="4510:5927" ph="Input Handling" />
-                <marker date="1559379018204" expanded="true" signature="4570:5463" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="4947:4994" ph="{...}" />
-                <marker date="1559379018204" expanded="true" signature="5329:5459" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="5502:5909" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="5636:5862" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="5931:19359" ph="Character Control" />
-                <marker date="1559379018204" expanded="false" signature="5961:6069" ph="/// Handles movement state transitions and enter/exit callbacks ... " />
-                <marker date="1559379018204" expanded="false" signature="6128:6327" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="6337:6405" ph="/// Event when entering a state ... " />
-                <marker date="1559379018204" expanded="false" signature="6482:6595" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="6507:6589" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="6605:6672" ph="/// Event when exiting a state ... " />
-                <marker date="1559379018204" expanded="false" signature="6746:6859" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="6771:6853" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="6869:7004" ph="/// This is called every frame by ExamplePlayer in order to tell the character what its inputs are ... " />
-                <marker date="1559379018204" expanded="false" signature="7064:8553" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="7482:7614" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="7759:8547" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="7953:8297" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="8356:8447" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="8563:8698" ph="/// This is called every frame by the AI script in order to tell the character what its inputs are ... " />
-                <marker date="1559379018204" expanded="false" signature="8754:8848" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="8858:9029" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1559379018204" expanded="false" signature="9084:9096" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="9106:9369" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1559379018204" expanded="false" signature="9449:10328" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="9490:10322" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="9617:10068" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="10102:10291" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="10338:10598" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1559379018204" expanded="false" signature="10675:15703" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="10716:15697" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="10846:12288" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="11097:11590" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="11351:11456" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="11473:11578" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="12325:14011" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="12412:13839" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="12650:12945" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="13358:13428" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="13445:13776" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="14147:15383" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="14406:15373" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="14629:14721" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="14739:14961" ph="/* Makes the character skip ground probing/snapping on its next update. ... */" />
-                <marker date="1559379018204" expanded="false" signature="15486:15602" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="15713:15889" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-                <marker date="1559379018204" expanded="false" signature="15943:17722" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="15984:17716" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="16218:16277" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="16401:16629" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="16513:16575" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="16644:16803" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="16895:17621" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="17289:17436" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="17451:17611" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="17780:18099" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="17922:17952" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18052:18093" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18164:18294" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18207:18238" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18429:18441" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18578:18590" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18641:18875" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="18682:18869" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="19085:19097" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="19132:19170" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="19216:19254" ph="{...}" />
-                <marker date="1559379018204" expanded="false" signature="19325:19342" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="6:190" ph="..." />
+                <marker date="1559379789126" expanded="true" signature="311:19197" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="409:19195" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="415:3617" ph="Variables" />
+                <marker date="1559379789126" expanded="false" signature="436:1804" ph="Serialized" />
+                <marker date="1559379789126" expanded="true" signature="1808:3601" ph="Non-Serialized" />
+                <marker date="1559379789126" expanded="true" signature="2847:3205" ph="Local Classes" />
+                <marker date="1559379789126" expanded="false" signature="2900:2920" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="2953:2999" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="3055:3189" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="3211:3585" ph="Consts" />
+                <marker date="1559379789126" expanded="true" signature="3621:19189" ph="Methods" />
+                <marker date="1559379789126" expanded="true" signature="3660:3894" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="3919:4275" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="4083:4115" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="4159:4216" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="4281:4350" ph="/// Links a player to their playerID ... " />
+                <marker date="1559379789126" expanded="false" signature="4378:4597" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="4601:5741" ph="Input Handling" />
+                <marker date="1559379789126" expanded="true" signature="4661:5188" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="5000:5047" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="5227:5723" ph="{...}" />
+                <marker date="1559379789126" expanded="true" signature="5419:5645" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="5745:19173" ph="Character Control" />
+                <marker date="1559379789126" expanded="false" signature="5775:5883" ph="/// Handles movement state transitions and enter/exit callbacks ... " />
+                <marker date="1559379789126" expanded="false" signature="5942:6141" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="6151:6219" ph="/// Event when entering a state ... " />
+                <marker date="1559379789126" expanded="false" signature="6296:6409" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="6321:6403" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="6419:6486" ph="/// Event when exiting a state ... " />
+                <marker date="1559379789126" expanded="false" signature="6560:6673" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="6585:6667" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="6683:6818" ph="/// This is called every frame by ExamplePlayer in order to tell the character what its inputs are ... " />
+                <marker date="1559379789126" expanded="false" signature="6878:8367" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="7296:7428" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="7573:8361" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="7767:8111" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="8170:8261" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="8377:8512" ph="/// This is called every frame by the AI script in order to tell the character what its inputs are ... " />
+                <marker date="1559379789126" expanded="false" signature="8568:8662" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="8672:8843" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1559379789126" expanded="false" signature="8898:8910" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="8920:9183" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1559379789126" expanded="false" signature="9263:10142" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="9304:10136" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="9431:9882" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="9916:10105" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="10152:10412" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1559379789126" expanded="false" signature="10489:15517" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="10530:15511" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="10660:12102" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="10911:11404" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="11165:11270" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="11287:11392" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="12139:13825" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="12226:13653" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="12464:12759" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="13172:13242" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="13259:13590" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="13961:15197" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="14220:15187" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="14443:14535" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="14553:14775" ph="/* Makes the character skip ground probing/snapping on its next update. ... */" />
+                <marker date="1559379789126" expanded="false" signature="15300:15416" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="15527:15703" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+                <marker date="1559379789126" expanded="false" signature="15757:17536" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="15798:17530" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="16032:16091" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="16215:16443" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="16327:16389" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="16458:16617" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="16709:17435" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="17103:17250" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="17265:17425" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="17594:17913" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="17736:17766" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="17866:17907" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="17978:18108" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18021:18052" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18243:18255" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18392:18404" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18455:18689" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18496:18683" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18899:18911" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="18946:18984" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="19030:19068" ph="{...}" />
+                <marker date="1559379789126" expanded="false" signature="19139:19156" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -629,12 +626,12 @@
       <option name="presentableId" value="Default" />
       <updated>1559320988918</updated>
       <workItem from="1559320990353" duration="10205000" />
-      <workItem from="1559339288351" duration="8262000" />
+      <workItem from="1559339288351" duration="9078000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18467000" />
+    <option name="totallyTimeSpent" value="19283000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1125,7 +1122,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterController.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
-          <caret line="81" column="28" lean-forward="true" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
+          <caret line="81" column="28" selection-start-line="81" selection-start-column="28" selection-end-line="81" selection-end-column="28" />
           <folding>
             <marker date="1554267634000" expanded="true" signature="6:128" ph="..." />
             <marker date="1554267634000" expanded="true" signature="177:20601" ph="{...}" />
@@ -1209,7 +1206,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExamplePlayer.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <marker date="1554267613000" expanded="false" signature="6:159" ph="..." />
             <marker date="1554267613000" expanded="true" signature="208:3276" ph="{...}" />
@@ -1228,7 +1225,7 @@
     <entry file="file://$PROJECT_DIR$/Assets/KinematicCharacterController/ExampleCharacter/Scripts/ExampleCharacterCamera.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2595">
-          <caret line="176" column="5" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="176" selection-end-column="5" />
+          <caret line="176" column="5" selection-start-line="9" selection-start-column="8" selection-end-line="176" selection-end-column="5" />
           <folding>
             <marker date="1554267591000" expanded="false" signature="6:92" ph="..." />
             <marker date="1554267591000" expanded="true" signature="141:7379" ph="{...}" />
@@ -1665,65 +1662,65 @@
         <state relative-caret-position="1620">
           <caret line="404" column="12" selection-start-line="404" selection-start-column="12" selection-end-line="404" selection-end-column="12" />
           <folding>
-            <marker date="1559378762961" expanded="true" signature="6:282" ph="..." />
-            <marker date="1559378762961" expanded="true" signature="307:16221" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="370:16219" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="385:8000" ph="Variables" />
-            <marker date="1559378762961" expanded="false" signature="518:662" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="886:1371" ph="LetterBoxCamera" />
-            <marker date="1559378762961" expanded="false" signature="1679:7976" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="1803:2052" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="2324:2509" ph="[...]" />
-            <marker date="1559378762961" expanded="true" signature="2785:2946" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="3119:3233" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="3407:4848" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="3453:4834" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="4866:5176" ph="/// Forces a camera to render at a given ratio ... " />
-            <marker date="1559378762961" expanded="true" signature="5285:7966" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="5477:5683" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="7274:7612" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="7416:7503" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="7756:7841" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="8014:16213" ph="Methods" />
-            <marker date="1559378762961" expanded="false" signature="8043:8123" ph="/// Validate any insecure variables ... " />
-            <marker date="1559378762961" expanded="true" signature="8152:10255" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="8359:8428" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="8488:8567" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="8721:8800" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="8928:9927" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="9605:9913" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="9693:9895" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="9963:10041" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="10294:10686" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="10469:10569" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="10696:14488" ph="Camera Management" />
-            <marker date="1559378762961" expanded="false" signature="10731:11004" ph="/// Returns the container class for a Camera and it's ratio by the _camera it contains ... " />
-            <marker date="1559378762961" expanded="false" signature="11070:11397" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="11184:11361" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="11271:11347" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="11407:11508" ph="/// Removes any null elements from the CameraRatio Array ... " />
-            <marker date="1559378762961" expanded="false" signature="11551:11780" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="11618:11770" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="11679:11756" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="11790:11914" ph="/// Populates the tracked Camera Array with every Camera currently in the scene ... " />
-            <marker date="1559378762961" expanded="false" signature="11958:12389" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="12126:12379" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="12211:12365" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="12399:12674" ph="/// Loops through all cameras in scene (or that have been set in editor) ... " />
-            <marker date="1559378762961" expanded="false" signature="12727:13453" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="13086:13159" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="13209:13443" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="13463:13631" ph="/// Set the anchor for a given Camera ... " />
-            <marker date="1559378762961" expanded="false" signature="13698:13904" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="13815:13894" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="13947:14117" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="13990:14069" ph="{...}" />
-            <marker date="1559378762961" expanded="true" signature="14498:16189" ph="Controller Management" />
-            <marker date="1559378762961" expanded="true" signature="14576:15701" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="14599:14714" ph="/* Check all joysticks for a button press and assign it tp ... */" />
-            <marker date="1559378762961" expanded="false" signature="14838:15422" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="15841:16039" ph="{...}" />
-            <marker date="1559378762961" expanded="false" signature="16093:16169" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="6:282" ph="..." />
+            <marker date="1559379270785" expanded="true" signature="307:16221" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="370:16219" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="385:8000" ph="Variables" />
+            <marker date="1559379270785" expanded="false" signature="518:662" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="886:1371" ph="LetterBoxCamera" />
+            <marker date="1559379270785" expanded="false" signature="1679:7976" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="1803:2052" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="2324:2509" ph="[...]" />
+            <marker date="1559379270785" expanded="true" signature="2785:2946" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="3119:3233" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="3407:4848" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="3453:4834" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="4866:5176" ph="/// Forces a camera to render at a given ratio ... " />
+            <marker date="1559379270785" expanded="true" signature="5285:7966" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="5477:5683" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="7274:7612" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="7416:7503" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="7756:7841" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="8014:16213" ph="Methods" />
+            <marker date="1559379270785" expanded="false" signature="8043:8123" ph="/// Validate any insecure variables ... " />
+            <marker date="1559379270785" expanded="true" signature="8152:10255" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="8359:8428" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="8488:8567" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="8721:8800" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="8928:9927" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="9605:9913" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="9693:9895" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="9963:10041" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="10294:10686" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="10469:10569" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="10696:14488" ph="Camera Management" />
+            <marker date="1559379270785" expanded="false" signature="10731:11004" ph="/// Returns the container class for a Camera and it's ratio by the _camera it contains ... " />
+            <marker date="1559379270785" expanded="false" signature="11070:11397" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="11184:11361" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="11271:11347" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="11407:11508" ph="/// Removes any null elements from the CameraRatio Array ... " />
+            <marker date="1559379270785" expanded="false" signature="11551:11780" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="11618:11770" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="11679:11756" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="11790:11914" ph="/// Populates the tracked Camera Array with every Camera currently in the scene ... " />
+            <marker date="1559379270785" expanded="false" signature="11958:12389" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="12126:12379" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="12211:12365" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="12399:12674" ph="/// Loops through all cameras in scene (or that have been set in editor) ... " />
+            <marker date="1559379270785" expanded="false" signature="12727:13453" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="13086:13159" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="13209:13443" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="13463:13631" ph="/// Set the anchor for a given Camera ... " />
+            <marker date="1559379270785" expanded="false" signature="13698:13904" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="13815:13894" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="13947:14117" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="13990:14069" ph="{...}" />
+            <marker date="1559379270785" expanded="true" signature="14498:16189" ph="Controller Management" />
+            <marker date="1559379270785" expanded="true" signature="14576:15701" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="14599:14714" ph="/* Check all joysticks for a button press and assign it tp ... */" />
+            <marker date="1559379270785" expanded="false" signature="14838:15422" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="15841:16039" ph="{...}" />
+            <marker date="1559379270785" expanded="false" signature="16093:16169" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1733,123 +1730,122 @@
         <state relative-caret-position="397">
           <caret line="54" column="27" selection-start-line="54" selection-start-column="21" selection-end-line="54" selection-end-column="27" />
           <folding>
-            <marker date="1559374190780" expanded="false" signature="6:78" ph="..." />
-            <marker date="1559374190780" expanded="true" signature="199:7411" ph="{...}" />
-            <marker date="1559374190780" expanded="true" signature="245:7404" ph="{...}" />
-            <marker date="1559374190780" expanded="true" signature="260:2572" ph="Variables" />
-            <marker date="1559374190780" expanded="true" signature="287:1800" ph="Serialized" />
-            <marker date="1559374190780" expanded="true" signature="1810:2552" ph="Non-Serialized" />
-            <marker date="1559374190780" expanded="true" signature="1842:2111" ph="Accessors" />
-            <marker date="1559374190780" expanded="false" signature="2582:7389" ph="Methods" />
-            <marker date="1559374190780" expanded="false" signature="2624:2836" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="2858:3099" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="3215:3385" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="3479:7369" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="3557:3625" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="3651:3719" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="4339:4417" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="5723:6268" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="5846:6033" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="6152:6250" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="6371:6618" ph="{...}" />
-            <marker date="1559374190780" expanded="false" signature="6676:6924" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="6:78" ph="..." />
+            <marker date="1559379270799" expanded="true" signature="199:7411" ph="{...}" />
+            <marker date="1559379270799" expanded="true" signature="245:7404" ph="{...}" />
+            <marker date="1559379270799" expanded="true" signature="260:2572" ph="Variables" />
+            <marker date="1559379270799" expanded="true" signature="287:1800" ph="Serialized" />
+            <marker date="1559379270799" expanded="true" signature="1810:2552" ph="Non-Serialized" />
+            <marker date="1559379270799" expanded="true" signature="1842:2111" ph="Accessors" />
+            <marker date="1559379270799" expanded="false" signature="2582:7389" ph="Methods" />
+            <marker date="1559379270799" expanded="false" signature="2624:2836" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="2858:3099" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="3215:3385" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="3479:7369" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="3557:3625" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="3651:3719" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="4339:4417" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="5723:6268" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="5846:6033" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="6152:6250" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="6371:6618" ph="{...}" />
+            <marker date="1559379270799" expanded="false" signature="6676:6924" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/[Source]/Scripts/Core/Player/Movement/RewiredPlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="517">
-          <caret line="190" column="121" selection-start-line="190" selection-start-column="106" selection-end-line="190" selection-end-column="121" />
+        <state relative-caret-position="760">
+          <caret line="191" column="59" lean-forward="true" selection-start-line="191" selection-start-column="59" selection-end-line="191" selection-end-column="59" />
           <folding>
-            <marker date="1559379018204" expanded="true" signature="6:190" ph="..." />
-            <marker date="1559379018204" expanded="true" signature="311:19383" ph="{...}" />
-            <marker date="1559379018204" expanded="true" signature="409:19381" ph="{...}" />
-            <marker date="1559379018204" expanded="true" signature="415:3526" ph="Variables" />
-            <marker date="1559379018204" expanded="false" signature="436:1804" ph="Serialized" />
-            <marker date="1559379018204" expanded="true" signature="1808:3510" ph="Non-Serialized" />
-            <marker date="1559379018204" expanded="false" signature="2775:3116" ph="Local Classes" />
-            <marker date="1559379018204" expanded="false" signature="2828:2848" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="2881:2927" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="2966:3100" ph="{...}" />
-            <marker date="1559379018204" expanded="true" signature="3122:3494" ph="Consts" />
-            <marker date="1559379018204" expanded="true" signature="3530:19375" ph="Methods" />
-            <marker date="1559379018204" expanded="false" signature="3569:3803" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="3828:4184" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="3992:4024" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="4068:4125" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="4190:4259" ph="/// Links a player to their playerID ... " />
-            <marker date="1559379018204" expanded="false" signature="4287:4506" ph="{...}" />
-            <marker date="1559379018204" expanded="true" signature="4510:5927" ph="Input Handling" />
-            <marker date="1559379018204" expanded="true" signature="4570:5463" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="4947:4994" ph="{...}" />
-            <marker date="1559379018204" expanded="true" signature="5329:5459" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="5502:5909" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="5636:5862" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="5931:19359" ph="Character Control" />
-            <marker date="1559379018204" expanded="false" signature="5961:6069" ph="/// Handles movement state transitions and enter/exit callbacks ... " />
-            <marker date="1559379018204" expanded="false" signature="6128:6327" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="6337:6405" ph="/// Event when entering a state ... " />
-            <marker date="1559379018204" expanded="false" signature="6482:6595" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="6507:6589" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="6605:6672" ph="/// Event when exiting a state ... " />
-            <marker date="1559379018204" expanded="false" signature="6746:6859" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="6771:6853" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="6869:7004" ph="/// This is called every frame by ExamplePlayer in order to tell the character what its inputs are ... " />
-            <marker date="1559379018204" expanded="false" signature="7064:8553" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="7482:7614" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="7759:8547" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="7953:8297" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="8356:8447" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="8563:8698" ph="/// This is called every frame by the AI script in order to tell the character what its inputs are ... " />
-            <marker date="1559379018204" expanded="false" signature="8754:8848" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="8858:9029" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1559379018204" expanded="false" signature="9084:9096" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="9106:9369" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1559379018204" expanded="false" signature="9449:10328" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="9490:10322" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="9617:10068" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="10102:10291" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="10338:10598" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1559379018204" expanded="false" signature="10675:15703" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="10716:15697" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="10846:12288" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="11097:11590" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="11351:11456" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="11473:11578" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="12325:14011" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="12412:13839" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="12650:12945" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="13358:13428" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="13445:13776" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="14147:15383" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="14406:15373" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="14629:14721" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="14739:14961" ph="/* Makes the character skip ground probing/snapping on its next update. ... */" />
-            <marker date="1559379018204" expanded="false" signature="15486:15602" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="15713:15889" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
-            <marker date="1559379018204" expanded="false" signature="15943:17722" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="15984:17716" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="16218:16277" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="16401:16629" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="16513:16575" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="16644:16803" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="16895:17621" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="17289:17436" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="17451:17611" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="17780:18099" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="17922:17952" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18052:18093" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18164:18294" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18207:18238" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18429:18441" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18578:18590" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18641:18875" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="18682:18869" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="19085:19097" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="19132:19170" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="19216:19254" ph="{...}" />
-            <marker date="1559379018204" expanded="false" signature="19325:19342" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="6:190" ph="..." />
+            <marker date="1559379789126" expanded="true" signature="311:19197" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="409:19195" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="415:3617" ph="Variables" />
+            <marker date="1559379789126" expanded="false" signature="436:1804" ph="Serialized" />
+            <marker date="1559379789126" expanded="true" signature="1808:3601" ph="Non-Serialized" />
+            <marker date="1559379789126" expanded="true" signature="2847:3205" ph="Local Classes" />
+            <marker date="1559379789126" expanded="false" signature="2900:2920" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="2953:2999" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="3055:3189" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="3211:3585" ph="Consts" />
+            <marker date="1559379789126" expanded="true" signature="3621:19189" ph="Methods" />
+            <marker date="1559379789126" expanded="true" signature="3660:3894" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="3919:4275" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="4083:4115" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="4159:4216" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="4281:4350" ph="/// Links a player to their playerID ... " />
+            <marker date="1559379789126" expanded="false" signature="4378:4597" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="4601:5741" ph="Input Handling" />
+            <marker date="1559379789126" expanded="true" signature="4661:5188" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="5000:5047" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="5227:5723" ph="{...}" />
+            <marker date="1559379789126" expanded="true" signature="5419:5645" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="5745:19173" ph="Character Control" />
+            <marker date="1559379789126" expanded="false" signature="5775:5883" ph="/// Handles movement state transitions and enter/exit callbacks ... " />
+            <marker date="1559379789126" expanded="false" signature="5942:6141" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="6151:6219" ph="/// Event when entering a state ... " />
+            <marker date="1559379789126" expanded="false" signature="6296:6409" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="6321:6403" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="6419:6486" ph="/// Event when exiting a state ... " />
+            <marker date="1559379789126" expanded="false" signature="6560:6673" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="6585:6667" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="6683:6818" ph="/// This is called every frame by ExamplePlayer in order to tell the character what its inputs are ... " />
+            <marker date="1559379789126" expanded="false" signature="6878:8367" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="7296:7428" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="7573:8361" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="7767:8111" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="8170:8261" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="8377:8512" ph="/// This is called every frame by the AI script in order to tell the character what its inputs are ... " />
+            <marker date="1559379789126" expanded="false" signature="8568:8662" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="8672:8843" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1559379789126" expanded="false" signature="8898:8910" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="8920:9183" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1559379789126" expanded="false" signature="9263:10142" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="9304:10136" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="9431:9882" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="9916:10105" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="10152:10412" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1559379789126" expanded="false" signature="10489:15517" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="10530:15511" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="10660:12102" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="10911:11404" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="11165:11270" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="11287:11392" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="12139:13825" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="12226:13653" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="12464:12759" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="13172:13242" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="13259:13590" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="13961:15197" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="14220:15187" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="14443:14535" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="14553:14775" ph="/* Makes the character skip ground probing/snapping on its next update. ... */" />
+            <marker date="1559379789126" expanded="false" signature="15300:15416" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="15527:15703" ph="/// (Called by KinematicCharacterMotor during its update cycle) ... " />
+            <marker date="1559379789126" expanded="false" signature="15757:17536" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="15798:17530" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="16032:16091" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="16215:16443" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="16327:16389" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="16458:16617" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="16709:17435" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="17103:17250" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="17265:17425" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="17594:17913" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="17736:17766" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="17866:17907" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="17978:18108" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18021:18052" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18243:18255" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18392:18404" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18455:18689" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18496:18683" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18899:18911" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="18946:18984" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="19030:19068" ph="{...}" />
+            <marker date="1559379789126" expanded="false" signature="19139:19156" ph="{...}" />
           </folding>
         </state>
       </provider>

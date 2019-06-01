@@ -81,6 +81,9 @@ namespace Core.Movement
 		
 		[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
 		private bool initialized;
+
+		[SerializeField] [ReadOnly] 
+		private PlayerCharacterInputs inputs;
 		
 		#region Local Classes
 		
@@ -95,6 +98,7 @@ namespace Core.Movement
 			TowardsMovement,
 		}
 
+		[Serializable]
 		public struct PlayerCharacterInputs
 		{
 			public float moveAxisForward;
@@ -109,7 +113,7 @@ namespace Core.Movement
 		
 		private const string MOUSE_X_INPUT = "Look Horizontal";
 		private const string MOUSE_Y_INPUT = "Look Vertical";
-		private const string MOUSE_SCROLL_INPUT = "Mouse ScrollWheel";
+		//private const string MOUSE_SCROLL_INPUT = "Mouse ScrollWheel";
 		private const string HORIZONTAL_INPUT = "Move Horizontal";
 		private const string VERTICAL_INPUT = "Move Vertical";
 		private const string JUMP_KEY = "Jump";
@@ -168,9 +172,8 @@ namespace Core.Movement
 		
 		private void HandleCameraInput()
 		{
-			// Create the look input vector for the camera
-			float mouseLookAxisUp = 0f;//player.GetAxisRaw(MOUSE_Y_INPUT);
-			float mouseLookAxisRight = 0f;//player.GetAxisRaw(MOUSE_X_INPUT);
+			float mouseLookAxisUp = 0f; //player.GetAxisRaw(MOUSE_Y_INPUT);
+			float mouseLookAxisRight = 0f; //player.GetAxisRaw(MOUSE_X_INPUT);
 			Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
 		
 			// Prevent moving the camera while the cursor isn't locked
@@ -179,15 +182,15 @@ namespace Core.Movement
 				 lookInputVector = Vector3.zero;
 			}
 		
-			// Input for zooming the camera (disabled in WebGL because it can cause problems)
-			float scrollInput = -player.GetAxis(MOUSE_SCROLL_INPUT);
+			//float scrollInput = -player.GetAxis(MOUSE_SCROLL_INPUT);
 		
-			// Apply inputs to the camera
-			playerCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
+			playerCamera.UpdateWithInput(Time.deltaTime, 0, lookInputVector);
 		}
 
 		private void HandleCharacterInput()
 		{
+			Debug.Log("We are handling Player Input, right?");
+			
 			//TODO: Don't make a new one every frame, cache it.
 			 PlayerCharacterInputs characterInputs = new PlayerCharacterInputs
 			 {
@@ -196,6 +199,8 @@ namespace Core.Movement
 				 cameraRotation = playerCamera.Transform.rotation,
 				 jumpDown = player.GetButtonDown(JUMP_KEY),
 			 };
+
+			 inputs = characterInputs;
 			 
 			 SetInputs(ref characterInputs);
 		 }
