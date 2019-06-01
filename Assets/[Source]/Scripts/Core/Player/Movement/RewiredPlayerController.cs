@@ -31,7 +31,8 @@ namespace Core.Movement
 		[SerializeField] private float maxStableMoveSpeed = 10f;
 		[SerializeField] private float stableMovementSharpness = 15f;
 		[SerializeField] private float orientationSharpness = 10f;
-		[SerializeField] private OrientationMethod orientationMethod = OrientationMethod.TowardsCamera;
+		
+		private OrientationMethod orientationMethod = OrientationMethod.TowardsCamera;
 
 		[Header("Air Movement")]
 		[SerializeField] private float maxAirMoveSpeed = 100f;
@@ -115,7 +116,6 @@ namespace Core.Movement
 		
 		private const string LOOK_HORIZONTAL = "Look Horizontal";
 		private const string LOOK_VERTICAL = "Look Vertical";
-		//private const string MOUSE_SCROLL_INPUT = "Mouse ScrollWheel";
 		private const string MOVE_HORIZONTAL = "Move Horizontal";
 		private const string MOVE_VERTICAL = "Move Vertical";
 		private const string JUMP_KEY = "Jump";
@@ -132,7 +132,7 @@ namespace Core.Movement
 			// Handle initial state
 			TransitionToState(CharacterState.Default);
 
-			motor = motor ?? GetComponent<KinematicCharacterMotor>();
+			motor = motor ?? GetComponent<KinematicCharacterMotor>() ?? GetComponentInChildren<KinematicCharacterMotor>();
 			
 			// Assign the characterController to the motor
 			motor.CharacterController = this;
@@ -197,7 +197,7 @@ namespace Core.Movement
 			 {
 				 moveAxisForward = player.GetAxisRaw(MOVE_VERTICAL),
 				 moveAxisRight = player.GetAxisRaw(MOVE_HORIZONTAL),
-				 cameraRotation = playerCamera.Transform.rotation,
+				 cameraRotation = playerCamera.TargetTransforms[0].rotation,
 				 jumpDown = player.GetButtonDown(JUMP_KEY),
 			 };
 
@@ -333,7 +333,7 @@ namespace Core.Movement
 									 Vector3 smoothedLookInputDirection = Vector3.Slerp(motor.CharacterForward, lookInputVector, 1 - Mathf.Exp(-orientationSharpness * deltaTime)).normalized;
 		  
 									 // Set the current rotation (which will be used by the KinematicCharacterMotor)
-									 currentRotation = Quaternion.LookRotation(smoothedLookInputDirection, motor.CharacterUp);
+									 //currentRotation = Quaternion.LookRotation(smoothedLookInputDirection, motor.CharacterUp);
 								}
 								if (orientTowardsGravity)
 								{

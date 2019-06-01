@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using Utilities.Extensions;
 using static Core.Utilities.Helpers;
 
 #if Odin_Inspector
@@ -14,32 +15,32 @@ namespace Core.Movement
     {
         #region Variables
         
-        public	Transform	targetTrans;
-        
         public bool inputActive = true;
         public bool controlCursor = false;
-        public bool pitchClamp	= true;
         
+        [SerializeField] private bool pitchClamp = true;
+        [ShowIf("pitchClamp")]
         [Range(-90f, 90f)] [SerializeField] private float defaultVerticalAngle = 20f;
         
+        [MinMaxSlider(-90, 90, true)]
         [ShowIf("pitchClamp")]
-        [Range(-90f, 90f)] [SerializeField] private float minVerticalAngle = -90f, 
-                                                          maxVerticalAngle = 90f;
+        [SerializeField] private Vector2 verticalClamps = new Vector2(-90, 90f);
         
         [Header("Smoothing")]
-        public bool byPassSmoothing	= false;
-        public float mouseSmoothing = 20f;	//Lambda | higher = less latency but also less smoothing
+        [SerializeField] private bool bypassSmoothing = false;
+        [SerializeField] private float mouseSmoothing = 20f;	//Lambda | higher = less latency but also less smoothing
+
+        [BoxGroup("Sensitivity")] [HorizontalGroup("Sensitivity/Group", 0.5f, LabelWidth = 60)]
         
-        [Header("Sensitivity")]
-        [HorizontalGroup("Sensitivity")]
-        public float horizontalSensitivity = 4f;
-        public float verticalSensitivity = 4f;
+        [LabelText("Horizontal")] [SerializeField] private float horizontalSensitivity = 4f;
+        [HorizontalGroup("Sensitivity/Group")]
+        [LabelText("Vertical")] [SerializeField] private float verticalSensitivity = 4f;
         
-        public BufferV2	mouseBuffer = new BufferV2();
+        private BufferV2 mouseBuffer = new BufferV2();
         
         #region Accessors
 
-        public Transform Transform { get; private set; }
+        public List<Transform> TargetTransforms { get; private set; }
         
         #endregion
         
@@ -49,7 +50,7 @@ namespace Core.Movement
 
         private void Awake()
         {
-            throw new System.NotImplementedException();
+            TargetTransforms.Add(this.transform);
         }
 
         public void UpdateWithInput(Vector3 rotationInput)
@@ -70,7 +71,7 @@ namespace Core.Movement
             if(!inputActive){ return; }	//active?
 
             UpdateMouseBuffer(rotationInput);
-            targetTrans.rotation = Quaternion.Euler(mouseBuffer.curAbs);
+            TargetTransforms.For(targetTransform => targetTransform.rotation = Quaternion.Euler(mouseBuffer.curAbs));
         }
 
         //consider late Update for applying the rotation if your game needs it (e.g. if camera parents are rotated in Update for some reason)
@@ -81,10 +82,10 @@ namespace Core.Movement
             mouseBuffer.target += new Vector2( verticalSensitivity * rotationInput.y, horizontalSensitivity * rotationInput.x); //Mouse Input is inherently framerate independend!
             
             mouseBuffer.target.x = pitchClamp
-                ? Mathf.Clamp(mouseBuffer.target.x, minVerticalAngle, maxVerticalAngle) 
+                ? Mathf.Clamp(mouseBuffer.target.x, verticalClamps.x, verticalClamps.y) 
                 : mouseBuffer.target.x;
             
-            mouseBuffer.Update(mouseSmoothing, Time.deltaTime, byPassSmoothing);
+            mouseBuffer.Update(mouseSmoothing, Time.deltaTime, bypassSmoothing);
         }
         
         #endregion
