@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.Serialization;
+using Utilities.Extensions;
+using Utilities;
 
-public class GameManager : MonoBehaviour
+public class GameManager : PersistentSingleton<GameManager>
 {
     public List<ScheduleItem> schedule = new List<ScheduleItem>();
     public float secondsPerTick;
