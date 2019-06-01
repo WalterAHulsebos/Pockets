@@ -20,10 +20,16 @@ public class ItemManager : PersistentSingleton<ItemManager>
 
 
     public List<Item> globalItems = new List<Item>();
-    [SerializeField] private Object[] allTypes;
 
     [HideInInspector] public delegate void DegradeCallback();
     public event DegradeCallback degradeCallback;
+    public void CallEventDegradeCallback()
+    {
+        if(degradeCallback != null)
+        {
+            degradeCallback();
+        }
+    }
 
     private void Awake()
     {
@@ -47,15 +53,33 @@ public class ItemManager : PersistentSingleton<ItemManager>
                 newItem.type = items[i].type;
                 newItem.storageRoom = items[i].room;
                 newItem.effects = items[i].effects;
-                if (Random.Range(0, 100) < mutationChance)
+                if (newItem.effects != ItemEffects.None)
                 {
-                    //TODO Mutation
+                    if (Random.Range(0, 100) < mutationChance)
+                    {
+                        //TODO Mutation
+                    }
+
+                    if(newItem.effects == ItemEffects.Fire)
+                    {
+                        ItemEffectFactory.Instance.CreateFireEffect(newItem.transform);
+                    }
+                    if (newItem.effects == ItemEffects.Poison)
+                    {
+                        ItemEffectFactory.Instance.CreatePoisonEffect(newItem.transform);
+                    }
+                    if (newItem.effects == ItemEffects.Freeze)
+                    {
+                        ItemEffectFactory.Instance.CreateFrozenEffect(newItem.transform);
+                    }
                 }
 
                 newItem.degradePerTick = items[i].degradePerTick;
 
                 newItem.GetComponent<MeshFilter>().mesh = items[i].mesh;
                 newItem.GetComponent<MeshRenderer>().material = items[i].material;
+                globalItems.Add(newItem);
+                degradeCallback += newItem.DoDegration;
             }
         }
     }
@@ -68,25 +92,27 @@ public class ItemManager : PersistentSingleton<ItemManager>
 
         for(int i = 0; i < colliders.Length; i++)
         {
-            Item newItem = colliders[i].GetComponent<Item>();
-            if(newItem == null)
+            Item removeItem = colliders[i].GetComponent<Item>();
+            if(removeItem == null)
             {
                 continue;
             }
             
             for(int j = 0; j < items.Count; j++)
             {
-                if(newItem.type == items[j].type)
+                if(removeItem.type == items[j].type)
                 {
                     itemCounter[j]--;
                     break;
                 }
             }
-            Destroy(newItem);
+
+            globalItems.Remove(removeItem);
+            degradeCallback -= removeItem.DoDegration;
+            Destroy(removeItem);
         }
         CalculateFinalScore(itemCounter);
     }
-
 
     private void CalculateFinalScore(List<int> counts)
     {
