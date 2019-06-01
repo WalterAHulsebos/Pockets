@@ -45,10 +45,14 @@ namespace Core.PlayerSystems
 
 		 private bool holdingAnObject = false;
 
+		 private bool initialGrab = false;
+
 		 private Vector3 heldObjectMoveTowardsPosition = Vector3.zero;
 		 
 		 private float timeSinceStartedCharging = 0f;
-		 private float chargePercentage = 0f;
+		 
+		 [ReadOnly]
+		 [SerializeField] private float chargePercentage = 0f;
 		 
 		 private Transform heldObject = null;
 		 private Rigidbody heldObjectRigidBody = null;
@@ -104,6 +108,8 @@ namespace Core.PlayerSystems
 				 //heldObjectCollider = heldObject.GetComponent<Collider>();
 				 
 				 heldObjectRigidBody.isKinematic = true;
+
+				 initialGrab = true;
 				 //heldObjectCollider.enabled = false;
 			 }
 			 else
@@ -118,13 +124,21 @@ namespace Core.PlayerSystems
 				 
 				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
 
-				 if(InputPlayer.GetButtonDown(PICKUP_BUTTON))
+				 if (InputPlayer.GetButtonDown(PICKUP_BUTTON))
+				 {
+					 initialGrab = false;
+				 }
+				 
+				 if(initialGrab == true){return;}
+				 
+				 if(InputPlayer.GetButton(PICKUP_BUTTON))
 				 {
 					 timeSinceStartedCharging += Time.deltaTime;
 					 chargePercentage = timeSinceStartedCharging / chargeTime;
 				 }
 				 
-				 if (!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
+				 if (!(chargePercentage >= 0.05 )) return;
+				 if(!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
 
 				 float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
 
