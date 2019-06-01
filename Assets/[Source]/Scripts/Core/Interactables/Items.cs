@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [System.Serializable,  CreateAssetMenu(fileName = "New Item", menuName = "ScriptableObjects/Item", order = 1)]
-public class Item : ScriptableObject, IInteractable
+public class Item : MonoBehaviour, IInteractable
 {
     #region Variables
 
