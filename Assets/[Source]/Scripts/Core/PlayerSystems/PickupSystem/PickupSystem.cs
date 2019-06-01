@@ -25,6 +25,11 @@ namespace Core.PlayerSystems
 		 
 		 [SerializeField] private float grabRange = 10f;
 		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
+
+		 [SerializeField] private float objectFollowingSpeed = 10f;
+		 
+		 [FoldoutGroup("Sensitivity")]
+		 [SerializeField] private Vector2 rotationSensitivity = new Vector3(1,1,1);
 		 
 		 [FoldoutGroup("Throw Force")]
 		 
@@ -51,6 +56,8 @@ namespace Core.PlayerSystems
 		 
 		 private float timeSinceStartedCharging = 0f;
 		 
+		 private Vector2 rotationInput = Vector3.zero;
+		 
 		 [ReadOnly]
 		 [SerializeField] private float chargePercentage = 0f;
 		 
@@ -68,7 +75,6 @@ namespace Core.PlayerSystems
 		
 		 #endregion
 
-		 
 		 #endregion
 	 
 		 #region Methods
@@ -89,7 +95,9 @@ namespace Core.PlayerSystems
 			 
 			 Ray ray = new Ray(cameraTransform.position, cameraTransform.forward * grabRange);
 			 
-			 //Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
+			 Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
+			 
+			 //CGDebug.DrawRay(ray).Color(Color.cyan).Duration(1f);
 			 
 			 if(holdingAnObject == false)
 			 {
@@ -114,19 +122,27 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
+				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform); //Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.localScale);
+				 
 				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
-				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 
-				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
+				 rotationInput = new Vector3(
+					 InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
+					 InputPlayer.GetAxis(ROTATE_VERTICAL), 
+					 0);
+				 
+				 Debug.Log($"rotationInput = {rotationInput}");
+				 
+				 heldObjectMoveTowardsPosition = matrix.MultiplyPoint(holdOffset);
 
-				 if (InputPlayer.GetButtonDown(PICKUP_BUTTON))
+				 if(InputPlayer.GetButtonDown(PICKUP_BUTTON))
 				 {
 					 initialGrab = false;
 				 }
 				 
-				 if(initialGrab == true){return;}
+				 if(initialGrab){return;}
 				 
 				 if(InputPlayer.GetButton(PICKUP_BUTTON))
 				 {
@@ -154,10 +170,15 @@ namespace Core.PlayerSystems
 
 		 private void FixedUpdate()
 		 {
-			 if (heldObjectRigidBody != null)
-			 {
-			 	//heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition);
-			 }
+			 if (heldObjectRigidBody == null) return;
+			 
+			 heldObjectRigidBody.AddTorque(transform.up * rotationInput.y * rotationSensitivity.y);
+			 heldObjectRigidBody.AddTorque(transform.right * rotationInput.x * rotationSensitivity.x);
+			 
+			 //Vector3 direction = (heldObjectMoveTowardsPosition - heldObject.position).normalized;
+			 //heldObjectRigidBody.MovePosition(heldObject.position + direction * objectFollowingSpeed * Time.deltaTime);
+
+			 heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition); // * Time.fixedDeltaTime);
 		 }
 
 		 #endregion
