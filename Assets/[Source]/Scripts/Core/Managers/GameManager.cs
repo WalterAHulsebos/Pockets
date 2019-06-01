@@ -5,7 +5,6 @@ using Sirenix.Serialization;
 
 public class GameManager : MonoBehaviour
 {
-    [OdinSerialize]
     public List<ScheduleItem> schedule = new List<ScheduleItem>();
     public float secondsPerTick;
     float timer;
@@ -28,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckSchedule()
     {
-        if (schedule.Count <= schedulePos)
+        if (schedule.Count > schedulePos)
         {
             if ((schedule[schedulePos].minuteToExecute * 60) <= globalTimer)
             {

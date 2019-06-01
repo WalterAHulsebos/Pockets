@@ -6,6 +6,7 @@ using Sirenix.Serialization;
 [System.Serializable]
 public enum ItemRoom
 {
+    Default,
     Freezer,
     Armory,
     Library,
@@ -53,12 +54,10 @@ public class ItemEvent
         {
             case ItemEventType.AddEvent:
                 ItemManager.Instance.CreateItems(items, counts, mutationChance);
-                Debug.Log("ADD");
                 break;
 
             case ItemEventType.RemoveEvent:
-                //ItemManager.Instance.RemoveItems(items, counts);
-                Debug.Log("REMOVE");
+                ItemManager.Instance.RemoveItems(items, counts);
                 break;
             case ItemEventType.RatEvent:
 
