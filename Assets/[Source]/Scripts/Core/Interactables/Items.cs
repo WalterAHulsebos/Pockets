@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[System.Serializable,  CreateAssetMenu(fileName = "New Item", menuName = "ScriptableObjects/Item", order = 1)]
 public class Item : MonoBehaviour, IInteractable
 {
     #region Variables
 
-    public string name;
+    public string type;
     public GameObject prefab;
     public ItemRoom room;
     public ItemEffects effects;
@@ -23,10 +22,14 @@ public class Item : MonoBehaviour, IInteractable
     {
         if(container != null)
         {
-            if(container.IsInCorrectContainer(this))
+            if(!container.IsInCorrectRoom(this))
             {
                 integity -= degradePerTick;
             }
+        }
+        else
+        {
+            integity -= degradePerTick;
         }
     }
 }
