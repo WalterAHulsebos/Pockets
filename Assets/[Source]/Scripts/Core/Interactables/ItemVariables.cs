@@ -35,12 +35,12 @@ public enum ItemEventType
 [System.Serializable]
 public class ItemEvent
 {
-    public ItemEventType eventType;
-    public List<ItemType> items;
-    public List<int> counts;
-    public int mutationChance;
+    public ItemEventType    eventType;
+    public List<ItemType>   items;
+    public List<int>        counts;
+    public int              mutationChance;
     
-    public int timeToExecute = 30;
+    public int              timeToExecute = 30;
 
     public IEnumerator HandleEvent()
     {

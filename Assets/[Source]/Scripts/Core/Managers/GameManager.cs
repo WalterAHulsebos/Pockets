@@ -41,5 +41,8 @@ public class GameManager : MonoBehaviour
         ItemManager.Instance.CallEventDegradeCallback();
     }
 
+    public void AddScheduledEvent(ScheduleItem scheduledItem)
+    {
 
+    }
 }
