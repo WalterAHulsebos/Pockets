@@ -65,7 +65,8 @@ namespace Core.PlayerSystems
 			 Transform myTransform = this.transform;
 			 
 			 Ray ray = new Ray(myTransform.position, myTransform.forward * grabRange);
-			 CGDebug.DrawRay(ray).Color(Color.cyan);
+			 
+			 //CGDebug.DrawRay(ray).Color(Color.cyan);
 			 
 			 if(heldObject == null)
 			 {
