@@ -1201,7 +1201,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   requestPosition: {fileID: 1417044253}
-  requestPositionRadius: 3
+  requestPositionRadius: 2.5
   spawnPosition: {fileID: 614193622}
   spawnRadius: 1.5
   baseItemPrefab: {fileID: 1281928139426422549, guid: 88f08f62636f42f4c9bc2aca28252751,
@@ -1267,12 +1267,20 @@ MonoBehaviour:
       timeToExecute: 1
   - minuteToExecute: 0
     itemEvent:
-      eventType: 1
+      eventType: 0
       items:
       - {fileID: 11400000, guid: fa9bbf6a542ca664a8cbecd166cb9f5f, type: 2}
-      counts: 03000000
+      - {fileID: 11400000, guid: f0ced95b0a8cdd84397961819fc4af1c, type: 2}
+      counts: 0300000005000000
       mutationChance: 0
       timeToExecute: 5
+  - minuteToExecute: 0
+    itemEvent:
+      eventType: 0
+      items: []
+      counts: 
+      mutationChance: 0
+      timeToExecute: 30
   secondsPerTick: 4
 --- !u!4 &1137181457
 Transform:
@@ -1556,7 +1564,7 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   roomOrganisationScore: 0
-  heroSatisfactionRating: 100
+  heroSatisfactionRating: 50
   organisationTextMesh: {fileID: 0}
   satisfactionTextMesh: {fileID: 0}
 --- !u!4 &1785108936
