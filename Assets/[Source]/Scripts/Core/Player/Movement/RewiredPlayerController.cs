@@ -9,6 +9,10 @@ using Rewired;
 using Utilities;
 using Utilities.Extensions;
 
+using Sirenix.OdinInspector;
+
+using ReadOnlyAttribute = Sirenix.OdinInspector.ReadOnlyAttribute;
+
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 #endif
@@ -23,35 +27,44 @@ namespace Core.Movement
 
 		//public int playerId = 0; // The Rewired player id of this character
 		
-		public TempCamera playerCamera;
+		[Required]
+		public PlayerCamera playerCamera;
 		
+		[Required]
 		public KinematicCharacterMotor motor;
 		
-		[Header("Stable Movement")]
-		[SerializeField] private float maxStableMoveSpeed = 10f;
-		[SerializeField] private float stableMovementSharpness = 15f;
+		[FoldoutGroup("Ground Movement")]
+		[SerializeField] private float maxGroundMoveSpeed = 10f;
+		[FoldoutGroup("Ground Movement")]
+		[SerializeField] private float groundMovementSharpness = 15f;
+		[FoldoutGroup("Ground Movement")]
 		[SerializeField] private float orientationSharpness = 10f;
 		
 		private OrientationMethod orientationMethod = OrientationMethod.TowardsCamera;
 
-		[Header("Air Movement")]
-		[SerializeField] private float maxAirMoveSpeed = 100f;
-		[SerializeField] private float airAccelerationSpeed = 15f;
-		[SerializeField] private float drag = 0.1f;
+		[FoldoutGroup("Air Movement")]
+		[SerializeField] private float 
+			maxAirMoveSpeed = 100f, 
+			airAccelerationSpeed = 15f, 
+			drag = 0.1f;
 
-		[Header("Jumping")]
+		[FoldoutGroup("Jumping")]
 		[SerializeField] private bool allowJumpingWhenSliding = false;
-		[SerializeField] private float jumpUpSpeed = 10f;
-		[SerializeField] private float jumpScalableForwardSpeed = 10f;
-		[SerializeField] private float jumpPreGroundingGraceTime = 0f;
-		[SerializeField] private float jumpPostGroundingGraceTime = 0f;
+		[FoldoutGroup("Jumping")]
+		[SerializeField] private float 
+			jumpUpSpeed = 10f, 
+			jumpScalableForwardSpeed = 10f,
+			jumpPreGroundingGraceTime = 0f, 
+			jumpPostGroundingGraceTime = 0f;
 
-		[Header("Misc")]
+		[FoldoutGroup("Misc")]
 		[SerializeField] private List<Collider> ignoredColliders = new List<Collider>();
+		[FoldoutGroup("Misc")]
 		[SerializeField] private bool orientTowardsGravity = false;
+		[FoldoutGroup("Misc")]
 		[SerializeField] private Vector3 gravity = new Vector3(0, -30f, 0);
+		[FoldoutGroup("Misc")]
 		[SerializeField] private Transform meshRoot;
-		[SerializeField] private Transform cameraFollowPoint;
 		
 		#endregion
 
@@ -185,13 +198,11 @@ namespace Core.Movement
 		
 			//float scrollInput = -player.GetAxis(MOUSE_SCROLL_INPUT);
 		
-			playerCamera.UpdateWithInput(lookInputVector);
+			playerCamera.UpdateWithInput(lookInputVector, meshRoot);
 		}
 
 		private void HandleCharacterInput()
 		{
-			Debug.Log("We are handling Player Input, right?");
-			
 			//TODO: Don't make a new one every frame, cache it.
 			 PlayerCharacterInputs characterInputs = new PlayerCharacterInputs
 			 {
@@ -382,10 +393,10 @@ namespace Core.Movement
 									 // Calculate target velocity
 									 Vector3 inputRight = Vector3.Cross(moveInputVector, motor.CharacterUp);
 									 Vector3 reorientedInput = Vector3.Cross(effectiveGroundNormal, inputRight).normalized * moveInputVector.magnitude;
-									 Vector3 targetMovementVelocity = reorientedInput * maxStableMoveSpeed;
+									 Vector3 targetMovementVelocity = reorientedInput * maxGroundMoveSpeed;
 		  
 									 // Smooth movement Velocity
-									 currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-stableMovementSharpness * deltaTime));
+									 currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-groundMovementSharpness * deltaTime));
 								}
 								// Air movement
 								else
