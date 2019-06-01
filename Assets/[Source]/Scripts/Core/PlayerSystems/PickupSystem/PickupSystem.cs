@@ -54,7 +54,7 @@ namespace Core.PlayerSystems
 		 private Rigidbody heldObjectRigidBody = null;
 		 private Collider heldObjectCollider = null;
 
-		 private Player Player => playerController.Player;
+		 private Player InputPlayer => playerController.Player;
 		 
 		 #region Consts
 
@@ -75,9 +75,11 @@ namespace Core.PlayerSystems
 			 playerCamera = playerCamera ?? GetComponentInChildren<PlayerCamera>();
 		 }
 
-		 private void Update ()
+		 private void Update()
 		 {
-			 //Transform myTransform = this.transform;
+			 if(!ReInput.isReady) return;
+			 if(!playerController.initialized) return;
+			 if(InputPlayer == null) return;
 			 
 			 Transform cameraTransform = playerCamera.TargetTransforms[0]; 
 			 
@@ -89,7 +91,7 @@ namespace Core.PlayerSystems
 			 
 			 if(holdingAnObject == false)
 			 {
-				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
+				 if (!InputPlayer.GetButtonDown(PICKUP_BUTTON)) return;
 
 				 if (!Physics.Raycast(ray, out RaycastHit hit, grabRange, pickupLayermask)) return;
 				 
@@ -99,10 +101,10 @@ namespace Core.PlayerSystems
 				 
 				 //TODO: Walter - Edit this.
 				 heldObjectRigidBody = heldObject.GetComponent<Rigidbody>();
-				 heldObjectCollider = GetComponent<Collider>();
+				 //heldObjectCollider = heldObject.GetComponent<Collider>();
 				 
 				 heldObjectRigidBody.isKinematic = true;
-				 heldObjectCollider.enabled = false;
+				 //heldObjectCollider.enabled = false;
 			 }
 			 else
 			 {
@@ -116,26 +118,26 @@ namespace Core.PlayerSystems
 				 
 				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint3x4(holdOffset);
 
-				 if(Player.GetButtonDown(PICKUP_BUTTON))
+				 if(InputPlayer.GetButtonDown(PICKUP_BUTTON))
 				 {
 					 timeSinceStartedCharging += Time.deltaTime;
 					 chargePercentage = timeSinceStartedCharging / chargeTime;
 				 }
 				 
-				 if (!Player.GetButtonUp(PICKUP_BUTTON)) return;
+				 if (!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
 
 				 float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
 
 				 timeSinceStartedCharging = 0f;
 				 
 				 heldObjectRigidBody.isKinematic = false;
-				 heldObjectCollider.enabled = true;
+				 //heldObjectCollider.enabled = true;
 				 heldObjectRigidBody.AddForce(throwForce * cameraTransform.forward, throwForceMode);
 
 				 holdingAnObject = false;
 				 heldObject = null;
 				 heldObjectRigidBody = null;
-				 heldObjectCollider = null;
+				 //heldObjectCollider = null;
 			 }
 		 }
 

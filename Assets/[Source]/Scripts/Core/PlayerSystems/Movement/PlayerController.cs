@@ -94,8 +94,8 @@ namespace Core.PlayerSystems.Movement
 		//[SerializeField] [ReadOnly]
 		public Player Player { get; private set; } // The Rewired Player
 		
-		[System.NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
-		private bool initialized;
+		[NonSerialized] // Don't serialize this so the value is lost on an editor script recompile.
+		public bool initialized;
 
 		[SerializeField] [ReadOnly] 
 		private PlayerCharacterInputs inputs;
@@ -136,7 +136,6 @@ namespace Core.PlayerSystems.Movement
 		
 		#endregion
 
-		
 		#endregion
 
 		#region Methods
