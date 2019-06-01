@@ -5,6 +5,9 @@ using LetterboxCamera;
 using Utilities;
 using Utilities.Extensions;
 using System;
+
+using Rewired;
+using Enumerable = System.Linq.Enumerable;
     
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -42,11 +45,9 @@ namespace Core.Managers
         #endregion
 
         public List<CameraRatio> cameras;
-        
-        //[SerializeField] private Camera[] singlePlayerCameras;
-        //[SerializeField] private Camera[] twoPlayerCameras;
-        //[SerializeField] private Camera[] threePlayerCameras;
-        //[SerializeField] private Camera[] fourPlayerCameras;
+        private bool isletterBoxCameraNotNull;
+
+        private const int DEFAULT_PLAYER_COUNT = 3;
         
         [Serializable]
         /// <summary> A class for tracking individual Cameras and their Viewports </summary>
@@ -195,6 +196,7 @@ namespace Core.Managers
         /// </summary>
         private void Awake()
         {
+            isletterBoxCameraNotNull = letterBoxCamera != null;
             // If no cameras have been assigned in editor, search for cameras in the scene
             if (findCamerasAutomatically)
             {
@@ -243,23 +245,29 @@ namespace Core.Managers
             }
             
             
-            //singlePlayerCameras.For(cam => cam.enabled = true);
-            //twoPlayerCameras.For(cam => cam.enabled = false);
-            //threePlayerCameras.For(cam => cam.enabled = false);
-            //fourPlayerCameras.For(cam => cam.enabled = false);
+            
+            GetCamerasFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = true);
+            GetCamerasNotFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = false);
+            
         }
         
         private void Update()
         {
-            if (!listenForWindowChanges) return;
+            //if (!listenForWindowChanges) return;
             
-            // Recalculate the viewport size if the window size has changed
             CalculateAndSetAllCameraRatios();
-            if (letterBoxCamera != null)
+            
+            if (isletterBoxCameraNotNull)
             {
                 letterBoxCamera.backgroundColor = letterBoxCameraColor;
             }
+            
+            if(!ReInput.isReady) return;
+            
+            AssignJoysticksToPlayers();
         }
+
+        #region Camera Management
 
         /// <summary>
         /// Returns the container class for a Camera and it's ratio by the _camera it contains
@@ -368,6 +376,52 @@ namespace Core.Managers
         
         public List<CameraRatio> GetCamerasNotFromGroup(int cameraGroup)
             => cameras.GetMultiple(func: (cameraRatio => cameraRatio.cameraGroup != cameraGroup));
+
+        #endregion
+
+        #region Controller Management
+
+        private void AssignJoysticksToPlayers()
+        {
+            // Check all joysticks for a button press and assign it tp
+            // The first Player found without a joystick
+            IList<Joystick> joysticks = ReInput.controllers.Joysticks;
+            foreach (Joystick joystick in joysticks)
+            {
+                if(ReInput.controllers.IsControllerAssigned(joystick.type, joystick.id)) continue;
+    
+                // Check if a button was pressed on the joystick
+                if (!joystick.GetAnyButtonDown()) continue;
+                
+                // Find the next Player without a Joystick
+                Player player = FindPlayerWithoutJoystick();
+                if(player == null) return; // no free joysticks
+    
+                // Assign the joystick to this Player
+                player.controllers.AddController(joystick, false);
+            }
+    
+            // If all players have joysticks, enable joystick auto-assignment
+            if (!DoAllPlayersHaveJoysticks()) return;
+            
+            ReInput.configuration.autoAssignJoysticks = true;
+            this.enabled = false; // disable this script
+        }
+    
+        // Searches all Players to find the next Player without a Joystick assigned
+        private Player FindPlayerWithoutJoystick()
+        {
+            IList<Player> players = ReInput.players.Players;
+            
+            return Enumerable.FirstOrDefault(players, player => player.controllers.joystickCount <= 0);
+        }
+    
+        private bool DoAllPlayersHaveJoysticks()
+        {
+            return FindPlayerWithoutJoystick() == null;
+        }
+
+        #endregion
     
         #endregion
     }
