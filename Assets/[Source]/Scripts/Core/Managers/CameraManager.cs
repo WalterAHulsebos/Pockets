@@ -45,7 +45,7 @@ namespace Core.Managers
         public List<CameraRatio> cameras = new List<CameraRatio>();
         private bool isletterBoxCameraNotNull;
 
-        private const int DEFAULT_PLAYER_COUNT = 1;
+        private const int DEFAULT_PLAYER_COUNT = 0;
 
         private int activePlayerCount = 0;
         
