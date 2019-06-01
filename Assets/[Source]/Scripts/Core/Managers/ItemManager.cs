@@ -18,11 +18,6 @@ public class ItemManager : PersistentSingleton<ItemManager>
     LayerMask itemLayerMask;
 
 
-    /* TODO: [Wybren]
-     * Keep track of all global items
-     * Add items to world\
-     * remove / request items from world
-     */
 
     public List<Item> globalItems = new List<Item>();
     [SerializeField] private Object[] allTypes;
@@ -47,7 +42,8 @@ public class ItemManager : PersistentSingleton<ItemManager>
         {
             for (int j = 0; j < counts[i]; j++)
             {
-                Item newItem = Instantiate(baseItemPrefab, spawnPosition.position + (Vector3)(Random.insideUnitCircle * spawnRadius), Quaternion.identity).GetComponent<Item>();
+                //turn to inside unit circle on x and z
+                Item newItem = Instantiate(baseItemPrefab, spawnPosition.position + (Random.insideUnitSphere * spawnRadius), Quaternion.identity).GetComponent<Item>();
                 newItem.type = items[i].type;
                 newItem.storageRoom = items[i].room;
                 newItem.effects = items[i].effects;
@@ -64,13 +60,9 @@ public class ItemManager : PersistentSingleton<ItemManager>
         }
     }
 
-    public void RemoveItems(List<KeyValuePair<ItemType, int>> items)
+    public void RemoveItems(List<ItemType> items, List<int> counts)
     {
-        List<int> itemCounter = new List<int>();
-        foreach(KeyValuePair<ItemType, int> item in items)
-        {
-            itemCounter.Add(item.Value);
-        }
+        List<int> itemCounter = counts;
 
         Collider[] colliders = UnityEngine.Physics.OverlapCapsule(requestCapsuleTop, requestCapsuleBottom, requestPositionRadius, itemLayerMask);
 
@@ -84,7 +76,7 @@ public class ItemManager : PersistentSingleton<ItemManager>
             
             for(int j = 0; j < items.Count; j++)
             {
-                if(newItem.type == items[j].Key.type)
+                if(newItem.type == items[j].type)
                 {
                     itemCounter[j]--;
                     break;
