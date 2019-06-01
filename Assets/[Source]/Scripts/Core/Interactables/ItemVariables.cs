@@ -27,22 +27,23 @@ public enum ItemEffects
 public enum ItemEventType
 {
     AddEvent,
-    RemoveEvent
+    RemoveEvent,
+    RatEvent
 }
 
 [System.Serializable]
 public class ItemEvent
 {
     public ItemEventType eventType;
-    public List<Item> items;
+    public List<ItemType> items;
     public List<int> counts;
-    public float mutationChance;
+    public int mutationChance;
     
-    public int timeToExecute;
+    public int timeToExecute = 30;
 
     public IEnumerator HandleEvent()
     {
-        while(timeToExecute > 0 && eventType == ItemEventType.RemoveEvent)
+        while(timeToExecute > 0 && eventType != ItemEventType.AddEvent)
         {
             timeToExecute -= 1;
             yield return new WaitForSecondsRealtime(1f);
@@ -51,13 +52,17 @@ public class ItemEvent
         switch(eventType)
         {
             case ItemEventType.AddEvent:
-                //ItemManager.Instance.CreateItems(items, mutationChance);
+                ItemManager.Instance.CreateItems(items, counts, mutationChance);
                 Debug.Log("ADD");
                 break;
 
             case ItemEventType.RemoveEvent:
-                //ItemManager.Instance.RemoveItems(items);
+                //ItemManager.Instance.RemoveItems(items, counts);
                 Debug.Log("REMOVE");
+                break;
+            case ItemEventType.RatEvent:
+
+                Debug.Log("RATS!!");
                 break;
         }
 
