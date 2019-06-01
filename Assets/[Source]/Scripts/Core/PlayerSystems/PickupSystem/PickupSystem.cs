@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using Core.PlayerSystems.Movement;
+using CGDebug = Utilities.CGTK.CGDebug;
+using Rewired;
+using PlayerController = Core.PlayerSystems.Movement.PlayerController;
 
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
@@ -10,6 +13,7 @@ using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
 
 namespace Core.PlayerSystems
 {
+	//[RequireComponent(PlayerController), RequireComponent(PlayerCamera)]
 	 public class PickupSystem : MonoBehaviour
 	 {
 		 #region Variables
@@ -30,6 +34,8 @@ namespace Core.PlayerSystems
 		 private Transform heldObject = null;
 		 private Rigidbody heldObjectRigidBody = null;
 		 private Collider heldObjectCollider = null;
+
+		 private Player Player => playerController.Player;
 		 
 		 #region Consts
 
@@ -47,15 +53,21 @@ namespace Core.PlayerSystems
 		 private void Awake()
 		 {
 			 playerController = playerController ?? GetComponentInChildren<PlayerController>();
+			 playerCamera = playerCamera ?? GetComponentInChildren<PlayerCamera>();
 		 }
 
 		 private void Update ()
 		 {
+			 Transform myTransform = this.transform;
+			 
 			 if(heldObject == null)
 			 {
-				 if (!Input.GetButtonDown(PICKUP_BUTTON)) return;
+				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
 
-				 if (!Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, grabRange, pickupLayermask)) return;
+				 Ray ray = new Ray(myTransform.position, myTransform.forward * grabRange);
+				 CGDebug.DrawRay(ray).Color(Color.cyan);
+					 
+				 if (!Physics.Raycast(ray, out RaycastHit hit, grabRange, pickupLayermask)) return;
 				 
 				 heldObject = hit.collider.transform;
 				 
@@ -70,17 +82,16 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 Transform myTransform = this.transform;
 				 Matrix4x4 matrix = Matrix4x4.TRS(myTransform.position, myTransform.rotation, myTransform.localScale);
 
 				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 heldTransform.rotation = (Quaternion.Inverse(playerCamera.TargetTransforms[0].rotation) * heldTransform.rotation);
 
-				 if (!Input.GetButtonDown(PICKUP_BUTTON)) return;
+				 if (!Player.GetButtonDown(PICKUP_BUTTON)) return;
 				 
 				 heldObjectRigidBody.isKinematic = false;
 				 heldObjectCollider.enabled = true;
-				 heldObjectRigidBody.AddForce(throwForce*transform.forward, throwForceMode);
+				 heldObjectRigidBody.AddForce(throwForce * myTransform.forward, throwForceMode);
 				 
 				 heldObject = null;
 			 }
