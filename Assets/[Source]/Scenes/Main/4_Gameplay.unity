@@ -1258,7 +1258,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDefaultRoom: 1
   roomType: 0
-<<<<<<< HEAD
 --- !u!114 &270420165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1389,9 +1388,6 @@ Transform:
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &303958542
-=======
---- !u!1 &210064867
->>>>>>> cc9a755482d46cee3c086f9ab716922cb419ccbd
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1481,7 +1477,6 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1591,11 +1586,6 @@ Transform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &530326610
-=======
-  m_GameObject: {fileID: 210064867}
-  m_CullTransparentMesh: 0
---- !u!1 &232912938
->>>>>>> cc9a755482d46cee3c086f9ab716922cb419ccbd
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3028,7 +3018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad4132f7fbb994247bd4392f47c4c46c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
 --- !u!1 &1012053457
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,9 +3110,6 @@ Transform:
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1277480460
-=======
---- !u!1 &898416803
->>>>>>> cc9a755482d46cee3c086f9ab716922cb419ccbd
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3195,7 +3181,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
   m_GameObject: {fileID: 1576913190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -3374,9 +3359,6 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753461075}
-=======
-  m_GameObject: {fileID: 902202535}
->>>>>>> cc9a755482d46cee3c086f9ab716922cb419ccbd
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -3742,7 +3724,6 @@ MonoBehaviour:
   frustumSettings:
     baseSettings: {fileID: 387552786}
     qualitySettings: {fileID: 270420165}
-<<<<<<< HEAD
 --- !u!1 &1927775377
 GameObject:
   m_ObjectHideFlags: 0
@@ -3900,10 +3881,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 19.663, y: 0, z: 0}
 --- !u!114 &1955775338
 MonoBehaviour:
-=======
---- !u!20 &959999418
-Camera:
->>>>>>> cc9a755482d46cee3c086f9ab716922cb419ccbd
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
