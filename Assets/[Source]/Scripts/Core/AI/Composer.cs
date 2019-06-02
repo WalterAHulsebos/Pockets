@@ -103,7 +103,7 @@ public class Composer : EnsuredSingleton<Composer>
 
         for(int i = 0; i < drops.Value.Length; i++)
         {
-            for (int j = 0; j < drops.Value[j]; j++)
+            for (int j = 0; j < drops.Value[i]; j++)
             {
                 ItemType type = GetItemType(drops.Key[j]);
                 if(requestDictionary.ContainsKey(type))
