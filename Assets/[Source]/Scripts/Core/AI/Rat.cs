@@ -13,6 +13,7 @@ public class Rat : MonoBehaviour
     Rigidbody rb;
     float minDistance = .75f;
     bool grabbed, pickedup;
+    int reactivateDelay = 0;
 
     public void Start()
     {
@@ -71,6 +72,7 @@ public class Rat : MonoBehaviour
     {
         pickedup = true;
         grabbed = false;
+        reactivateDelay = 5;
         
         agent.isStopped = true;
         agent.enabled = false;
@@ -111,9 +113,10 @@ public class Rat : MonoBehaviour
 
     public IEnumerator ResetRat()
     {
-        while(rb.velocity.y != 0)
+        while(rb.velocity.y != 0 || rb.velocity.x != 0 || rb.velocity.z != 0 || reactivateDelay > 0)
         {
-            yield return null;
+            reactivateDelay--;
+            yield return new WaitForSeconds(1);
         }
 
         pickedup = false;
