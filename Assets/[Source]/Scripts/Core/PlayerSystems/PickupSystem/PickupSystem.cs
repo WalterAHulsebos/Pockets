@@ -11,6 +11,7 @@ using Sirenix.OdinInspector;
 using Math = Utilities.Extensions.Math;
 using Core.PlayerSystems.Ballistics;
 using Lean.Pool;
+using Utilities.CGTK.Greasy;
 
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
@@ -169,9 +170,17 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
+				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
 
-				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 //heldTransform.position = cameraTransform.TransformPoint(holdOffset);
+				 
+				 heldTransform.SetParent(cameraTransform);
+
+				 Vector3.Distance(heldTransform.localPosition, holdOffset);
+				 
+				 
+				 heldTransform.LocalPositionTo(holdOffset, 0.3f, EaseType.ExponentialIn);
 				 
 				 /*
 				 rotationInput = new Vector3(
@@ -216,6 +225,8 @@ namespace Core.PlayerSystems
 				 
 				 if (!(chargePercentage >= 0.05 )) return;
 				 if(!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
+				 
+				 heldTransform.SetParent(null);
 
 				 //LeanPool.DespawnAll();
 
