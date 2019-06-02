@@ -41,7 +41,7 @@ public class PauseMenu : Singleton<PauseMenu>
 		scoreManager.GameOverEvent += Animate;
 	}
 
-	private void Awake()
+	private void Start()
 	{
 		scoreManager = ScoreManager.Instance;
 

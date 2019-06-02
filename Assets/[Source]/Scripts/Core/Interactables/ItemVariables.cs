@@ -60,7 +60,7 @@ public class ItemEvent
                 ItemManager.Instance.RemoveItems(items, counts);
                 break;
             case ItemEventType.RatEvent:
-
+                GameManager.Instance.SpawnRats(counts[0]);
                 Debug.Log("RATS!!");
                 break;
         }

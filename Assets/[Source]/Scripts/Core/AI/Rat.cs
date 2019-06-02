@@ -10,22 +10,35 @@ public class Rat : MonoBehaviour
     public Transform itemLoc;
 
     NavMeshAgent agent;
+    Rigidbody rb;
     float minDistance = .75f;
-    bool grabbed;
+    bool grabbed, pickedup;
 
-    public void Init()
+    public void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
 
+        Retarget();
         returnLoc = transform.position;
 
-        agent.SetDestination(target.transform.position);
+        
     }
 
     private void Update()
     {
-        if(agent != null)
+        if (target == null && pickedup == false)
         {
+            Retarget();
+        }
+
+        if (agent != null && pickedup != true && target != null)
+        {
+            if (target.container != null)
+            {
+                Retarget();
+            }
+
             if (!grabbed)
             {
                 if (Vector3.Distance(target.transform.position, transform.position) <= minDistance)
@@ -33,6 +46,7 @@ public class Rat : MonoBehaviour
                     grabbed = true;
 
                     target.GetComponent<Rigidbody>().isKinematic = true;
+                    target.GetComponent<MeshCollider>().enabled = false;
                     target.transform.position = itemLoc.position;
                     target.transform.parent = itemLoc;
 
@@ -46,6 +60,8 @@ public class Rat : MonoBehaviour
                     ItemManager.Instance.DestroyItem(target);
                     ScoreManager.Instance.ChangeSatisfaction(-5);
                     Destroy(gameObject);
+                    Debug.Log("Yeet");
+                    ScoreManager.Instance.stolenItems++;
                 }
             }
         }
@@ -53,8 +69,59 @@ public class Rat : MonoBehaviour
 
     public void IsPickedUp()
     {
+        pickedup = true;
         grabbed = false;
-        target.transform.parent = null;
-        target.GetComponent<Rigidbody>().isKinematic = false;
+        
+        agent.isStopped = true;
+        agent.enabled = false;
+
+        ItemManager.Instance.targetedItems.Remove(target);
+
+        if (target != null)
+        {
+            
+            target.transform.parent = null;
+            target.GetComponent<MeshCollider>().enabled = true;
+            target.GetComponent<Rigidbody>().isKinematic = false;
+            target = null;
+        }
+    }
+
+    public void Retarget()
+    {
+        List<Item> unstoredItems = ItemManager.Instance.globalItems.FindAll(x => x.container == null);
+
+        if(unstoredItems.Count == 0)
+        {
+            Destroy(gameObject);
+        }
+
+        foreach(Item item in unstoredItems)
+        {
+            if(!ItemManager.Instance.targetedItems.Contains(item))
+            {
+                ItemManager.Instance.targetedItems.Add(item);        
+                target = item;
+                agent.SetDestination(item.transform.position);
+
+                break;
+            }
+        }
+    }
+
+    public IEnumerator ResetRat()
+    {
+        while(rb.velocity.y != 0)
+        {
+            yield return null;
+        }
+
+        pickedup = false;
+
+        rb.isKinematic = true;
+        agent.enabled = true;
+        agent.isStopped = false;
+
+        Retarget();
     }
 }

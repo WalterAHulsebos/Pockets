@@ -10,6 +10,7 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
 {
     public float roomOrganisationScore = 0;
     public int heroSatisfactionRating = 100;
+    public int stolenItems = 0;
 
     public event Action GameOverEvent;
 
