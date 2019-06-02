@@ -122,12 +122,15 @@ MonoBehaviour:
     m_Bits: 16384
   grabRange: 5
   holdOffset: {x: 0, y: 0, z: 2}
-  objectFollowingSpeed: 10
   rotationSensitivity: {x: 1, y: 1}
   minThrowForce: 0
   maxThrowForce: 25
   chargeTime: 0.75
   throwForceMode: 1
+  launchAngle: 30
+  defaultPhysicsMaterial: {fileID: 0}
+  trajectoryDebugObject: {fileID: 0}
+  trajectoryEndMarkObject: {fileID: 0}
   chargePercentage: 0
 --- !u!1 &3076984117631754371
 GameObject:
