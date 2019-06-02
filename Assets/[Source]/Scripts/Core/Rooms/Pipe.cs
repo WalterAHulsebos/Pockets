@@ -10,7 +10,12 @@ public class Pipe : MonoBehaviour
 	[SerializeField] Color m_SpotLightSpawnColor = Color.white;
 	[SerializeField] Color m_SpotLightRequestColor = Color.red;
 
-	public IEnumerator Open(bool isRequest)
+    private void Awake()
+    {
+        StartCoroutine(Close());
+    }
+
+    public IEnumerator Open(bool isRequest)
 	{
 		yield return null;
 
