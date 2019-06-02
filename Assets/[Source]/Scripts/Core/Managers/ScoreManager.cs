@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities.Extensions;
 using Utilities;
+using TMPro;
 
 public class ScoreManager : PersistentSingleton<ScoreManager>
 {
@@ -10,8 +12,10 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
     public int heroSatisfactionRating = 100;
     public int stolenItems = 0;
 
+    public event Action GameOverEvent;
+
     private List<int> recordedHeroSatisfactionRatings = new List<int>();
-    public int averageHeroSatisfactionRating
+    public int AverageHeroSatisfactionRating
     {
         get
         {
@@ -25,8 +29,8 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
         }
     }
 
-    public TextMesh organisationTextMesh;
-    public TextMesh satisfactionTextMesh;
+    public TMP_Text organisationTextMesh;
+    public TMP_Text satisfactionTextMesh;
 
     public void ChangeSatisfaction(int satisfactionDifference)
     {
@@ -53,6 +57,10 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
 
     public void GameOver()
     {
-        // TODO: End the game.
+        // TODO: Reset Timescale on reload.
+        
+        Time.timeScale = 0f;
+        
+        GameOverEvent?.Invoke();
     }
 }

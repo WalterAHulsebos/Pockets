@@ -20,10 +20,12 @@ TagManager:
   - Items
   - 
   - 
+  - 
+  - 
   - Pickup
   - 
   - UI SeeThrough
-  - 
+  - RequestPreview
   - 
   - 
   - 

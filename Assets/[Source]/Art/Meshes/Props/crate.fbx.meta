@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 39310b3c17aac144bae53633d03eac2c
+guid: b5c9b55197c968242ac6e0595e7d0cc2
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wire_214229166
-    second: {fileID: 2100000, guid: b748240885fcaaf479e6ca088dc7076c, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 140
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -85,7 +80,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
+    globalScale: 140
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

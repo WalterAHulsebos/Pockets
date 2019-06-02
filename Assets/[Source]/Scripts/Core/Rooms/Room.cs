@@ -64,7 +64,8 @@ public class Room : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Container otherItem = other.GetComponent<Container>();
+        print(other.transform);
+        Container otherItem = other.transform.parent.GetComponent<Container>();
         if (otherItem == null)
         {
             return;
@@ -75,7 +76,7 @@ public class Room : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Container otherItem = other.GetComponent<Container>();
+        Container otherItem = other.transform.parent.GetComponent<Container>();
         if (otherItem == null)
         {
             return;
