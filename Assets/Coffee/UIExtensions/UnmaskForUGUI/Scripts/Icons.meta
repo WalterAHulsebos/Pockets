@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/[Source]/Art/Materials/Wood.mat.meta
+guid: 53239ef6170b7f14ca086e28ac5611ac
+NativeFormatImporter:
+=======
 guid: b5576bb7baebb41f29147e7759583369
 folderAsset: yes
 DefaultImporter:
+>>>>>>> cc9a755482d46cee3c086f9ab716922cb419ccbd:Assets/Coffee/UIExtensions/UnmaskForUGUI/Scripts/Icons.meta
   externalObjects: {}
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
