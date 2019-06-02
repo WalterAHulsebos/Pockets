@@ -6,7 +6,7 @@ using Utilities;
 
 public class ItemManager : EnsuredSingleton<ItemManager>
 {
-    private Pipe lightRay;
+    //private Pipe lightRay;
 
     public Transform requestPosition;
     private Vector3 requestCapsuleBottom, requestCapsuleTop;
@@ -38,7 +38,7 @@ public class ItemManager : EnsuredSingleton<ItemManager>
 
     private void Start()
     {
-        SetInitialReferences();
+        Invoke("SetInitialReferences",0.05f);
     }
 
     private void SetInitialReferences()
@@ -46,7 +46,7 @@ public class ItemManager : EnsuredSingleton<ItemManager>
         requestCapsuleBottom = requestPosition.position - Vector3.up;
         requestCapsuleTop = requestPosition.position + Vector3.up;
 
-        lightRay = FindObjectOfType<Pipe>();
+        //lightRay = FindObjectOfType<Pipe>();
     }
 
     public void CreateItems(List<ItemType> items, List<int> counts, int mutationChance)
@@ -91,9 +91,16 @@ public class ItemManager : EnsuredSingleton<ItemManager>
         DestroyImmediate(item.gameObject);
     }
 
+    private Pipe Lightray
+    {
+        get
+        {
+            return FindObjectOfType<Pipe>();
+        }
+    }
     private IEnumerator ActivateItem(List<ItemType> items, List<int> counts, int mutationChance)
     {
-        yield return lightRay.Open(false);
+        yield return Lightray.Open(false);
         for (int i = 0; i < items.Count; i++)
         {
             for (int j = 0; j < counts[i]; j++)
@@ -142,7 +149,7 @@ public class ItemManager : EnsuredSingleton<ItemManager>
                 
             }
         }
-        yield return lightRay.Close();
+        yield return Lightray.Close();
     }
 
     private void CalculateFinalScore(List<int> counts)
