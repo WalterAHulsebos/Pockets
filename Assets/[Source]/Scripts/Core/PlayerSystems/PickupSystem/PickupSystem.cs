@@ -126,7 +126,7 @@ namespace Core.PlayerSystems
 				 
 				 Matrix4x4 matrix = Matrix4x4.TRS(cameraTransform.position, cameraTransform.rotation, cameraTransform.lossyScale);
 
-				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
 				 
 				 rotationInput = new Vector3(
 					 InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
@@ -135,7 +135,7 @@ namespace Core.PlayerSystems
 				 
 				 Debug.Log($"rotationInput = {rotationInput}");
 				 
-				 heldObjectMoveTowardsPosition = matrix.MultiplyPoint(holdOffset);
+				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint(holdOffset);
 
 				 if(InputPlayer.GetButtonDown(PICKUP_BUTTON))
 				 {
@@ -178,7 +178,7 @@ namespace Core.PlayerSystems
 			 //Vector3 direction = (heldObjectMoveTowardsPosition - heldObject.position).normalized;
 			 //heldObjectRigidBody.MovePosition(heldObject.position + direction * objectFollowingSpeed * Time.deltaTime);
 
-			 heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition); // * Time.fixedDeltaTime);
+			 //heldObjectRigidBody.MovePosition(heldObjectMoveTowardsPosition); // * Time.fixedDeltaTime);
 		 }
 
 		 #endregion
