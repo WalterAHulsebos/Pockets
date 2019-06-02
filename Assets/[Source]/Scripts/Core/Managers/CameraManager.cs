@@ -48,6 +48,7 @@ namespace Core.Managers
 
         private const int DEFAULT_PLAYER_COUNT = 0;
 
+        [SerializeField] [ReadOnly]
         private int activePlayerCount = 0;
         
         [Serializable]
@@ -404,10 +405,10 @@ namespace Core.Managers
 
         private void SetCameras()
         {
-            Debug.Log($"PlayerCount = {ReInput.players.playerCount}");
+            Debug.Log($"PlayerCount = {activePlayerCount}");
             
-            GetCamerasFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = true);
-            GetCamerasNotFromGroup(DEFAULT_PLAYER_COUNT).For(cam => cam.camera.enabled = false);
+            GetCamerasFromGroup(activePlayerCount).For(cam => cam.camera.enabled = true);
+            GetCamerasNotFromGroup(activePlayerCount).For(cam => cam.camera.enabled = false);
         }
     
         // Searches all Players to find the next Player without a Joystick assigned
