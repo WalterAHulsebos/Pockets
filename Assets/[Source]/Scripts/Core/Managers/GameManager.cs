@@ -7,6 +7,10 @@ using Utilities;
 
 public class GameManager : EnsuredSingleton<GameManager>
 {
+    public GameObject ratPrefab;
+    public List<Transform> ratSpawnLocations = new List<Transform>();
+
+    [Header("Schedule")]
     public List<ScheduleItem> schedule = new List<ScheduleItem>();
     public float secondsPerTick;
     float timer;
@@ -77,5 +81,13 @@ public class GameManager : EnsuredSingleton<GameManager>
     public ItemEvent GetActiveRequestEvent()
     {
         return currentRequestEvent;
+    }
+
+    public void SpawnRats(int count)
+    {
+        for(int i = 0; i < count; i++)
+        {
+            Instantiate(ratPrefab, ratSpawnLocations[Random.Range(0, ratSpawnLocations.Count - 1)].position, Quaternion.identity);
+        }
     }
 }
