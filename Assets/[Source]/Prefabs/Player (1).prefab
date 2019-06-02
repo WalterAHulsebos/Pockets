@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupLayermask:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 0
   grabRange: 5
   holdOffset: {x: 0, y: 0, z: 2}
   rotationSensitivity: {x: 1, y: 1}
