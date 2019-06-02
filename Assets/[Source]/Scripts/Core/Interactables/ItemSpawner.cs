@@ -10,6 +10,7 @@ public class ItemSpawner : EnsuredSingleton<ItemSpawner>
     {
         GameObject newItem = Instantiate(item, transform);
         newItem.transform.position = position;
+        newItem.transform.rotation = Random.rotation;
         return newItem;
     }
 }
