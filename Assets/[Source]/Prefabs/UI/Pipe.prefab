@@ -110,16 +110,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   m_CurrentCamera: {fileID: 0}
   m_Size: {x: 10, y: 10, z: 20}
   m_SpotNear: 0.1
@@ -225,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SpotLight: {fileID: 1327603408613695657}
-  m_SpotLightOpenAngle: 44
-  m_SpotLightOpenIntensity: 8
+  m_SpotLightOpenAngle: 6
+  m_SpotLightOpenIntensity: 6.87
   m_SpotLightSpawnColor: {r: 1, g: 1, b: 1, a: 1}
   m_SpotLightRequestColor: {r: 1, g: 0, b: 0, a: 1}
