@@ -174,7 +174,7 @@ public class Composer : EnsuredSingleton<Composer>
         itemEvent.mutationChance = 5;
         itemEvent.timeToExecute = 0;                
 
-        float minutesToExecute = 0.25f;             // TODO: Make Random
+        float minutesToExecute = 0.5f + (difficulty / 60.0f);             // TODO: Make Random
         ScheduleItem scheduleItem = new ScheduleItem();
         scheduleItem.itemEvent = itemEvent;
         scheduleItem.minuteToExecute = minutesToExecute;
@@ -200,9 +200,9 @@ public class Composer : EnsuredSingleton<Composer>
         itemEvent.items = items;
         itemEvent.counts = counts;
         itemEvent.mutationChance = 5;
-        itemEvent.timeToExecute = 30; // TODO: Make Random
+        itemEvent.timeToExecute = 30;
 
-        float minutesToExecute = 0.25f; // TODO: Make Random
+        float minutesToExecute = 0.5f + (difficulty / 60.0f);
         ScheduleItem scheduleItem = new ScheduleItem();
         scheduleItem.itemEvent = itemEvent;
         scheduleItem.minuteToExecute = minutesToExecute;

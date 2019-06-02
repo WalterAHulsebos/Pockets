@@ -1,14 +1,9 @@
 fileFormatVersion: 2
-guid: 39310b3c17aac144bae53633d03eac2c
+guid: 40650f9ba9a8a894eb044f87bab5b328
 ModelImporter:
   serializedVersion: 25
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: wire_214229166
-    second: {fileID: 2100000, guid: b748240885fcaaf479e6ca088dc7076c, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
@@ -39,7 +34,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
