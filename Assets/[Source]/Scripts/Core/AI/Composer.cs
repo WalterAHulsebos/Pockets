@@ -19,6 +19,8 @@ public class Composer : EnsuredSingleton<Composer>
 
     private int difficulty;
 
+    private bool firstTime = true;
+
     private void Awake()
     {
         SetInitialReferences();
@@ -172,9 +174,18 @@ public class Composer : EnsuredSingleton<Composer>
         itemEvent.items = items;
         itemEvent.counts = itemSplits;
         itemEvent.mutationChance = 5;
-        itemEvent.timeToExecute = 0;                
+        itemEvent.timeToExecute = 0;
 
-        float minutesToExecute = 0.5f + (difficulty / 60.0f);             // TODO: Make Random
+        float minutesToExecute;
+        if (firstTime)
+        {
+            minutesToExecute = (10 / 60.0f);
+            firstTime = false;
+        }
+        else
+        {
+            minutesToExecute = 0.5f + (difficulty / 60.0f);
+        }
         ScheduleItem scheduleItem = new ScheduleItem();
         scheduleItem.itemEvent = itemEvent;
         scheduleItem.minuteToExecute = minutesToExecute;
