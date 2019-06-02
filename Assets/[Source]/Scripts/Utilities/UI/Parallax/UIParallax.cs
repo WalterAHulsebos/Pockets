@@ -1,0 +1,102 @@
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
+using Utilities.CGTK.Greasy;
+using Utilities.Extensions;
+
+/// <summary>
+/// This class implements the abstraction of the parallax system.
+/// </summary>
+public abstract class UIParallax : MonoBehaviour
+{
+    [System.Serializable]
+    public struct ParallaxElement
+    {
+        // Image source for the parallax layer
+        public RectTransform transform;
+
+        // You can select the required range
+        [Range(0, 100)]
+        public float intensity;
+
+    }
+    
+    // Layers of parallax.They can be configured from the inspector
+    [SerializeField] protected ParallaxElement[] parallaxLayers;
+    [SerializeField] protected EaseType easeType;
+    [SerializeField] protected float moveSpeed = 1f;
+
+    protected bool initialized = true;
+
+    protected Vector3 targetPositionLastFrame = Vector3.zero;
+    
+    /// <summary> The main method that implemented parallax. </summary>
+    /// <param name="direction"> Parallax movement direction </param>
+    protected void Parallaxing(Vector3 targetPosition)
+    {
+        if(!initialized) return;
+        
+        if(targetPosition == targetPositionLastFrame) return;
+        //if(targetPosition.Approximately(targetPositionLastFrame)) return;
+
+        if(parallaxLayers.Length <= 0)
+        {
+            Debug.LogWarning("Parallax layers are not found");
+            return;
+        }
+        
+        foreach (ParallaxElement parallaxLayer in parallaxLayers)
+        {
+            Vector3 adjustedPosition = Vector3.Lerp(parallaxLayer.transform.position, targetPosition, (parallaxLayer.intensity/100));
+            
+            float distance = Vector3.Distance(parallaxLayer.transform.position, adjustedPosition);
+            float moveTime = distance / moveSpeed;
+            
+            parallaxLayer.transform.PositionTo(adjustedPosition, moveTime, easeType);
+        }
+        
+        targetPositionLastFrame = targetPosition;
+    }
+    
+    /*
+    /// <summary>
+    /// The main method that implemented parallax.
+    /// </summary>
+    /// <param name="direction"> Parallax movement direction </param>
+    protected void Parallaxing(Vector3 direction) {
+
+        if (!_isInitialize)
+            return;
+
+        if (ParallaxLayers.Length <= 0) {
+            Debug.LogError("UIParallax! Parallax layers are not found");
+            return;
+        }            
+
+        for (int i = 0; i < ParallaxLayers.Length; i++) {
+
+            ParallaxElement parallaxLayer = ParallaxLayers[i];
+
+            Vector2 offset = direction * Time.deltaTime * parallaxLayer.intensity;
+
+            if(ParallaxLayers[i].image == null) {
+                Debug.LogError("ParallaxElement with id : " + i + " error! Not found Image!");
+                continue;
+            }
+
+            float x = ParallaxLayers[i].image.uvRect.x + offset.x;
+            float y = ParallaxLayers[i].image.uvRect.y + offset.y;
+
+            if (x > 1 || x < -1)
+                x = 0;
+
+            if (y > 1 || y < -1)
+                y = 0;
+
+            ParallaxLayers[i].image.uvRect = new Rect(x, y, ParallaxLayers[i].image.uvRect.width, ParallaxLayers[i].image.uvRect.height);
+
+        }
+
+    }
+    */
+}

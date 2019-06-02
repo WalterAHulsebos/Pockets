@@ -1281,6 +1281,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1137181457}
   - component: {fileID: 1137181456}
+  - component: {fileID: 1137181458}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1309,30 +1310,7 @@ MonoBehaviour:
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
     SerializationNodes: []
-  schedule:
-  - minuteToExecute: 0.05
-    itemEvent:
-      eventType: 0
-      items:
-      - {fileID: 11400000, guid: fa9bbf6a542ca664a8cbecd166cb9f5f, type: 2}
-      counts: 03000000
-      mutationChance: 0
-      timeToExecute: 1
-  - minuteToExecute: 0.2
-    itemEvent:
-      eventType: 1
-      items:
-      - {fileID: 11400000, guid: fa9bbf6a542ca664a8cbecd166cb9f5f, type: 2}
-      counts: 03000000
-      mutationChance: 0
-      timeToExecute: 30
-  - minuteToExecute: 0
-    itemEvent:
-      eventType: 0
-      items: []
-      counts: 
-      mutationChance: 0
-      timeToExecute: 30
+  schedule: []
   secondsPerTick: 4
 --- !u!4 &1137181457
 Transform:
@@ -1348,6 +1326,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1137181458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137181455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2733cc99e48f64a45b12891b893a5b7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes: []
+  maxChallengeRating: 25
+  minutesToCompleteRange: []
 --- !u!1 &1263093461
 GameObject:
   m_ObjectHideFlags: 0

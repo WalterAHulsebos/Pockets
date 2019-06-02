@@ -5,7 +5,7 @@ using Sirenix.Serialization;
 using Utilities.Extensions;
 using Utilities;
 
-public class GameManager : PersistentSingleton<GameManager>
+public class GameManager : EnsuredSingleton<GameManager>
 {
     public List<ScheduleItem> schedule = new List<ScheduleItem>();
     public float secondsPerTick;
@@ -41,15 +41,18 @@ public class GameManager : PersistentSingleton<GameManager>
 
     public void CheckSchedule()
     {
-        if (schedule.Count > schedulePos)
+        if (schedule.Count > 0)
         {
-            if ((schedule[schedulePos].minuteToExecute * 60) <= globalTimer)
+            if ((schedule[0].minuteToExecute * 60) <= globalTimer)
             {
-                if(schedule[schedulePos].itemEvent.eventType == ItemEventType.RemoveEvent)
+                if(schedule[0].itemEvent.eventType == ItemEventType.RemoveEvent)
                 {
-                    currentRequestEvent = schedule[schedulePos].itemEvent;
+                    currentRequestEvent = schedule[0].itemEvent;
                 }
-                StartCoroutine(schedule[schedulePos++].itemEvent.HandleEvent());
+                StartCoroutine(schedule[0].itemEvent.HandleEvent());
+                schedule.RemoveAt(0);
+                Composer.Instance.ComposeNextLevel();
+                globalTimer = 0;
             }
         }
         if (currentRequestEvent != null)

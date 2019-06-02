@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilities;
 
-public class ItemEffectFactory : PersistentSingleton<ItemEffectFactory>
+public class ItemEffectFactory : EnsuredSingleton<ItemEffectFactory>
 {
     public GameObject fireParticleSystemPrefab;
     public GameObject poisonParticleSystemPrefab;

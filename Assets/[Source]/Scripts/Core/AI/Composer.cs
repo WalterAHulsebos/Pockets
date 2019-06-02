@@ -86,12 +86,15 @@ public class Composer : EnsuredSingleton<Composer>
     {
         int counter = numberToSplit;
         List<int> splits = new List<int>();
+        splits.Add(1);
+        counter--;
         
         while(counter > 0)
         {
             if(splits.Count >= 3)
             {
                 splits[Random.Range(0, splits.Count-1)]++;
+                counter--;
                 continue;
             }
 
@@ -103,6 +106,7 @@ public class Composer : EnsuredSingleton<Composer>
             {
                 splits[Random.Range(0, splits.Count - 1)]++;
             }
+            counter--;
         }
         return splits;
     }
@@ -113,9 +117,17 @@ public class Composer : EnsuredSingleton<Composer>
 
         List<int> itemSplits = GetSplit(testDifficulty);
         List<ItemType> items = new List<ItemType>();
+
+        List<ItemType> availableTypes = new List<ItemType>();
+        foreach(object itemType in itemTypes)
+        {
+            availableTypes.Add((ItemType)itemType);
+        }
         for(int i = 0; i < itemSplits.Count; i++)
         {
-            items.Add((ItemType)itemTypes[Random.Range(0, itemTypes.Length)]);
+            int index = Random.Range(0, availableTypes.Count);
+            items.Add(availableTypes[index]);
+            availableTypes.RemoveAt(index);
         }
 
         ItemEvent itemEvent = new ItemEvent();
