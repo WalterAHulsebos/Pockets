@@ -11,6 +11,7 @@ using Sirenix.OdinInspector;
 using Math = Utilities.Extensions.Math;
 using Core.PlayerSystems.Ballistics;
 using Lean.Pool;
+using Utilities.CGTK.Greasy;
 
 #if Odin_Inspector
 using MonoBehaviour = Sirenix.OdinInspector.SerializedMonoBehaviour;
@@ -114,8 +115,8 @@ namespace Core.PlayerSystems
 		 #region Consts
 
 		 private const string PICKUP_BUTTON = "Interact";
-		 private const string ROTATE_HORIZONTAL = "Move Horizontal";
-		 private const string ROTATE_VERTICAL = "Move Vertical";
+		 private const string ROTATE_HORIZONTAL = "Rotate Horizontal";
+		 private const string ROTATE_VERTICAL = "Rotate Vertical";
 		
 		 #endregion
 
@@ -171,16 +172,25 @@ namespace Core.PlayerSystems
 
 				 Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
 
-				 heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 Vector3 holdingPosition = matrix.MultiplyPoint3x4(holdOffset);
+				 //heldTransform.position = cameraTransform.TransformPoint(holdOffset);
 				 
-				 /*
+				 Vector3.Distance(heldTransform.position, holdingPosition);
+				 
+				 heldTransform.PositionTo(holdingPosition, 0.3f, EaseType.ExponentialIn);
+				 
+				 heldTransform.SetParent(cameraTransform);
+				 
 				 rotationInput = new Vector3(
-					 InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
-					 InputPlayer.GetAxis(ROTATE_VERTICAL), 
-					 0);
-					 */
+			 		InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
+			 		InputPlayer.GetAxis(ROTATE_VERTICAL), 
+			 		0);
 				 
-				 Debug.Log($"rotationInput = {rotationInput}");
+				 heldTransform.Rotate(heldTransform.up, rotationInput.x);
+				 heldTransform.Rotate(heldTransform.right, rotationInput.y);
+				 
+				 
+				 //Debug.Log($"rotationInput = {rotationInput}");
 				 
 				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint(holdOffset);
 
@@ -216,6 +226,8 @@ namespace Core.PlayerSystems
 				 
 				 if (!(chargePercentage >= 0.05 )) return;
 				 if(!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
+				 
+				 heldTransform.SetParent(null);
 
 				 //LeanPool.DespawnAll();
 
