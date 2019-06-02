@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Rat
   layers:
   - Default
   - TransparentFX
@@ -15,14 +16,16 @@ TagManager:
   - 
   - PostProcessing
   - 
+  - Rat
+  - Items
   - 
   - 
   - 
   - 
+  - Pickup
   - 
-  - 
-  - 
-  - 
+  - UI SeeThrough
+  - RequestPreview
   - 
   - 
   - 

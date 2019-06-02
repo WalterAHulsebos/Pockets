@@ -1,0 +1,2 @@
+.asset filter=lfs diff=lfs merge=lfs -text
+F:/[Projects]/[Srctree]/btnjam5-Pockets/Assets/[Source]/Scenes/Main/3_Environment/LightingData.asset filter=lfs diff=lfs merge=lfs -text
