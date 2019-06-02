@@ -39,8 +39,15 @@ public class MultiScene : ScriptableObject
 	public SceneReference activeScene;
 	public List<SceneInfo> sceneAssets = new List<SceneInfo>();
 	
-	public void Load(LoadSceneMode mode = LoadSceneMode.Single)
+	public void Load()//(LoadSceneMode mode = LoadSceneMode.Additive)
 	{
-		sceneAssets.For(sceneInfo => SceneManager.LoadScene(sceneInfo.asset, mode));
+		//sceneAssets.For(sceneInfo => SceneManager.LoadScene(sceneInfo.asset, LoadSceneMode.Additive));
+
+		for (int index = 0; index < sceneAssets.Count; index++)
+		{
+			SceneInfo sceneInfo = sceneAssets[index];
+			
+			SceneManager.LoadSceneAsync(sceneInfo.asset, (index == 0)? LoadSceneMode.Single : LoadSceneMode.Additive);
+		}
 	}
 }
