@@ -16,10 +16,18 @@ public partial class LightShafts : MonoBehaviour
 
         m_Cameras = allCamera;
 
+        Debug.Log("start");
+
 		UpdateCameraDepthMode();
 	}
 
-	void UpdateShadowmap()
+    private void OnEnable()
+    {
+        Camera[] allCamera = FindObjectsOfType<Camera>();
+        m_Cameras = allCamera;
+    }
+
+    void UpdateShadowmap()
 	{
 		if (m_ShadowmapMode == LightShaftsShadowmapMode.Static && !m_ShadowmapDirty)
 			return;
