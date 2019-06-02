@@ -47,7 +47,7 @@ public class Item : MonoBehaviour, IInteractable
         }
         if(integity <= 0)
         {
-            ScoreManager.Instance.ChangeSatisfaction(satisfaction);
+            ScoreManager.Instance.ChangeSatisfaction(5);
             ItemManager.Instance.DestroyItem(this);
         }
     }
