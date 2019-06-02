@@ -51,5 +51,39 @@ public class Item : MonoBehaviour, IInteractable
             ItemManager.Instance.DestroyItem(this);
         }
     }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        Container container = other.GetComponent<Container>();
+        if (container != null)
+        {
+            container.RemoveItemFromContainer(this);
+        }
+        else
+        {
+            container = other.GetComponentInParent<Container>();
+            if (container != null)
+            {
+                container.RemoveItemFromContainer(this);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        Container container = other.GetComponent<Container>();
+        if (container != null)
+        {
+            container.AddItemToContainer(this);
+        }
+        else
+        {
+            container = other.GetComponentInParent<Container>();
+            if (container != null)
+            {
+                container.AddItemToContainer(this);
+            }
+        }
+    }
 }
 
