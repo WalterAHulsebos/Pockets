@@ -17,7 +17,6 @@ public class Composer : EnsuredSingleton<Composer>
 
     private int maxTypeNumber = 3;
 
-
     private int difficulty;
 
     private void Awake()
@@ -34,20 +33,28 @@ public class Composer : EnsuredSingleton<Composer>
     {
         UpdateItemDictionary();
         difficulty = currentLevel + 2;
-        if (giveReceiveRatio > 1) // Allow Requests
+
+        if (currentLevel % 5 == 0)
         {
-            if(Random.value < 0.5)
-            {
-                CreateGiveEvent();
-            }
-            else
-            {
-                CreateRequestEvent();
-            }
+            CreateRatEvent();
         }
         else
         {
-            CreateGiveEvent();
+            if (giveReceiveRatio > 1) // Allow Requests
+            {
+                if (Random.value < 0.5)
+                {
+                    CreateGiveEvent();
+                }
+                else
+                {
+                    CreateRequestEvent();
+                }
+            }
+            else
+            {
+                CreateGiveEvent();
+            }
         }
 
         currentLevel++;
@@ -202,6 +209,21 @@ public class Composer : EnsuredSingleton<Composer>
 
         GameManager.Instance.AddScheduledEvent(scheduleItem);
         giveReceiveRatio--;
+    }
+
+    private void CreateRatEvent()
+    {
+        List<int> ratNum = new List<int>();
+        ratNum.Add((currentLevel % 5) + 2);
+        
+        ItemEvent itemEvent = new ItemEvent();
+        itemEvent.counts = ratNum;
+
+        ScheduleItem scheduleItem = new ScheduleItem();
+        scheduleItem.itemEvent = itemEvent;
+        scheduleItem.minuteToExecute = 0.5f;
+
+        GameManager.Instance.AddScheduledEvent(scheduleItem);
     }
 
     private void UpdateItemDictionary()
