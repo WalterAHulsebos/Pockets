@@ -35,7 +35,8 @@ namespace Core.PlayerSystems
 		 [FoldoutGroup("Grab Settings")]
 		 [SerializeField] private Vector3 holdOffset = new Vector3(2,0,0);
 
-		 //[SerializeField] private float objectFollowingSpeed = 10f;
+		 [FoldoutGroup("Grab Settings")]
+		 [SerializeField] private float rotationSpeed = 10f;
 		 
 		 [FoldoutGroup("Sensitivity")]
 		 [SerializeField] private Vector2 rotationSensitivity = new Vector3(1,1,1);
@@ -97,7 +98,7 @@ namespace Core.PlayerSystems
 		 
 		 private Vector2 rotationInput = Vector3.zero;
 
-		 private Transform cameraTransform;
+		 private Transform cameraTransform, characterTransform;
 		 
 		 private List<Vector3> trajectory = null;
 
@@ -138,11 +139,10 @@ namespace Core.PlayerSystems
 			 if(!playerController.initialized) return;
 			 if(InputPlayer == null) return;
 			 
-			 cameraTransform = playerCamera.TargetTransforms[0]; 
+			 cameraTransform = playerCamera.TargetTransforms[0];
+			 characterTransform = playerController.meshRoot;
 			 
 			 Ray ray = new Ray(cameraTransform.position, cameraTransform.forward * grabRange);
-			 
-			 //Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
 			 
 			 trajectoryPredictor.debugLineDuration = Time.deltaTime;
 			 
@@ -178,36 +178,41 @@ namespace Core.PlayerSystems
 			 }
 			 else
 			 {
-                if (heldObject == null)
-                {
-                    holdingAnObject = false;
-                    return;
-                }
+            if (heldObject == null)
+            {
+                holdingAnObject = false;
+                return;
+            }
 
-                Transform heldTransform = heldObject.transform;
-
-
+            Transform heldTransform = heldObject.transform;
 
 				 Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
 
-				 Vector3 holdingPosition = matrix.MultiplyPoint3x4(holdOffset);
+				 Vector3 holdingPosition = matrix.MultiplyPoint3x4(new Vector3(0,-0.25f,2));
 				 //heldTransform.position = cameraTransform.TransformPoint(holdOffset);
 				 
 				 Vector3.Distance(heldTransform.position, holdingPosition);
 				 
 				 //heldTransform.PositionTo(holdingPosition, 0.3f, EaseType.ExponentialIn);
 				 
-                heldTransform.SetParent(cameraTransform);
-                heldTransform.localPosition = holdOffset;
+            //heldTransform.SetParent(cameraTransform);
+            heldTransform.SetParent(characterTransform);
+  
+            heldTransform.localPosition = holdOffset;
+            
+            heldTransform.position = new Vector3(holdingPosition.x, heldTransform.position.y, holdingPosition.z);
+  
+            
+            //heldTransform.forward = cameraTransform.forward;
 
-                rotationInput = new Vector3(
-			 		InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
-			 		InputPlayer.GetAxis(ROTATE_VERTICAL), 
-			 		0);
-				 
-				 heldTransform.Rotate(heldTransform.up, rotationInput.x);
-				 heldTransform.Rotate(heldTransform.right, rotationInput.y);
-				 
+            rotationInput = new Vector3(
+			 	InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
+			 	InputPlayer.GetAxis(ROTATE_VERTICAL), 
+			 	0);
+            
+				 float speed = rotationSpeed * Time.deltaTime;
+				 transform.Rotate(0f, rotationInput.x * speed, 0f, Space.World);
+				 transform.Rotate(rotationInput.y * speed,  0f, 0f, Space.Self);
 				 
 				 //Debug.Log($"rotationInput = {rotationInput}");
 				 

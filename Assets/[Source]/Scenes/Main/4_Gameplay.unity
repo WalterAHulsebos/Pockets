@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1036489119}
+  m_Material: {fileID: 1532406925}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1036489119}
+  m_Material: {fileID: 1532406925}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1036489119}
+  m_Material: {fileID: 1532406925}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1036489119}
+  m_Material: {fileID: 1532406925}
   m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1036489119}
+  m_Material: {fileID: 1532406925}
   m_Color: {r: 1, g: 0.80729437, b: 0, a: 0.9764706}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -2891,6 +2891,29 @@ PrefabInstance:
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 68608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: defaultPhysicsMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: c5fb99868e032ce4dae8393e99bafbc9,
+        type: 2}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryDebugObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryEndMarkObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: launchAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: holdOffset.y
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
@@ -3533,6 +3556,29 @@ PrefabInstance:
       propertyPath: pickupLayermask.m_Bits
       value: 68608
       objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: defaultPhysicsMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: c5fb99868e032ce4dae8393e99bafbc9,
+        type: 2}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryDebugObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryEndMarkObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: launchAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: holdOffset.y
+      value: 1.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
 --- !u!4 &992869402 stripped
@@ -3644,39 +3690,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1036489119
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/Procedural UI Image
-  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1053398712
 GameObject:
   m_ObjectHideFlags: 0
@@ -4043,6 +4056,39 @@ Transform:
   m_Father: {fileID: 1753461076}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1532406925
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/Procedural UI Image
+  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1576913190
 GameObject:
   m_ObjectHideFlags: 0
@@ -5303,7 +5349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1036489119}
+  m_Material: {fileID: 1532406925}
   m_Color: {r: 1, g: 0.80729437, b: 0, a: 0.9764706}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -6066,6 +6112,29 @@ PrefabInstance:
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 68608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: defaultPhysicsMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: c5fb99868e032ce4dae8393e99bafbc9,
+        type: 2}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryDebugObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryEndMarkObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: launchAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: holdOffset.y
+      value: 1.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
@@ -6988,6 +7057,34 @@ PrefabInstance:
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: pickupLayermask.m_Bits
       value: 68608
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: defaultPhysicsMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: c5fb99868e032ce4dae8393e99bafbc9,
+        type: 2}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryDebugObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: trajectoryEndMarkObject
+      value: 
+      objectReference: {fileID: 4642180032915660401, guid: 49b32777a8bfa7e4bb3de00d0a052762,
+        type: 3}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: launchAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
+      propertyPath: holdOffset.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076984118953990235, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: StableGroundLayers.m_Bits
+      value: 786743
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
