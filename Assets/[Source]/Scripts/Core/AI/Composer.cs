@@ -11,13 +11,13 @@ public class Composer : EnsuredSingleton<Composer>
 
     private int currentLevel = 1;
 
-    public int maxChallengeRating = 25;
-
     private int giveReceiveRatio = 0;
 
     public float[] minutesToCompleteRange;
 
     private int maxTypeNumber = 3;
+
+    private int difficulty;
 
     private void Awake()
     {
@@ -31,54 +31,93 @@ public class Composer : EnsuredSingleton<Composer>
 
     public void ComposeNextLevel()
     {
-        int difficulty = currentLevel <= maxChallengeRating ? maxChallengeRating : currentLevel;
         UpdateItemDictionary();
-        if(giveReceiveRatio > 1) // Allow Requests
+        difficulty = currentLevel + 2;
+
+        if (currentLevel % 5 == 0)
         {
-            if(Random.value < 0.5)
-            {
-                CreateGiveEvent();
-            }
-            else
-            {
-                CreateRequestEvent();
-            }
+            CreateRatEvent();
         }
         else
         {
-            CreateGiveEvent();
+            if (giveReceiveRatio > 1) // Allow Requests
+            {
+                if (Random.value < 0.5)
+                {
+                    CreateGiveEvent();
+                }
+                else
+                {
+                    CreateRequestEvent();
+                }
+            }
+            else
+            {
+                CreateGiveEvent();
+            }
         }
 
         currentLevel++;
     }
 
-    private Dictionary<ItemType, int> GetItemDictionary()
+    private KeyValuePair<string[], int[]> TryToFindGroupToMatchDifficulty(int currentDifficulty)
     {
-        Dictionary<ItemType, int> requestDictionary = new Dictionary<ItemType, int>();
-
-
-
-        return requestDictionary;
-    }
-
-    private KeyValuePair<List<ItemType>, List<int>> GetSingleItem()
-    {
-        ItemType availableType = new ItemType();
-        for(int i = 0; i < itemTypes.Length; i++)
+        string[] largestKeys = { "", "", "" };
+        int[] largestValues = { 0, 0, 0 };
+        foreach (KeyValuePair<string, int> possibleDrop in itemDictionary)
         {
-            ItemType currentType = (ItemType)itemTypes[i];
-            if (itemDictionary.ContainsKey(currentType.type))
+            for(int i = 0; i < largestValues.Length; i++)
             {
-                availableType = currentType;
+                if(possibleDrop.Value > largestValues[i])
+                {
+                    largestValues[i] = possibleDrop.Value;
+                    largestKeys[i] = possibleDrop.Key;
+                }
             }
         }
-        List<ItemType> list = new List<ItemType>();
-        list.Add(availableType);
-        List<int> list2 = new List<int>();
-        list2.Add(1);
 
-        KeyValuePair<List<ItemType>, List<int>> result = new KeyValuePair<List<ItemType>, List<int>>(list, list2);
-        return result;
+
+        return new KeyValuePair<string[], int[]>(largestKeys, largestValues);
+    }
+
+    private ItemType GetItemType(string type)
+    {
+        foreach(ItemType item in itemTypes)
+        {
+            if(item.type == type)
+            {
+                return item;
+            }
+        }
+        return null;
+    }
+
+    private Dictionary<ItemType, int> GetItemDictionary()
+    {
+        int difficultyCounter = difficulty - 2;
+        Dictionary<ItemType, int> requestDictionary = new Dictionary<ItemType, int>();
+
+        KeyValuePair<string[], int[]> drops = TryToFindGroupToMatchDifficulty(difficultyCounter);
+
+        for(int i = 0; i < drops.Value.Length; i++)
+        {
+            for (int j = 0; j < drops.Value[j]; j++)
+            {
+                ItemType type = GetItemType(drops.Key[j]);
+                if(requestDictionary.ContainsKey(type))
+                {
+                    requestDictionary[type]++;
+                }
+                else
+                {
+                    requestDictionary.Add(type, 1);
+                }
+
+                if (--difficultyCounter <= 0) { break; }
+            }
+        }
+
+        return requestDictionary;
     }
 
 
@@ -113,9 +152,7 @@ public class Composer : EnsuredSingleton<Composer>
 
     private void CreateGiveEvent()
     {
-        int testDifficulty = 10;                            // TODO: Make Random
-
-        List<int> itemSplits = GetSplit(testDifficulty);
+        List<int> itemSplits = GetSplit(difficulty);
         List<ItemType> items = new List<ItemType>();
 
         List<ItemType> availableTypes = new List<ItemType>();
@@ -148,14 +185,20 @@ public class Composer : EnsuredSingleton<Composer>
 
     private void CreateRequestEvent()
     {
-        int testDifficulty = 10; // TODO: Make Random
+        Dictionary<ItemType, int> requestDictionary = GetItemDictionary();
+        List<ItemType> items = new List<ItemType>();
+        List<int> counts = new List<int>();
+        foreach(KeyValuePair<ItemType, int> valuePair in requestDictionary)
+        {
+            items.Add(valuePair.Key);
+            counts.Add(valuePair.Value);
+        }
 
-        KeyValuePair< List<ItemType>, List<int>> pair = GetSingleItem();
 
         ItemEvent itemEvent = new ItemEvent();
         itemEvent.eventType = ItemEventType.RemoveEvent;
-        itemEvent.items = pair.Key;
-        itemEvent.counts = pair.Value;
+        itemEvent.items = items;
+        itemEvent.counts = counts;
         itemEvent.mutationChance = 5;
         itemEvent.timeToExecute = 30; // TODO: Make Random
 
@@ -166,6 +209,21 @@ public class Composer : EnsuredSingleton<Composer>
 
         GameManager.Instance.AddScheduledEvent(scheduleItem);
         giveReceiveRatio--;
+    }
+
+    private void CreateRatEvent()
+    {
+        List<int> ratNum = new List<int>();
+        ratNum.Add((currentLevel % 5) + 2);
+        
+        ItemEvent itemEvent = new ItemEvent();
+        itemEvent.counts = ratNum;
+
+        ScheduleItem scheduleItem = new ScheduleItem();
+        scheduleItem.itemEvent = itemEvent;
+        scheduleItem.minuteToExecute = 0.5f;
+
+        GameManager.Instance.AddScheduledEvent(scheduleItem);
     }
 
     private void UpdateItemDictionary()
