@@ -71,45 +71,39 @@ public class Container : MonoBehaviour
 
     public void AddItemToContainer(Item itemToAdd)
     {
-        if(itemsInContainer.Contains(itemToAdd))
+        if(!itemsInContainer.Contains(itemToAdd))
         {
-            return;
+            itemToAdd.container = this;
+            itemsInContainer.Add(itemToAdd);
         }
-
-        itemToAdd.container = this;
-        itemsInContainer.Add(itemToAdd);
     }
 
     public void RemoveItemFromContainer(Item itemToRemove)
     {
-        if(!itemsInContainer.Contains(itemToRemove))
+        if(itemsInContainer.Contains(itemToRemove))
         {
-            return;
+            itemToRemove.container = null;
+            itemsInContainer.Remove(itemToRemove);
         }
-
-        itemToRemove.container = null;
-        itemsInContainer.Remove(itemToRemove);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Item otherItem = other.GetComponent<Item>();
-        if(otherItem == null)
+        Room room = other.GetComponent<Room>();
+        if (room != null)
         {
+            room.AddContainerToRoom(this);
             return;
         }
-
-        AddItemToContainer(otherItem);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Item otherItem = other.GetComponent<Item>();
-        if (otherItem == null)
+        Room room = other.GetComponent<Room>();
+        if (room != null)
         {
+            room.RemoveContainerToRoom(this);
             return;
         }
-
-        RemoveItemFromContainer(otherItem);
     }
 }

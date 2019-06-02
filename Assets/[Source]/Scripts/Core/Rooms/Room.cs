@@ -61,27 +61,4 @@ public class Room : MonoBehaviour
         
         containersInRoom.Remove(containerToRemove);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        print(other.transform);
-        Container otherItem = other.transform.parent.GetComponent<Container>();
-        if (otherItem == null)
-        {
-            return;
-        }
-
-        AddContainerToRoom(otherItem);
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        Container otherItem = other.transform.parent.GetComponent<Container>();
-        if (otherItem == null)
-        {
-            return;
-        }
-
-        RemoveContainerToRoom(otherItem);
-    }
 }
