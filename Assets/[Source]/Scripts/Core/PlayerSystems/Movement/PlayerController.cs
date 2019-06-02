@@ -68,7 +68,7 @@ namespace Core.PlayerSystems.Movement
 		[FoldoutGroup("Misc")]
 		[SerializeField] private Vector3 gravity = new Vector3(0, -30f, 0);
 		[FoldoutGroup("Misc")]
-		[SerializeField] private Transform meshRoot;
+		[SerializeField] public Transform meshRoot;
 		
 		#endregion
 

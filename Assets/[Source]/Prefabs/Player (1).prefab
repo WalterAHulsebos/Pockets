@@ -122,6 +122,7 @@ MonoBehaviour:
     m_Bits: 0
   grabRange: 5
   holdOffset: {x: 0, y: 0, z: 2}
+  rotationSpeed: 10
   rotationSensitivity: {x: 1, y: 1}
   minThrowForce: 0
   maxThrowForce: 25
