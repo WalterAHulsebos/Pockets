@@ -245,7 +245,7 @@ namespace Core.PlayerSystems
 				 
 				 foreach(Vector3 orbPos in trajectory)
 				 {
-					 if(trajectoryDebugObject){LeanPool.Spawn(trajectoryDebugObject, orbPos, Quaternion.identity);}
+					 //if(trajectoryDebugObject){LeanPool.Spawn(trajectoryDebugObject, orbPos, Quaternion.identity);}
 				 }
 				 
 				 if (!(chargePercentage >= 0.05 )) return;
