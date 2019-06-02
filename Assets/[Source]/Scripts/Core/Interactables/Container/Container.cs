@@ -8,9 +8,9 @@ public class Container : MonoBehaviour
     public Room room;
     private List<Item> itemsInContainer;
 
-    private void Awake()
+    private void Start()
     {
-        SetInitialReferences();
+        Invoke("SetInitialReferences", 0.05f);
     }
 
     private void SetInitialReferences()
