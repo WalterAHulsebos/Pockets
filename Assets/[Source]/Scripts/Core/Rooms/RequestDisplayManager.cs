@@ -21,6 +21,11 @@ public class RequestDisplayManager : MonoBehaviour
         // TODO: Poll
         ItemEvent itemEvent = GameManager.Instance.GetActiveRequestEvent();
 
+		if (itemEvent != null)
+		{
+			SetTimer(itemEvent.timeToExecute);
+		}
+
 		bool requestValue = itemEvent != null;
 
 		if (m_PreviousRequestValue == requestValue)
@@ -30,8 +35,6 @@ public class RequestDisplayManager : MonoBehaviour
 
         if (itemEvent != null)
         {
-            SetTimer(itemEvent.timeToExecute);
-
             SetDisplays(itemEvent);
         }
         else
