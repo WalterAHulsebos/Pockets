@@ -8,6 +8,7 @@ public class ScoreManager : PersistentSingleton<ScoreManager>
 {
     public float roomOrganisationScore = 0;
     public int heroSatisfactionRating = 100;
+    public int stolenItems = 0;
 
     private List<int> recordedHeroSatisfactionRatings = new List<int>();
     public int averageHeroSatisfactionRating

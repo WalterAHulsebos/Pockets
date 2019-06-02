@@ -22,6 +22,7 @@ public class ItemManager : EnsuredSingleton<ItemManager>
     WaitForSecondsRealtime waitTime = new WaitForSecondsRealtime(0.2f);
 
     public List<Item> globalItems = new List<Item>();
+    public List<Item> targetedItems = new List<Item>();
 
     [HideInInspector] public delegate void DegradeCallback();
     public event DegradeCallback degradeCallback;
@@ -76,6 +77,12 @@ public class ItemManager : EnsuredSingleton<ItemManager>
     public void DestroyItem(Item item)
     {
         globalItems.Remove(item);
+
+        if(targetedItems.Contains(item))
+        {
+            targetedItems.Remove(item);
+        }
+
         degradeCallback -= item.DoDegration;
         DestroyImmediate(item.gameObject);
     }
