@@ -115,8 +115,8 @@ namespace Core.PlayerSystems
 		 #region Consts
 
 		 private const string PICKUP_BUTTON = "Interact";
-		 private const string ROTATE_HORIZONTAL = "Move Horizontal";
-		 private const string ROTATE_VERTICAL = "Move Vertical";
+		 private const string ROTATE_HORIZONTAL = "Rotate Horizontal";
+		 private const string ROTATE_VERTICAL = "Rotate Vertical";
 		
 		 #endregion
 
@@ -170,26 +170,27 @@ namespace Core.PlayerSystems
 			 {
 				 Transform heldTransform = heldObject.transform;
 
-				 //Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
+				 Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
 
-				 //heldTransform.position = matrix.MultiplyPoint3x4(holdOffset);
+				 Vector3 holdingPosition = matrix.MultiplyPoint3x4(holdOffset);
 				 //heldTransform.position = cameraTransform.TransformPoint(holdOffset);
 				 
+				 Vector3.Distance(heldTransform.position, holdingPosition);
+				 
+				 heldTransform.PositionTo(holdingPosition, 0.3f, EaseType.ExponentialIn);
+				 
 				 heldTransform.SetParent(cameraTransform);
-
-				 Vector3.Distance(heldTransform.localPosition, holdOffset);
 				 
-				 
-				 heldTransform.LocalPositionTo(holdOffset, 0.3f, EaseType.ExponentialIn);
-				 
-				 /*
 				 rotationInput = new Vector3(
-					 InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
-					 InputPlayer.GetAxis(ROTATE_VERTICAL), 
-					 0);
-					 */
+			 		InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
+			 		InputPlayer.GetAxis(ROTATE_VERTICAL), 
+			 		0);
 				 
-				 Debug.Log($"rotationInput = {rotationInput}");
+				 heldTransform.Rotate(heldTransform.up, rotationInput.x);
+				 heldTransform.Rotate(heldTransform.right, rotationInput.y);
+				 
+				 
+				 //Debug.Log($"rotationInput = {rotationInput}");
 				 
 				 //heldObjectMoveTowardsPosition = matrix.MultiplyPoint(holdOffset);
 
