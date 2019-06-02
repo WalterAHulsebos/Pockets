@@ -156,19 +156,37 @@ namespace Core.PlayerSystems
 				 
 				 heldObject = hit.collider.transform;
 
-				 holdingAnObject = true;
-				 
-				 heldObjectRigidBody = heldObject.GetComponent<Rigidbody>();
-				 heldObjectCollider = heldObject.GetComponent<Collider>();
-				 
-				 heldObjectRigidBody.isKinematic = true;
+                if(heldObject.GetComponent<Rigidbody>() == null)
+                {
+                    heldObject = heldObject.parent;
+                }
 
-				 initialGrab = true;
+				 holdingAnObject = true;
+
+                heldObjectRigidBody = heldObject.GetComponentInChildren<Rigidbody>() ?? heldObject.parent.GetComponentInChildren<Rigidbody>();
+                heldObjectCollider = heldObject.GetComponentInChildren<Collider>() ?? heldObject.parent.GetComponentInChildren<Collider>();
+
+                heldObjectRigidBody.isKinematic = true;
+
+                if (heldObject.gameObject.tag == "Rat")
+                {
+                    heldObject.GetComponent<Rat>().IsPickedUp();
+                }
+
+                initialGrab = true;
 				 //heldObjectCollider.enabled = false;
 			 }
 			 else
 			 {
-				 Transform heldTransform = heldObject.transform;
+                if (heldObject == null)
+                {
+                    holdingAnObject = false;
+                    return;
+                }
+
+                Transform heldTransform = heldObject.transform;
+
+
 
 				 Matrix4x4 matrix = Math.LocalMatrix(cameraTransform);
 
@@ -177,11 +195,12 @@ namespace Core.PlayerSystems
 				 
 				 Vector3.Distance(heldTransform.position, holdingPosition);
 				 
-				 heldTransform.PositionTo(holdingPosition, 0.3f, EaseType.ExponentialIn);
+				 //heldTransform.PositionTo(holdingPosition, 0.3f, EaseType.ExponentialIn);
 				 
-				 heldTransform.SetParent(cameraTransform);
-				 
-				 rotationInput = new Vector3(
+                heldTransform.SetParent(cameraTransform);
+                heldTransform.localPosition = holdOffset;
+
+                rotationInput = new Vector3(
 			 		InputPlayer.GetAxis(ROTATE_HORIZONTAL), 
 			 		InputPlayer.GetAxis(ROTATE_VERTICAL), 
 			 		0);
@@ -227,17 +246,24 @@ namespace Core.PlayerSystems
 				 if (!(chargePercentage >= 0.05 )) return;
 				 if(!InputPlayer.GetButtonUp(PICKUP_BUTTON)) return;
 				 
-				 heldTransform.SetParent(null);
+				 
 
 				 //LeanPool.DespawnAll();
 
 				 timeSinceStartedCharging = 0f;
 				 
 				 heldObjectRigidBody.isKinematic = false;
-				 //heldObjectCollider.enabled = true;
-				 heldObjectRigidBody.AddForce(throwForce * projectileDirection, throwForceMode);
+                //heldObjectCollider.enabled = true;
+                heldTransform.SetParent(null);
+                heldObjectRigidBody.AddForce(throwForce * projectileDirection, throwForceMode);
+                
 
-				 holdingAnObject = false;
+                if (heldObject.tag == "Rat")
+                {
+                    StartCoroutine(heldObject.GetComponent<Rat>().ResetRat());
+                }
+
+                holdingAnObject = false;
 				 heldObject = null;
 				 heldObjectRigidBody = null;
 				 //heldObjectCollider = null;
