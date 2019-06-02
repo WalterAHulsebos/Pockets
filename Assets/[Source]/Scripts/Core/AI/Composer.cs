@@ -240,6 +240,7 @@ public class Composer : EnsuredSingleton<Composer>
     private void UpdateItemDictionary()
     {
         itemDictionary.Clear();
+        
         List<Item> itemList = ItemManager.Instance.globalItems;
         for(int i = 0; i < itemList.Count; i++)
         {
