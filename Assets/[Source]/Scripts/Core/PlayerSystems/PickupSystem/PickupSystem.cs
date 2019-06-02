@@ -78,7 +78,7 @@ namespace Core.PlayerSystems
 
 		 private PlayerCamera playerCamera = null;
 		 	
-		 private Vector3 projectileDirection => Quaternion.AngleAxis(launchAngle, Vector3.left) * heldObject.forward;
+		 private Vector3 projectileDirection => Quaternion.AngleAxis(launchAngle, Vector3.left) * cameraTransform.forward;
 
 		 private readonly BallisticTrajectoryPredictor trajectoryPredictor = new BallisticTrajectoryPredictor()
 		 {
@@ -141,7 +141,7 @@ namespace Core.PlayerSystems
 			 
 			 Ray ray = new Ray(cameraTransform.position, cameraTransform.forward * grabRange);
 			 
-			 Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
+			 //Debug.DrawRay(ray.origin, ray.direction, Color.cyan);
 			 
 			 trajectoryPredictor.debugLineDuration = Time.deltaTime;
 			 

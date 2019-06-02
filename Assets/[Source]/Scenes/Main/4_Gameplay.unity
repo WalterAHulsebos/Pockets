@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -419,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -26.72
       objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
@@ -492,6 +492,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3076984117389161511, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
+    - target: {fileID: 3076984117389161511, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: playerIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: _targetTransforms.Array.size
@@ -552,7 +557,7 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: holdOffset.y
-      value: -0.5
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
@@ -1481,7 +1486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 1, g: 0.80729437, b: 0, a: 0.9764706}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
@@ -1570,7 +1575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -2392,7 +2397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 0, g: 0, b: 0, a: 0.7058824}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -2411,6 +2416,39 @@ MonoBehaviour:
   m_UseSpriteMesh: 0
   borderWidth: 0
   falloffDistance: 250
+--- !u!21 &691550630
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/Procedural UI Image
+  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &724061031
 GameObject:
   m_ObjectHideFlags: 0
@@ -2484,7 +2522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 1, g: 0.80729437, b: 0, a: 0.9764706}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -3463,7 +3501,7 @@ PrefabInstance:
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.8
       objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
@@ -3473,7 +3511,7 @@ PrefabInstance:
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 12.1
       objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
@@ -3536,6 +3574,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3076984117389161511, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
+    - target: {fileID: 3076984117389161511, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: playerIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: _targetTransforms.Array.size
@@ -3596,7 +3639,7 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: holdOffset.y
-      value: -0.5
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
@@ -3655,7 +3698,7 @@ PrefabInstance:
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14.94
       objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
@@ -3665,7 +3708,7 @@ PrefabInstance:
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -14.98
       objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161510, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
@@ -3728,6 +3771,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3076984117389161511, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
+    - target: {fileID: 3076984117389161511, guid: 1a822019871ed1b4fb35fa659b75edc8,
+        type: 3}
+      propertyPath: playerIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3076984117389161508, guid: 1a822019871ed1b4fb35fa659b75edc8,
         type: 3}
       propertyPath: _targetTransforms.Array.size
@@ -3939,39 +3987,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
---- !u!21 &1377060775
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/Procedural UI Image
-  m_Shader: {fileID: 4800000, guid: 27d83044d20c5de4e9d57d35e4fda368, type: 3}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1523789271
 GameObject:
   m_ObjectHideFlags: 0
@@ -5096,7 +5111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41f1c5417c9d7ab4b84e531f83f60a4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 1377060775}
+  m_Material: {fileID: 691550630}
   m_Color: {r: 1, g: 0.80729437, b: 0, a: 0.9764706}
   m_RaycastTarget: 0
   m_OnCullStateChanged:
@@ -6585,7 +6600,7 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1779405917, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
       propertyPath: holdOffset.y
-      value: -0.5
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a822019871ed1b4fb35fa659b75edc8, type: 3}
